@@ -2,74 +2,82 @@
 # ============================================================
 # deploy_to_github.sh
 # 功能：將最新的 WBC 即時報表 HTML 自動推送至 GitHub Pages
-# 使用方法：./deploy_to_github.sh [html_file_path]
-#   - html_file_path：可選，指定要部署的 HTML 檔案路徑
-#                     若不指定，則自動搜尋 reports/ 下最新的 HTML
-# 執行前提：已初始化 Git Repo 並設定 Remote origin
+# 策略：使用 git worktree，在不切換當前分支的情況下操作 gh-pages
+# 使用方法：
+#   ./deploy_to_github.sh                  # 自動搜尋最新 HTML
+#   ./deploy_to_github.sh <html_file_path> # 指定 HTML 路徑（支援相對或絕對路徑）
 # ============================================================
 
-set -e  # 任何指令失敗即中止
+set -e
 
-# === 設定區 ===
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# === 設定區（全部使用絕對路徑）===
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$SCRIPT_DIR"
 REPORTS_DIR="$REPO_ROOT/reports"
 DEPLOY_BRANCH="gh-pages"
+WORKTREE_DIR="/tmp/wbc_gh_pages_$$"
 
-# === 尋找最新的 HTML 報表 ===
-if [ -n "$1" ] && [ -f "$1" ]; then
-  # 如果有指定 HTML 路徑且檔案存在
-  HTML_FILE="$1"
+# === 尋找最新的 Taiwan vs Japan HTML 報表（優先，其次才搜尋最新）===
+if [ -n "$1" ]; then
+  if [[ "$1" = /* ]]; then
+    HTML_FILE="$1"
+  else
+    HTML_FILE="$REPO_ROOT/$1"
+  fi
 else
-  # 自動搜尋 reports/ 下最新修改的 HTML 檔案
-  HTML_FILE=$(find "$REPORTS_DIR" -name "*.html" -not -path "*/assets/*" | sort -t/ -k4 -r | head -1)
+  # 優先選 Japan vs ChineseTaipei 報表
+  JAPAN_TAIWAN_FILES=$(find "$REPORTS_DIR" -name "*Japan*ChineseTaipei*.html" -not -path "*/assets/*" 2>/dev/null)
+  if [ -n "$JAPAN_TAIWAN_FILES" ]; then
+    HTML_FILE=$(echo "$JAPAN_TAIWAN_FILES" | xargs ls -t 2>/dev/null | head -1)
+  else
+    # 若找不到，選最新的 HTML
+    ALL_FILES=$(find "$REPORTS_DIR" -name "*.html" -not -path "*/assets/*" 2>/dev/null)
+    if [ -n "$ALL_FILES" ]; then
+      HTML_FILE=$(echo "$ALL_FILES" | xargs ls -t 2>/dev/null | head -1)
+    fi
+  fi
 fi
 
-if [ -z "$HTML_FILE" ]; then
-  echo "[部署腳本] ❌ 找不到任何 HTML 報表，跳過部署。"
-  exit 1
+if [ -z "$HTML_FILE" ] || [ ! -f "$HTML_FILE" ]; then
+  echo "[部署腳本] ❌ 找不到 HTML 報表，跳過部署。"
+  exit 0
 fi
 
-echo "[部署腳本] 📄 準備部署：$HTML_FILE"
+echo "[部署腳本] 📄 準備部署：$(basename "$HTML_FILE")"
 HTML_BASENAME=$(basename "$HTML_FILE")
 ASSETS_DIR="$(dirname "$HTML_FILE")/assets"
 
-# === 將目前工作狀態儲存（避免影響 main 的工作中檔案）===
+# === 確保本地有 gh-pages 分支 ===
+# 我們之前已經在遠端建立過。如果本地沒有，先建立追蹤。
+if ! git show-ref --verify --quiet "refs/heads/$DEPLOY_BRANCH" 2>/dev/null; then
+  git branch "$DEPLOY_BRANCH" "origin/$DEPLOY_BRANCH" 2>/dev/null || true
+fi
+
+# === 使用 git worktree 操作 ===
 cd "$REPO_ROOT"
 
-# 暫存所有工作中的變更（stash）
-git stash --include-untracked --quiet 2>/dev/null || true
+# 清理可能殘留的 worktree
+git worktree remove "$WORKTREE_DIR" --force 2>/dev/null || true
+rm -rf "$WORKTREE_DIR" 2>/dev/null || true
 
-# === 切換或建立 gh-pages 分支 ===
-if git show-ref --verify --quiet refs/heads/$DEPLOY_BRANCH 2>/dev/null; then
-  # gh-pages 分支已存在，切換過去
-  git checkout $DEPLOY_BRANCH --quiet
-else
-  # 建立全新的孤立 gh-pages 分支（第一次部署）
-  echo "[部署腳本] 🌱 初次部署：建立 gh-pages 分支..."
-  git checkout --orphan $DEPLOY_BRANCH --quiet
-  # 移除所有暫存檔案（確保乾淨起點）
-  git rm -rf . --quiet 2>/dev/null || true
-fi
+# 建立 worktree，把 gh-pages 掛載到暫存目錄
+git worktree add "$WORKTREE_DIR" "$DEPLOY_BRANCH" --quiet
 
-# === 複製 HTML 與 assets 至分支根目錄 ===
-# 清除舊有 HTML 與 assets（保留乾淨狀態）
-rm -f ./*.html 2>/dev/null || true
-rm -rf ./assets 2>/dev/null || true
+# === 複製 HTML 與相關資源至 worktree ===
+find "$WORKTREE_DIR" -maxdepth 1 -name "*.html" -delete 2>/dev/null || true
+rm -rf "$WORKTREE_DIR/assets" 2>/dev/null || true
 
-# 複製最新 HTML 至根目錄
-cp "$HTML_FILE" ./index.html           # 主頁面（訪問根 URL 就能看到）
-cp "$HTML_FILE" "./$HTML_BASENAME"     # 保留完整檔名版本（方便深度連結）
+cp "$HTML_FILE" "$WORKTREE_DIR/index.html"
+cp "$HTML_FILE" "$WORKTREE_DIR/$HTML_BASENAME"
 
-# 複製 assets 資料夾（圖片、CSS 等）
 if [ -d "$ASSETS_DIR" ]; then
-  cp -r "$ASSETS_DIR" ./assets
+  cp -r "$ASSETS_DIR" "$WORKTREE_DIR/assets"
 fi
 
-# 建立 README（讓 Repo 首頁有說明）
-cat > README.md << EOF
+cat > "$WORKTREE_DIR/README.md" << EOF
 # WBC 2026 賽事即時數據報表
 
-> 本頁面由自動化腳本每 10 秒即時更新，資料來源為 MLB Statcast API。
+> 本頁面由自動化腳本即時更新，資料來源為 MLB Statcast API。
 
 ## 查看即時報表
 
@@ -78,21 +86,24 @@ cat > README.md << EOF
 ## 技術資訊
 
 - 資料抓取：R \`baseballr\` 套件
-- 更新頻率：每 10 秒
 - 最後更新：$(date '+%Y-%m-%d %H:%M:%S %Z')
 EOF
 
-# === 提交並推送 ===
-COMMIT_MSG="🔄 自動部署：$(date '+%Y/%m/%d %H:%M:%S') - $HTML_BASENAME"
+# === 在 worktree 中提交並推送 ===
+cd "$WORKTREE_DIR"
+COMMIT_MSG="🔄 $(date '+%Y/%m/%d %H:%M:%S') - 更新 $HTML_BASENAME"
 git add -A
-git commit -m "$COMMIT_MSG" --quiet
+if git diff --staged --quiet; then
+  echo "[部署腳本] ℹ️  內容無變動，跳過 commit。"
+else
+  git commit -m "$COMMIT_MSG" --quiet
+  echo "[部署腳本] ⬆️  推送至 GitHub Pages..."
+  git push origin "$DEPLOY_BRANCH" --quiet
+  echo "[部署腳本] ✅ 部署成功！"
+  echo "           🌐 https://iflin.github.io/wbc-2026-live-stats/"
+fi
 
-echo "[部署腳本] ⬆️  推送至 GitHub Pages..."
-git push origin $DEPLOY_BRANCH --quiet
-
-echo "[部署腳本] ✅ 部署成功！"
-echo "           🌐 網址：https://iflin.github.io/wbc-2026-live-stats/"
-
-# === 切回 main 分支並還原工作狀態 ===
-git checkout main --quiet 2>/dev/null || git checkout -b main --quiet
-git stash pop --quiet 2>/dev/null || true
+# === 半清除 worktree（回到主目錄）===
+cd "$REPO_ROOT"
+git worktree remove "$WORKTREE_DIR" --force 2>/dev/null || true
+rm -rf "$WORKTREE_DIR" 2>/dev/null || true
