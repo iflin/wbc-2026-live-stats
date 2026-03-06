@@ -1,0 +1,61 @@
+/* 1. 視覺區塊化：將每一個子標題與表格包覆在卡片視覺中 */
+h3 {
+  background-color: #2C3E50;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 5px 5px 0 0;
+  margin-top: 35px;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.html-widget {
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+/* 2. 修復 DataTable 表頭與排序箭頭重疊問題 */
+table.dataTable thead th {
+  padding-right: 30px !important;
+}
+
+/* 4. 懶人包高亮 (Callout Box) */
+.recap-box {
+  padding: 10px 0;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.recap-box p, .recap-box li, .recap-box ul {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+.recap-box strong {
+  color: #D32F2F;
+  font-weight: 800;
+}
+
+/* 回到頂端按鈕樣式 */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #E74C3C;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+}
+#back-to-top:hover {
+  background-color: #C0392B;
+}

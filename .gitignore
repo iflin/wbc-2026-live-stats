@@ -1,0 +1,18 @@
+# === 大型資料集（避免推送到 GitHub）===
+# 逐球原始 CSV 資料（每場比賽可能數 MB）
+reports/*/data/
+reports/*/788*_pbp.csv
+# 各場比賽的 pbp CSV
+*.pbp.csv
+
+# === 暫存資料夾 ===
+/tmp/
+
+# === 系統檔案 ===
+.DS_Store
+*.out
+
+# === R 暫存 ===
+.Rhistory
+.RData
+.Rproj.user/

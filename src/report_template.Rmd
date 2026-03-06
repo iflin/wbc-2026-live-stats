@@ -1,0 +1,284 @@
+---
+title: "賽事即時數據報表：`r params$game_label`"
+date: "更新時間：`r params$timestamp_str`"
+output: 
+  html_document:
+    theme: flatly
+    highlight: tango
+    toc: true
+    toc_float: true
+params:
+  stats_list: NULL
+  game_label: "Unknown Match"
+  timestamp_str: ""
+  recap_text: ""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(DT)
+```
+
+```{cat, engine.opts=list(file="custom_style.css")}
+/* 1. 視覺區塊化：將每一個子標題與表格包覆在卡片視覺中 */
+h3 {
+  background-color: #2C3E50;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 5px 5px 0 0;
+  margin-top: 35px;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.html-widget {
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+/* 2. 修復 DataTable 表頭與排序箭頭重疊問題 */
+table.dataTable thead th {
+  padding-right: 30px !important;
+}
+
+/* 4. 懶人包高亮 (Callout Box) */
+.recap-box {
+  padding: 10px 0;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.recap-box p, .recap-box li, .recap-box ul {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+.recap-box strong {
+  color: #D32F2F;
+  font-weight: 800;
+}
+
+/* 回到頂端按鈕樣式 */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #E74C3C;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+}
+#back-to-top:hover {
+  background-color: #C0392B;
+}
+```
+
+<style>
+  `r paste(readLines("custom_style.css"), collapse="\n")`
+</style>
+
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆️ 回到頂端</button>
+
+<script>
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("back-to-top").style.display = "block";
+  } else {
+    document.getElementById("back-to-top").style.display = "none";
+  }
+};
+
+$(document).ready(function() {
+  // 修復 TOC 指向被隱藏 Tabset 內容時無法跳轉的問題
+  $('.tocify-item a').on('click', function() {
+    var hash = $(this).attr('data-unique');
+    if (!hash) return;
+    
+    var $target = $('#' + hash);
+    if ($target.length === 0) return;
+    
+    // 檢查目標標題是否被包裝在 Tab 中
+    var $tabPane = $target.closest('.tab-pane');
+    if ($tabPane.length > 0) {
+      var tabId = $tabPane.attr('id');
+      // 切換並顯示該 Tab
+      $('a[href="#' + tabId + '"]').tab('show');
+    }
+  });
+});
+</script>
+
+## 📝 賽況懶人包 (Game Recap)
+
+<div class="recap-box">
+```{r recap, results='asis'}
+cat(params$recap_text)
+```
+</div>
+
+---
+
+## 🔥 焦點球星追蹤 (Star Tracker) {.tabset .tabset-pills}
+
+
+
+### 大谷翔平 (Shohei Ohtani)
+
+**打者・指定打擊 (DH)**
+
+#### 📊 打席結果與摘要
+
+```{r render-star-ohtani-ab, results='asis', echo=FALSE}
+ohtani_ab <- params$stats_list[["StarOhtaniAB"]]
+if (!is.null(ohtani_ab) && nrow(ohtani_ab) > 0) {
+  cat(knitr::knit_child(text = "```{r, echo=FALSE}\nDT::datatable(ohtani_ab, rownames = FALSE, options = list(pageLength = 5, dom = 't', columnDefs = list(list(className = 'dt-left', targets = '_all'))), class = 'display compact cell-border hover')\n```", envir = environment(), quiet = TRUE))
+} else {
+  cat("> 尚無大谷翔平打席紀錄。\n\n")
+}
+```
+
+#### 🚀 擊球初速與飛行距離追蹤
+
+```{r render-star-ohtani-hit, results='asis', echo=FALSE}
+ohtani_hit <- params$stats_list[["StarOhtaniHit"]]
+if (!is.null(ohtani_hit) && nrow(ohtani_hit) > 0) {
+  colnames(ohtani_hit) <- gsub("_mph$", " (mph)", colnames(ohtani_hit))
+  colnames(ohtani_hit) <- gsub("_ft$", " (ft)", colnames(ohtani_hit))
+  colnames(ohtani_hit) <- gsub("_m$", " (m)", colnames(ohtani_hit))
+  colnames(ohtani_hit) <- gsub("_kph$", " (kph)", colnames(ohtani_hit))
+  cat(knitr::knit_child(text = "```{r, echo=FALSE}\nDT::datatable(ohtani_hit, rownames = FALSE, options = list(pageLength = 5, dom = 't', columnDefs = list(list(className = 'dt-left', targets = '_all'))), class = 'display compact cell-border hover')\n```", envir = environment(), quiet = TRUE))
+} else {
+  cat("> 尚無大谷翔平擊球追蹤數據。\n\n")
+}
+```
+
+#### 🕰️ 2023 WBC & 2025 MLB 賽季參照 (Historical Benchmarks)
+
+```{r render-star-ohtani-comp, results='asis', echo=FALSE}
+ohtani_comp <- params$stats_list[["StarOhtaniComp"]]
+if (!is.null(ohtani_comp) && nrow(ohtani_comp) > 0) {
+  cat(knitr::knit_child(text = "```{r, echo=FALSE}\nDT::datatable(ohtani_comp, rownames = FALSE, options = list(pageLength = 5, dom = 't', columnDefs = list(list(className = 'dt-left', targets = '_all'))), class = 'display compact cell-border hover')\n```", envir = environment(), quiet = TRUE))
+} else {
+  cat("> 本地資料庫查無大谷翔平歷史參照數據。\n\n")
+}
+```
+
+### 山本由伸 (Yoshinobu Yamamoto)
+
+**投手・先發 (SP)**
+
+#### 🎯 本場進階投球指標
+
+```{r render-star-yamamoto-adv, results='asis', echo=FALSE}
+yamamoto_adv <- params$stats_list[["StarYamamotoAdv"]]
+if (!is.null(yamamoto_adv) && nrow(yamamoto_adv) > 0) {
+  cat(knitr::knit_child(text = "```{r, echo=FALSE}\nDT::datatable(yamamoto_adv, rownames = FALSE, options = list(pageLength = 5, dom = 't', scrollX = TRUE, columnDefs = list(list(className = 'dt-left', targets = '_all'))), class = 'display compact cell-border hover')\n```", envir = environment(), quiet = TRUE))
+} else {
+  cat("> 尚無山本由伸總括數據。\n\n")
+}
+```
+
+#### ⚾️ 各球種測速與轉速追蹤
+
+```{r render-star-yamamoto-stats, results='asis', echo=FALSE}
+yamamoto_stats <- params$stats_list[["StarYamamotoStats"]]
+if (!is.null(yamamoto_stats) && nrow(yamamoto_stats) > 0) {
+  colnames(yamamoto_stats) <- gsub("_mph$", " (mph)", colnames(yamamoto_stats))
+  colnames(yamamoto_stats) <- gsub("_rpm$", " (rpm)", colnames(yamamoto_stats))
+  colnames(yamamoto_stats) <- gsub("_kph$", " (kph)", colnames(yamamoto_stats))
+  cat(knitr::knit_child(text = "```{r, echo=FALSE}\nDT::datatable(yamamoto_stats, rownames = FALSE, options = list(pageLength = 10, dom = 't', columnDefs = list(list(className = 'dt-left', targets = '_all'))), class = 'display compact cell-border hover')\n```", envir = environment(), quiet = TRUE))
+} else {
+  cat("> 尚無山本由伸分球種轉速紀錄。\n\n")
+}
+```
+
+#### 🕰️ 2025 MLB 賽季參照 (Historical Benchmarks)
+
+```{r render-star-yamamoto-comp, results='asis', echo=FALSE}
+yamamoto_comp <- params$stats_list[["StarYamamotoComp"]]
+if (!is.null(yamamoto_comp) && nrow(yamamoto_comp) > 0) {
+  cat(knitr::knit_child(text = "```{r, echo=FALSE}\nDT::datatable(yamamoto_comp, rownames = FALSE, options = list(pageLength = 5, dom = 't', columnDefs = list(list(className = 'dt-left', targets = '_all'))), class = 'display compact cell-border hover')\n```", envir = environment(), quiet = TRUE))
+} else {
+  cat("> 本地資料庫查無山本由伸歷史基準數據。\n\n")
+}
+```
+
+---
+
+## 📊 進階數據探索 (Interactive Stats) {.tabset .tabset-pills}
+
+*(提示：您可以使用表格右上方的搜尋框尋找特定選手，或是點擊各欄位標題進行排序)*
+
+```{r render-tables, results='asis', echo=FALSE}
+# 定義標題對應字典
+titles <- c(
+  MaxEV = "各隊最快擊球初速 (Max Exit Velocity)",
+  BatterCombined = "打者打擊表現綜覽 (Batter Combined Stats)",
+  Hits = "上壘與全壘打的擊球數據 (Hits & HRs EV & LA)",
+  TeamKBB = "各隊三振與四壞數 (Team K & BB)",
+  BatterOutcomes = "各隊打者的打擊結果統計 (Batter Outcomes)",
+  TeamOutcomes = "各隊團隊打擊結果總和統計 (Team Outcomes)",
+  ChangeupWhiffBatter = "各隊打者對變速球的揮空率 (Batter Changeup Whiff Rate)",
+  PitcherAvgSpeed = "各投手的平均球速 (Pitcher Avg Speed)",
+  PitcherTotal = "各投手總用球數 (Pitcher Total Pitches)",
+  PitcherMaxSpeed = "各投手最快球速、轉速與球種 (Pitcher Max Speed)",
+  PitcherSBRatio = "各投手好壞球比例 (Strike/Ball Ratio)",
+  PitcherTotalWhiff = "各投手總揮空率 (Pitcher Total Whiff Rate)",
+  PitcherTypeWhiff = "各投手各球種揮空率 (Pitcher Whiff Rate by Pitch Type)",
+  PitcherStats = "各投手的投球內容統計 (Pitcher Stats)"
+)
+
+# 定義分頁對應 (整體, 打擊, 投手)
+groups <- list(
+  "整體 (Team)" = c("TeamKBB", "TeamOutcomes"),
+  "打擊 (Batter)" = c("MaxEV", "BatterCombined", "Hits", "BatterOutcomes", "ChangeupWhiffBatter"),
+  "投手 (Pitcher)" = c("PitcherAvgSpeed", "PitcherTotal", "PitcherMaxSpeed", "PitcherSBRatio", "PitcherTotalWhiff", "PitcherTypeWhiff", "PitcherStats")
+)
+
+# 遍歷 groups，動態生成 R chunk 確保 DT 套件的正統互動表能發揮作用
+for (g_name in names(groups)) {
+  cat(sprintf("\n### %s\n\n", g_name))
+  
+  for (k in groups[[g_name]]) {
+    df <- params$stats_list[[k]]
+    
+    cat(sprintf("\n#### %s\n\n", titles[k]))
+  
+  if (!is.null(df) && nrow(df) > 0) {
+    # 把常見的英文欄位名稱翻譯成比較友善的中文
+    colnames(df)[colnames(df) == "batting_team"] <- "隊伍"
+    colnames(df)[colnames(df) == "pitching_team"] <- "隊伍"
+    colnames(df)[colnames(df) == "pitcher"] <- "投手"
+    colnames(df)[colnames(df) == "batter"] <- "打者"
+    colnames(df) <- gsub("_mph$", " (mph)", colnames(df))
+    colnames(df) <- gsub("_deg$", " (deg)", colnames(df))
+    colnames(df) <- gsub("_rpm$", " (rpm)", colnames(df))
+    
+    # 將處理後的 df 存回環境中給 knit_child 讀取
+    assign(paste0("df_clean_", k), df, envir = environment())
+
+    # 解決內容偏右對不齊或標題無效問題：讓 chunk 渲染環境內的 df_clean 變數
+    # 並移除 scrollX=TRUE 避免在短表格時自動撐開無用空白
+    chunk_src <- paste0(
+      "```{r chunk_", k, ", echo=FALSE}\n",
+      "DT::datatable(df_clean_", k, ", rownames = FALSE, options = list(pageLength = 10, autoWidth = FALSE, dom = 'Bfrtip', columnDefs = list(list(className = 'dt-left', targets = '_all')), language = list(url = '//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json')), class = 'display compact cell-border hover')\n",
+      "```"
+    )
+    
+    cat(knitr::knit_child(text = chunk_src, envir = environment(), quiet = TRUE))
+    } else {
+      cat("> 目前尚無相關數據紀錄。\n\n")
+    }
+  }
+}
+```
