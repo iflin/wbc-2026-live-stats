@@ -26,15 +26,10 @@ if [ -n "$1" ]; then
   fi
 else
   # 優先選 Japan vs ChineseTaipei 報表
-  JAPAN_TAIWAN_FILES=$(find "$REPORTS_DIR" -name "*Japan*ChineseTaipei*.html" -not -path "*/assets/*" 2>/dev/null)
-  if [ -n "$JAPAN_TAIWAN_FILES" ]; then
-    HTML_FILE=$(echo "$JAPAN_TAIWAN_FILES" | xargs ls -t 2>/dev/null | head -1)
-  else
+  HTML_FILE=$(ls -t "$REPORTS_DIR"/*/*Japan*ChineseTaipei*.html 2>/dev/null | head -1 || true)
+  if [ -z "$HTML_FILE" ]; then
     # 若找不到，選最新的 HTML
-    ALL_FILES=$(find "$REPORTS_DIR" -name "*.html" -not -path "*/assets/*" 2>/dev/null)
-    if [ -n "$ALL_FILES" ]; then
-      HTML_FILE=$(echo "$ALL_FILES" | xargs ls -t 2>/dev/null | head -1)
-    fi
+    HTML_FILE=$(ls -t "$REPORTS_DIR"/*/*.html 2>/dev/null | head -1 || true)
   fi
 fi
 
