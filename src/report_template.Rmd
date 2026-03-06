@@ -7,6 +7,8 @@ output:
     highlight: tango
     toc: true
     toc_float: true
+    includes:
+      in_header: "html_head.html"
 params:
   stats_list: NULL
   game_label: "Unknown Match"
