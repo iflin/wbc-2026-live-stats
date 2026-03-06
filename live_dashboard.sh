@@ -23,7 +23,7 @@ fi
 
 # === GitHub Pages 部署設定 ===
 # 每隔幾輪自動推送一次（設為 1 = 每輪都推，3 = 每三輪推一次）
-DEPLOY_EVERY=3
+DEPLOY_EVERY=1
 CYCLE_COUNT=0
 
 echo "=========================================="

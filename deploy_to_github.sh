@@ -81,6 +81,7 @@ cat > "$WORKTREE_DIR/README.md" << EOF
 ## 技術資訊
 
 - 資料抓取：R \`baseballr\` 套件
+- 更新頻率：每 10 秒 (每次抓取即時上傳)
 - 最後更新：$(date '+%Y-%m-%d %H:%M:%S %Z')
 EOF
 
