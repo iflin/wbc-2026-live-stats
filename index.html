@@ -23,7 +23,7 @@
     <script>
         const frame = document.getElementById('report-frame');
         const toast = document.getElementById('update-toast');
-        const RELOAD_SEC = 30; // 每 30 秒靜默刷新一次
+        const RELOAD_SEC = 10; // 每 10 秒靜默刷新一次
         let baseSrc = frame.src.split('?')[0];
 
         function silentRefresh() {
