@@ -5,7 +5,10 @@
     <title>WBC 2026 賽事即時數據報表</title>
     <style>
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #f7f9fc; }
-        iframe { border: none; width: 100%; height: 100%; }
+        .frame-container { position: relative; width: 100%; height: 100%; }
+        iframe { position: absolute; top: 0; left: 0; border: none; width: 100%; height: 100%; transition: opacity 0.2s ease-in-out; }
+        .hidden { opacity: 0; pointer-events: none; z-index: 1; }
+        .visible { opacity: 1; pointer-events: auto; z-index: 2; }
         #update-toast {
             position: fixed; top: 10px; right: 20px;
             background: #28a745; color: white;
@@ -17,46 +20,62 @@
 </head>
 <body>
     <div id="update-toast">資料已即時更新</div>
-    <!-- 實際放入我們產出的 HTML -->
-    <iframe id="report-frame" src="788117_ChineseTaipei_vs_Czechia_LiveStats.html"></iframe>
+    <div class="frame-container">
+        <!-- 採用雙層 iframe 輪替，以消除載入閃爍 -->
+        <iframe id="frame1" class="visible" src="788117_ChineseTaipei_vs_Czechia_LiveStats.html"></iframe>
+        <iframe id="frame2" class="hidden" src=""></iframe>
+    </div>
 
     <script>
-        const frame = document.getElementById('report-frame');
+        let activeFrame = document.getElementById('frame1');
+        let inactiveFrame = document.getElementById('frame2');
         const toast = document.getElementById('update-toast');
         const RELOAD_SEC = 10; // 每 10 秒靜默刷新一次
-        let baseSrc = frame.src.split('?')[0];
+        let baseSrc = activeFrame.src.split('?')[0];
 
-        function silentRefresh() {
-            // 在不觸發整個外殼頁面重整的情況下，變更 iframe 的 URL 參數強制取回最新檔案
-            // 注意：因為只有 iframe 內部重新載入，主外殼不會閃爍，體驗較佳。
-            // 為了不讓使用者失去目前所在的視角（例如表格看一半），我們需要先盡可能記錄 iframe 內部的滾動位置
+        function doubleBufferRefresh() {
             try {
-                const innerWindow = frame.contentWindow;
-                const innerDoc = frame.contentDocument || innerWindow.document;
+                // 取得目前正在觀看視窗的狀態
+                const innerWindow = activeFrame.contentWindow;
+                const innerDoc = activeFrame.contentDocument || innerWindow.document;
                 
-                // 若同源策略允許，記錄滾動
-                const scrollX = innerWindow.scrollX || innerDoc.documentElement.scrollLeft;
-                const scrollY = innerWindow.scrollY || innerDoc.documentElement.scrollTop;
-
-                // 準備在 iframe 讀取完成後恢復滾動條
-                frame.onload = function() {
+                // 定義 onload，當背景 iframe 載入完畢後執行切換
+                inactiveFrame.onload = function() {
                     try {
-                        frame.contentWindow.scrollTo(scrollX, scrollY);
+                        // 取得「交換前一刻」當下最精準的捲動高度
+                        const currentInnerWindow = activeFrame.contentWindow;
+                        const currentInnerDoc = activeFrame.contentDocument || currentInnerWindow.document;
+                        const finalScrollX = currentInnerWindow.scrollX || currentInnerDoc.documentElement.scrollLeft || currentInnerDoc.body.scrollLeft || 0;
+                        const finalScrollY = currentInnerWindow.scrollY || currentInnerDoc.documentElement.scrollTop || currentInnerDoc.body.scrollTop || 0;
+
+                        // 將準備登場的隱藏 iframe 捲動到相同高度
+                        inactiveFrame.contentWindow.scrollTo(finalScrollX, finalScrollY);
+                        
+                        // 交換顯示狀態 (CSS transition 提供平滑過渡)
+                        inactiveFrame.className = 'visible';
+                        activeFrame.className = 'hidden';
+                        
+                        // 交換變數指標
+                        const temp = activeFrame;
+                        activeFrame = inactiveFrame;
+                        inactiveFrame = temp;
+
                         // 顯示小提示框
                         toast.style.opacity = 1;
                         setTimeout(() => toast.style.opacity = 0, 2500);
                     } catch(e) {}
                     
-                    // 解除一次性綁定，避免後續重複觸發
-                    frame.onload = null;
+                    // 解除一次性綁定
+                    inactiveFrame.onload = null;
                 };
 
-            } catch(e) { /* DOMException on Cross-origin or early load */ }
+            } catch(e) { /* 例外處理：若跨域或尚未就緒 */ }
 
-            frame.src = baseSrc + '?t=' + new Date().getTime();
+            // 指定隱藏的 iframe 去抓取最新生成的靜態網頁
+            inactiveFrame.src = baseSrc + '?t=' + new Date().getTime();
         }
 
-        setInterval(silentRefresh, RELOAD_SEC * 1000);
+        setInterval(doubleBufferRefresh, RELOAD_SEC * 1000);
     </script>
 </body>
 </html>
