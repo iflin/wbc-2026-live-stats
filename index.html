@@ -86,7 +86,16 @@
                     oldRecapBox.innerHTML = newHTML;
                     hasUpdate = true;
 
-                    // 恢復 Accordion 展開/收起狀態
+                    // 先強制清除所有 Accordion 的展開狀態
+                    // （新 HTML 中某些 accordion 可能預設帶有 show class）
+                    var allContents = oldRecapBox.querySelectorAll('.accordion-content');
+                    for (var j = 0; j < allContents.length; j++) {
+                        allContents[j].classList.remove('show');
+                        var prevToggle = allContents[j].previousElementSibling;
+                        if (prevToggle) prevToggle.classList.remove('active');
+                    }
+
+                    // 只恢復使用者之前「明確展開」的 Accordion
                     for (var accId in accordionStates) {
                         if (accordionStates[accId]) {
                             var content = iframeDoc.getElementById(accId);
@@ -98,6 +107,13 @@
                         }
                     }
                 }
+            }
+
+            // === Step 2.5: 更新左上角對戰資訊列的更新時間 ===
+            var oldMatchBar = iframeDoc.querySelector('.match-info-bar');
+            var newMatchBar = newDoc.querySelector('.match-info-bar');
+            if (oldMatchBar && newMatchBar) {
+                oldMatchBar.innerHTML = newMatchBar.innerHTML;
             }
 
             // === Step 3: 更新 DataTable 數據 — 保留排序/分頁/搜尋/篩選狀態 ===
