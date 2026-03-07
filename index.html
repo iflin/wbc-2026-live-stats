@@ -22,7 +22,7 @@
     <div id="update-toast">資料已即時更新</div>
     <div class="frame-container">
         <!-- 採用雙層 iframe 輪替，以消除載入閃爍 -->
-        <iframe id="frame1" class="visible" src="788117_ChineseTaipei_vs_Czechia_LiveStats.html"></iframe>
+        <iframe id="frame1" class="visible" src="788118_Korea_vs_Japan_LiveStats.html"></iframe>
         <iframe id="frame2" class="hidden" src=""></iframe>
     </div>
 
@@ -30,7 +30,7 @@
         let activeFrame = document.getElementById('frame1');
         let inactiveFrame = document.getElementById('frame2');
         const toast = document.getElementById('update-toast');
-        const RELOAD_SEC = 60; // 每 60 秒靜默刷新一次
+        const RELOAD_SEC = 30; // 每 30 秒靜默刷新一次
         let baseSrc = activeFrame.src.split('?')[0];
 
         function doubleBufferRefresh() {
@@ -75,8 +75,8 @@
             inactiveFrame.src = baseSrc + '?t=' + new Date().getTime();
         }
 
-        // --- 暫時停用自動更新功能 ---
-        // setInterval(doubleBufferRefresh, RELOAD_SEC * 1000);
+        // 啟用自動更新功能
+        setInterval(doubleBufferRefresh, RELOAD_SEC * 1000);
     </script>
 </body>
 </html>

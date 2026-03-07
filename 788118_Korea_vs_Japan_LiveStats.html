@@ -11,7 +11,7 @@
 
 
 
-<title>賽事即時數據報表：Chinese Taipei vs Czechia</title>
+<title>賽事即時數據報表</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -2838,14 +2838,66 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">賽事即時數據報表：Chinese Taipei vs
-Czechia</h1>
-<h4 class="date">更新時間：2026-03-07 13:44:07</h4>
+<h1 class="title toc-ignore">賽事即時數據報表</h1>
 
 </div>
 
 
 <style>
+
+
+body {
+background-color: #f4f6f9;
+color: #2d3436;
+font-size: 15px;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+}
+.container-fluid {
+max-width: 960px;
+padding-top: 0 !important;
+}
+
+h1.title, .date {
+display: none !important;
+}
+
+.mini-nav {
+position: fixed;
+bottom: 30px;
+right: 110px;
+display: flex;
+flex-direction: row;
+gap: 8px;
+z-index: 9999;
+}
+.mini-nav a {
+background: #2C3E50;
+color: white;
+padding: 8px 16px;
+border-radius: 50px;
+text-decoration: none;
+font-size: 13px;
+font-weight: 600;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+transition: all 0.2s;
+white-space: nowrap;
+}
+.mini-nav a:hover {
+background: #1B2A4A;
+transform: translateY(-1px);
+text-decoration: none;
+color: white;
+}
+
+h2 {
+font-size: 26px;
+font-weight: 700;
+color: #1B2A4A;
+margin-top: 30px;
+margin-bottom: 22px;
+padding-left: 14px;
+border-left: 4px solid #E67E22;
+}
 
 h3 {
 background-color: #2C3E50;
@@ -2854,315 +2906,554 @@ padding: 12px 18px;
 border-radius: 5px 5px 0 0;
 margin-top: 35px;
 margin-bottom: 0;
-font-size: 1.6rem;
+font-size: 18px;
 font-weight: bold;
 }
+
+h4 {
+font-size: 17px;
+font-weight: 700;
+color: #2C3E50;
+margin-top: 36px;
+margin-bottom: 12px;
+padding: 10px 0 10px 14px;
+border-left: 4px solid #E67E22;
+border-bottom: 2px solid #e0e4ea;
+background: linear-gradient(90deg, rgba(230,126,34,0.06) 0%, transparent 100%);
+}
+
+h4:first-of-type {
+margin-top: 16px;
+}
+
 .html-widget {
 background: white;
-border: 1px solid #ddd;
+border: 1px solid #e0e4ea;
 border-top: none;
-border-radius: 0 0 5px 5px;
+border-radius: 0 0 8px 8px;
 padding: 15px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-margin-bottom: 20px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+margin-bottom: 30px;
 }
 
 table.dataTable thead th {
-padding-right: 30px !important;
+padding: 8px 14px !important;
+padding-right: 26px !important;
+background-color: #f0f2f5;
+border-bottom: 2px solid #dee2e6;
+font-size: 13px;
+font-weight: 700;
+color: #4a5568;
+letter-spacing: 0.3px;
+}
+
+table.dataTable tbody td {
+font-size: 14px;
+padding: 8px 10px !important;
+}
+
+table.dataTable tbody tr:hover {
+background-color: #f0f3f7 !important;
+}
+
+.dataTables_info {
+font-size: 12.5px !important;
+color: #8a9199 !important;
+}
+.dataTables_paginate {
+font-size: 13px !important;
+}
+.dataTables_paginate .paginate_button {
+font-size: 13px !important;
+padding: 4px 10px !important;
+}
+.dataTables_filter {
+font-size: 13px !important;
+color: #636e72 !important;
+}
+.dataTables_filter input {
+font-size: 14px !important;
+padding: 4px 8px !important;
+}
+
+.dataTables_wrapper .dataTables_scroll,
+.html-widget .dataTables_wrapper {
+min-height: 480px;
 }
 
 .recap-box {
-padding: 10px 0;
-font-size: 1.4rem;
-line-height: 1.8;
-margin-bottom: 30px;
+padding: 0;
+font-size: 15px;
+line-height: 1.85;
+margin-bottom: 20px;
 }
 .recap-box p, .recap-box li, .recap-box ul {
-font-size: 1.4rem;
-line-height: 1.8;
+font-size: 15px;
+line-height: 1.85;
 }
 .recap-box strong {
 color: #dd5e00;
-font-weight: 400;
+font-weight: 600;
 }
 
-#back-to-top {
-position: fixed;
-bottom: 30px;
-right: 30px;
-background-color: #E74C3C;
-color: white;
-border: none;
-border-radius: 50px;
-padding: 10px 20px;
-font-size: 16px;
-cursor: pointer;
-box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-display: none;
-z-index: 9999;
+.accordion-group {
+margin-bottom: 8px;
 }
-#back-to-top:hover {
-background-color: #C0392B;
+.accordion-toggle {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #f8f9fa;
+border: 1px solid #e0e4ea;
+border-radius: 8px;
+padding: 12px 20px;
+cursor: pointer;
+font-size: 16px;
+font-weight: 700;
+color: #2C3E50;
+transition: all 0.2s;
+margin-bottom: 0;
+user-select: none;
+}
+.accordion-toggle:hover {
+background: #eef2f7;
+}
+.accordion-toggle .arrow {
+transition: transform 0.3s;
+font-size: 0.9rem;
+opacity: 0.5;
+}
+.accordion-toggle.active .arrow {
+transform: rotate(180deg);
+}
+.accordion-toggle.active {
+border-radius: 8px 8px 0 0;
+border-bottom: none;
+background: #eef2f7;
+}
+.accordion-content {
+display: none;
+border: 1px solid #e0e4ea;
+border-top: none;
+border-radius: 0 0 8px 8px;
+padding: 16px 20px;
+background: white;
+animation: slideDown 0.3s ease;
+}
+.accordion-content.show {
+display: block;
+}
+@keyframes slideDown {
+from { opacity: 0; transform: translateY(-8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.section.level2 > .nav-pills {
+position: sticky;
+top: 0;
+z-index: 101;
+background: #f4f6f9;
+padding: 10px 0 6px 0;
+border-bottom: none;
+margin-bottom: 0;
+overflow-x: auto;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+}
+.nav-pills > li > a {
+border-radius: 8px;
+padding: 10px 20px;
+font-size: 15px;
+font-weight: 700;
+color: #2C3E50;
+transition: all 0.2s;
+border: 2px solid transparent;
+background: #e8ecf1;
+}
+.nav-pills > li > a:hover {
+background: #dfe3e8;
+border-color: #c0c8d0;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+background: #2C3E50 !important;
+color: white !important;
+border-color: #1B2A4A !important;
+box-shadow: 0 2px 6px rgba(44,62,80,0.3);
+}
+
+.anchor-nav {
+position: sticky;
+top: 52px; 
+z-index: 100;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+padding: 8px 16px;
+background: #f4f6f9;
+border: none;
+border-bottom: 1px dashed #d0d5dc;
+border-radius: 0;
+margin-bottom: 12px;
+}
+.anchor-nav .anchor-label {
+font-size: 13px;
+color: #8a9199;
+font-weight: 600;
+line-height: 28px;
+}
+.anchor-nav a {
+background: transparent;
+color: #E67E22;
+padding: 2px 8px;
+border-radius: 4px;
+border: none;
+text-decoration: none;
+font-size: 13px;
+font-weight: 500;
+transition: all 0.15s;
+line-height: 28px;
+}
+.anchor-nav a:hover {
+background: #fef3e2;
+color: #dd5e00;
+text-decoration: underline;
+}
+
+.context-filter {
+margin-bottom: 12px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.context-filter label {
+font-weight: 600;
+margin-right: 4px;
+color: #2C3E50;
+font-size: 14px;
+}
+.context-filter select {
+padding: 7px 14px;
+border-radius: 8px;
+border: 2px solid #E67E22;
+font-size: 14px;
+font-weight: 600;
+background: white;
+color: #2C3E50;
+cursor: pointer;
+outline: none;
+transition: all 0.2s;
+}
+.context-filter select:focus {
+border-color: #dd5e00;
+box-shadow: 0 0 0 3px rgba(230,126,34,0.15);
+}
+
+.guide-tip {
+background: #f0f3f7;
+border: 1px solid #d0d5dc;
+border-radius: 8px;
+padding: 10px 16px;
+font-size: 13px;
+color: #636e72;
+margin-bottom: 12px;
+font-weight: 500;
+}
+.guide-tip strong {
+color: #E67E22;
+}
+
+@media (max-width: 768px) {
+body { font-size: 14px; }
+h2 { font-size: 22px; }
+h3 { font-size: 16px; }
+h4 { font-size: 15px; }
+.recap-box, .recap-box p, .recap-box li {
+font-size: 14px;
+line-height: 1.7;
+}
+.accordion-toggle {
+font-size: 14px;
+padding: 10px 14px;
+}
+table.dataTable thead th { font-size: 12px; }
+table.dataTable tbody td { font-size: 13px !important; padding: 6px 8px !important; }
+.mini-nav {
+bottom: 16px;
+right: 16px;
+}
+.mini-nav a {
+padding: 6px 10px;
+font-size: 12px;
+}
+.anchor-nav { padding: 6px 10px; }
+.anchor-nav a, .anchor-nav .anchor-label {
+font-size: 12px;
+padding: 2px 6px;
+}
+.nav-pills > li > a {
+padding: 7px 14px;
+font-size: 13px;
+}
+.html-widget .dataTables_wrapper { min-height: 380px; }
 }
 </style>
-<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: &#39;smooth&#39;});">
-⬆️ 回到頂端
-</button>
-<script>
-window.onscroll = function() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    document.getElementById("back-to-top").style.display = "block";
-  } else {
-    document.getElementById("back-to-top").style.display = "none";
-  }
-};
+<!-- === 迷你固定導航列 (Mini Nav) — 改至右下角避免遮擋 === -->
+<div id="mini-nav" class="mini-nav">
+<p><a href="#recap-section">📝 懶人包</a> <a href="#stats-section">📊
+數據</a></p>
+</div>
+<!-- === 懶人包區段 === -->
+<div id="recap-section">
 
-</script>
+</div>
 <div id="賽況懶人包-game-recap" class="section level2">
 <h2>📝 賽況懶人包 (Game Recap)</h2>
-<div id="chinese-taipei-vs-czechia-賽事數據亮點總結" class="section level3 recap-box">
-<h3>⚾ Chinese Taipei vs Czechia 賽事數據亮點總結</h3>
-<div id="擊球火力戰-exit-velocity" class="section level4">
-<h4>🔥 擊球火力戰 (Exit Velocity)</h4>
+<div id="韓國-vs-日本-賽事數據亮點總結" class="section level3 recap-box">
+<h3>⚾ 韓國 vs 日本 賽事數據亮點總結</h3>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-ev&#39;)">
+🔥 擊球火力戰 (Exit Velocity) <span class="arrow">▼</span>
+</div>
+<div id="acc-ev" class="accordion-content">
 <ul>
-<li><strong>台灣 (Chinese Taipei) 最快擊球</strong>：由 <strong>江坤宇
-(Chiang Kun-Yu)</strong> 於二局上對決 <strong>Jan Novak</strong>
-時擊出，初速達 <strong>170.4 kph</strong>（仰角 -16度，飛行距離
-1.8公尺）。投手投出 <strong>142.6 kph</strong> 的四縫線速球 (Four-Seam
-Fastball)，結果為：滾地球出局 (Groundout)。</li>
-<li><strong>捷克 (Czechia) 最快擊球</strong>：由 <strong>Terrin
-Vavra</strong> 於一局下對決 <strong>莊陳仲敖 (Zhuang Chen
-Zhong-Ao)</strong> 時擊出，初速達 <strong>156.3 kph</strong>（仰角
-31度，飛行距離 115.2公尺）。投手投出 <strong>149.3 kph</strong>
-的四縫線速球 (Four-Seam Fastball)，結果為：二壘安打 (Double)。</li>
-<li><strong>台灣 (Chinese Taipei) 穩定重砲</strong>：<strong>張政禹
-(Chang Cheng-Yu)</strong> 今日平均擊球初速達 <strong>164 kph</strong>
-(共 1 次場內擊球)。</li>
-<li><strong>捷克 (Czechia) 穩定重砲</strong>：<strong>Martin
-Cervenka</strong> 今日平均擊球初速達 <strong>151.1 kph</strong> (共 1
+<li><strong>韓國 (Korea) 最快擊球</strong>：由 <strong>Do Yeong
+Kim</strong> 於一局上對決 <strong>Yusei Kikuchi</strong> 時擊出，初速達
+<strong>173.5 kph</strong>（仰角 3度，飛行距離 27.1公尺）。投手投出
+<strong>125 kph</strong> 的曲球 (Curveball)，結果為：一壘安打
+(Single)。</li>
+<li><strong>韓國 (Korea) 穩定重砲</strong>：<strong>Do Yeong
+Kim</strong> 今日平均擊球初速達 <strong>173.5 kph</strong> (共 1
 次場內擊球)。</li>
 </ul>
 </div>
-<div id="投球速度戰-pitch-velocity" class="section level4">
-<h4>⚡ 投球速度戰 (Pitch Velocity)</h4>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-pv&#39;)">
+⚡ 投球速度戰 (Pitch Velocity) <span class="arrow">▼</span>
+</div>
+<div id="acc-pv" class="accordion-content">
 <ul>
-<li><strong>台灣 (Chinese Taipei) 最速球</strong>：由 <strong>Jyun-Yue
-Tseng</strong> 於七局下對決 Martin Cervinka 時投出，球速達 <strong>154.2
-kph</strong> 之 四縫線速球 (Four-Seam Fastball)（Play 結果：三振
-(Strikeout)）。</li>
-<li><strong>捷克 (Czechia) 最速球</strong>：由 <strong>Boris
-Vecerka</strong> 於六局上對決 林家正 (Lin Chia-Cheng) 時投出，球速達
-<strong>153.4 kph</strong> 之 伸卡球 (Sinker)（Play 結果：觸身球 (Hit By
-Pitch)）。</li>
+<li><strong>日本 (Japan) 最速球</strong>：由 <strong>Yusei
+Kikuchi</strong> 於一局上對決 Do Yeong Kim 時投出，球速達 <strong>154.2
+kph</strong> 之 四縫線速球 (Four-Seam Fastball)（Play 結果：一壘安打
+(Single)）。</li>
 </ul>
 </div>
-<div id="關鍵打席-key-at-bats" class="section level4">
-<h4>🏆 關鍵打席 (Key At-Bats)</h4>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle active" onclick="toggleAccordion(&#39;acc-ab&#39;)">
+🏆 關鍵打席 (Key At-Bats) <span class="arrow">▼</span>
+</div>
+<div id="acc-ab" class="accordion-content show">
 <ul>
-<li><strong>台灣 (Chinese Taipei) 張育成 (Yu
-Chang)</strong>：一局上，在<strong>一壘有人</strong>、比分為<strong>客 0
-- 主 0</strong>的情況下，揮出 <strong>一壘安打
-(Single)</strong>！擊球初速 <strong>161.2 kph</strong>（仰角
-<strong>0度</strong>，飛行距離 <strong>15.8公尺</strong>），貢獻
-<strong>1 分打點</strong>。此打擊一棒替球隊掃回分數。 &gt;
-<em>打次描述：Yu Chang singles on a ground ball to left fielder William
-Escala. Stuart Fairchild scores.</em></li>
-<li><strong>台灣 (Chinese Taipei) 費爾柴德 (Stuart
-Fairchild)</strong>：二局上，在<strong>一壘有人</strong>、比分為<strong>客
-2 - 主 0</strong>的情況下，揮出 <strong>全壘打 (Home
-Run)</strong>！擊球初速 <strong>168.3 kph</strong>（仰角
-<strong>31度</strong>，飛行距離 <strong>118.6公尺</strong>），貢獻
-<strong>4 分打點</strong>。此打擊展示絕佳火力重擊對手。 &gt;
-<em>打次描述：Stuart Fairchild hits a grand slam (1) to left center
-field. Chen-Wei Chen scores. Tsung-Che Cheng scores. Cheng-Hui Sung
-scores.</em></li>
+<li>暫無特別關鍵的得分或高初速安打紀錄。</li>
 </ul>
 </div>
-<div id="關鍵投球-key-pitches" class="section level4">
-<h4>🎯 關鍵投球 (Key Pitches)</h4>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-kp&#39;)">
+🎯 關鍵投球 (Key Pitches) <span class="arrow">▼</span>
+</div>
+<div id="acc-kp" class="accordion-content">
 <ul>
-<li><strong>捷克 (Czechia) Jan
-Novak</strong>：一局上，在<strong>一二壘有人</strong>、比分<strong>客 2
-- 主 0</strong>的情況下，對決 吉力吉撈·鞏冠 (Giljegiljaw Kungkuan) 投出
-<strong>134.8 kph</strong>的變速球 (Changeup)，成功抓下三振
-(Strikeout)出局數。此投球在得點圈有人時頂住壓力三振對手。</li>
-<li><strong>台灣 (Chinese Taipei) Jyun-Yue
-Tseng</strong>：七局下，在<strong>壘上無人</strong>、比分<strong>客 14 -
-主 0</strong>的情況下，對決 Martin Cervinka 投出 <strong>154.1
-kph</strong>的四縫線速球 (Four-Seam Fastball)，成功抓下三振
-(Strikeout)出局數。此投球以剛猛火球輾壓打者。</li>
-<li><strong>台灣 (Chinese Taipei) Jyun-Yue
-Tseng</strong>：七局下，在<strong>壘上無人</strong>、比分<strong>客 14 -
-主 0</strong>的情況下，對決 Martin Cervinka 投出 <strong>153.8
-kph</strong>的四縫線速球 (Four-Seam Fastball)，成功抓下三振
-(Strikeout)出局數。此投球以剛猛火球輾壓打者。</li>
+<li>暫無高張力或高球速的三振紀錄。</li>
 </ul>
 </div>
-<div id="關鍵守備-key-defensive-plays" class="section level4">
-<h4>🛡️ 關鍵守備 (Key Defensive Plays)</h4>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-def&#39;)">
+🛡️ 關鍵守備 (Key Defensive Plays) <span class="arrow">▼</span>
+</div>
+<div id="acc-def" class="accordion-content">
 <ul>
-<li><strong>捷克 (Czechia) 守備</strong>：二局上，在比分<strong>客 2 -
-主 0</strong>及<strong>一壘有人</strong>的危機中，成功攔截了 江坤宇
-(Chiang Kun-Yu) 擊出高達 <strong>170.4 kph</strong>（仰角
--16度）的強勁球，將其接殺或封殺出局。沒收了可能形成重傷害的一擊。</li>
-<li><strong>捷克 (Czechia) 守備</strong>：七局上，在比分<strong>客 14 -
-主 0</strong>及<strong>壘上無人</strong>的危機中，成功攔截了 張政禹
-(Chang Cheng-Yu) 擊出高達 <strong>164.0 kph</strong>（仰角
--2度）的強勁球，將其接殺或封殺出局。穩健防守鞏固出局數。</li>
+<li>暫無攔截高初速強勁球的精彩紀錄。</li>
 </ul>
 </div>
-<div id="雙方投手調度概況-pitching-changes" class="section level4">
-<h4>⚾ 雙方投手調度概況 (Pitching Changes)</h4>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-pitch&#39;)">
+⚾ 雙方投手調度概況 (Pitching Changes) <span class="arrow">▼</span>
+</div>
+<div id="acc-pitch" class="accordion-content">
 <ul>
-<li><strong>Chinese Taipei</strong>：
+<li><strong>Japan</strong>：
 <ul>
-<li><strong>先發</strong>：Chen Zhong-Ao Zhuang (共用 55 球)</li>
-<li><strong>中繼</strong>：Yu-Min Lin 於第 3 局登板 (共用 30 球)</li>
-<li><strong>中繼</strong>：Kai-Wei Lin 於第 6 局登板 (共用 10 球)</li>
-<li><strong>中繼</strong>：Jyun-Yue Tseng 於第 7 局登板 (共用 14
-球)</li>
-</ul></li>
-<li><strong>Czechia</strong>：
-<ul>
-<li><strong>先發</strong>：Jan Novak (共用 48 球)</li>
-<li><strong>中繼</strong>：Tomas Duffek 於第 3 局登板 (共用 31 球)</li>
-<li><strong>中繼</strong>：Jeff Barto 於第 5 局登板 (共用 15 球)</li>
-<li><strong>中繼</strong>：Lukas Hlouch 於第 5 局登板 (共用 4 球)</li>
-<li><strong>中繼</strong>：Martin Schneider 於第 6 局登板 (共用 13
-球)</li>
-<li><strong>中繼</strong>：Boris Vecerka 於第 6 局登板 (共用 12 球)</li>
-<li><strong>中繼</strong>：Filip Capka 於第 6 局登板 (共用 19 球)</li>
+<li><strong>先發</strong>：Yusei Kikuchi (共用 4 球)</li>
 </ul></li>
 </ul>
+</div>
+</div>
 <p><em>(本懶人包由系統自動抓取 Statcast
 數據生成，提供即時賽況速寫)</em></p>
 </div>
-</div>
 <hr />
+<div id="stats-section">
+
+</div>
 </div>
 <div id="進階數據探索-interactive-stats" class="section level2 tabset tabset-pills">
 <h2 class="tabset tabset-pills">📊 進階數據探索 (Interactive Stats)</h2>
-<p><em>(提示：您可以使用表格右上方的搜尋框尋找特定選手，或是點擊各欄位標題進行排序)</em></p>
-<div id="隊伍數據" class="section level3">
-<h3>隊伍數據</h3>
-<div id="各隊基本表現-team-basic-performance" class="section level4">
-<h4>各隊基本表現 (Team Basic Performance)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-660806be32b6da37d87e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-660806be32b6da37d87e">{"x":{"filter":"none","vertical":false,"data":[["捷克 (Czechia)","台灣 (Chinese Taipei)"],[0,13],[4,11],[0,0],[6,8],[0,0],[0,0]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>得分 (R)<\/th>\n      <th>安打 (H)<\/th>\n      <th>失誤 (E)<\/th>\n      <th>殘壘 (LOB)<\/th>\n      <th>製造雙殺 (DP)<\/th>\n      <th>被雙殺 (GIDP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"得分 (R)","targets":1},{"name":"安打 (H)","targets":2},{"name":"失誤 (E)","targets":3},{"name":"殘壘 (LOB)","targets":4},{"name":"製造雙殺 (DP)","targets":5},{"name":"被雙殺 (GIDP)","targets":6}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="guide-tip">
+💡
+<strong>操作提示：</strong>使用表格右上方的搜尋框尋找特定選手，或點擊各欄位標題依數值排序。
 </div>
-<div id="各隊打擊基本統計-team-batting-basic-stats" class="section level4">
-<h4>各隊打擊基本統計 (Team Batting Basic Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-bb9e25a5f3a299a3576c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bb9e25a5f3a299a3576c">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)"],[42,13,15,28,14,27,6,9,9,18],[11,4,3,8,3,4,2,1,2,2],[1,0,1,1,0,0,0,0,0,0],[8,4,5,6,2,1,1,0,0,1],[6,1,2,4,2,10,3,3,3,7],["0.355","0.571","0.300","0.381","0.300","0.160","0.400","0.125","0.222","0.125"],["0.500","0.769","0.533","0.500","0.500","0.222","0.500","0.222","0.222","0.222"],["0.516","0.857","0.600","0.571","0.400","0.200","0.600","0.125","0.222","0.188"],["1.016","1.626","1.133","1.071","0.900","0.422","1.100","0.347","0.444","0.410"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>情境<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"情境","targets":1},{"name":"打席 (PA)","targets":2},{"name":"安打 (H)","targets":3},{"name":"全壘打 (HR)","targets":4},{"name":"四壞保送 (BB)","targets":5},{"name":"三振 (SO)","targets":6},{"name":"打擊率 (AVG)","targets":7},{"name":"上壘率 (OBP)","targets":8},{"name":"長打率 (SLG)","targets":9},{"name":"整體攻擊指數 (OPS)","targets":10}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="隊伍數據-5" class="section level3">
+<h3>🏟️ 隊伍數據 (5)</h3>
+<div class="anchor-nav">
+<span class="anchor-label">📋
+快速跳轉：</span><a href="#tbl-TeamBasic">基本表現</a><a href="#tbl-TeamBattingAdv">打擊進階統計</a><a href="#tbl-MaxEV">最快擊球初速</a><a href="#tbl-TeamOutcomes">團隊打擊結果總和統計</a>
 </div>
-<div id="各隊打擊進階統計-team-batting-advanced-stats" class="section level4">
-<h4>各隊打擊進階統計 (Team Batting Advanced Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f5ba6c75ba9a117e8d07" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f5ba6c75ba9a117e8d07">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","捷克 (Czechia)"],[26,15],["38.5%","6.7%"],["19.2%","20.0%"],["0.0%","0.0%"],["15.4%","6.7%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"場內擊球數","targets":1},{"name":"強勁擊球 (HardHit)","targets":2},{"name":"軟弱擊球 (WeaklyHit)","targets":3},{"name":"完美擊球 (Barrel)","targets":4},{"name":"扎實擊球 (Solid)","targets":5}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各隊最快擊球初速-max-exit-velocity" class="section level4">
-<h4>各隊最快擊球初速 (Max Exit Velocity)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-8b781dce9afe979e6b08" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8b781dce9afe979e6b08">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","捷克 (Czechia)"],["江坤宇 (Chiang Kun-Yu)","Terrin Vavra"],[105.9,97.09999999999999],[170.4,156.3],[-16,31],["滾地球出局 (Groundout)","二壘安打 (Double)"],[1.8,115.2]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>最快擊球初速 (mph)<\/th>\n      <th>最快擊球初速 (kph)<\/th>\n      <th>最快初速擊球仰角 (deg)<\/th>\n      <th>結果<\/th>\n      <th>飛行距離_公尺<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"最快擊球初速 (mph)","targets":2},{"name":"最快擊球初速 (kph)","targets":3},{"name":"最快初速擊球仰角 (deg)","targets":4},{"name":"結果","targets":5},{"name":"飛行距離_公尺","targets":6}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各隊團隊打擊結果總和統計-team-outcomes" class="section level4">
-<h4>各隊團隊打擊結果總和統計 (Team Outcomes)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-edce0b45f41804ba4261" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-edce0b45f41804ba4261">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["一壘安打 (Single)","滾地球出局 (Groundout)","四壞保送 (Walk)","三振 (Strikeout)","飛球出局 (Flyout)","二壘安打 (Double)","封殺 (Forceout)","觸身球 (Hit By Pitch)","全壘打 (Home Run)","Intent Walk","平飛球出局 (Lineout)","內野高飛出局 (Pop Out)","高飛犧牲打 (Sac Fly)","三振 (Strikeout)","飛球出局 (Flyout)","滾地球出局 (Groundout)","一壘安打 (Single)","內野高飛出局 (Pop Out)","二壘安打 (Double)","封殺 (Forceout)","觸身球 (Hit By Pitch)","平飛球出局 (Lineout)","四壞保送 (Walk)"],[8,7,7,6,3,2,2,2,1,1,1,1,1,10,4,3,3,2,1,1,1,1,1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>結果<\/th>\n      <th>總次數<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"結果","targets":1},{"name":"總次數","targets":2}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div id="打者數據" class="section level3">
-<h3>打者數據</h3>
-<div id="各打者打擊基本統計-batter-batting-basic-stats" class="section level4">
-<h4>各打者打擊基本統計 (Batter Batting Basic Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f51b5bc800cfd13ba3e1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f51b5bc800cfd13ba3e1">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","張政禹 (Chang Cheng-Yu)","張政禹 (Chang Cheng-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","吳念庭 (Wu Nien-Ting)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","張育成 (Yu Chang)","張育成 (Yu Chang)","張育成 (Yu Chang)","張育成 (Yu Chang)","Jan Pospisil","Jan Pospisil","Jan Pospisil","Marek Chlup","Marek Chlup","Marek Chlup","Marek Chlup","Marek Chlup","Martin Cervenka","Martin Cervenka","Martin Cervenka","Martin Cervenka","Martin Cervenka","Martin Cervinka","Martin Cervinka","Martin Cervinka","Martin Cervinka","Martin Muzik","Martin Muzik","Martin Muzik","Matous Bubenik","Matous Bubenik","Matous Bubenik","Max Prejda","Max Prejda","Max Prejda","Max Prejda","Michal Sindelka","Michal Sindelka","Michal Sindelka","Ryan Johnson","Ryan Johnson","Ryan Johnson","Terrin Vavra","Terrin Vavra","Terrin Vavra","Terrin Vavra","Vojtech Mensik","Vojtech Mensik","Vojtech Mensik","Vojtech Mensik","Vojtech Mensik","William Escala","William Escala","William Escala","William Escala"],["總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","對左投 (vs LHP)","對右投 (vs RHP)","總體","對左投 (vs LHP)","對右投 (vs RHP)","總體","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","對左投 (vs LHP)","對右投 (vs RHP)"],[5,1,1,3,2,4,1,1,3,1,5,2,3,3,2,1,1,1,4,2,1,3,1,4,1,1,3,1,4,2,1,3,1,1,1,4,1,2,3,1,5,3,2,4,1,5,2,3,2,1,1,1,3,1,2,1,2,3,1,1,1,2,3,1,1,2,2,1,1,2,1,1,2,2,1,1,1,1,1,1,1,1,3,1,1,2,3,1,1,1,2,3,1,1,2],[0,0,0,0,0,2,1,1,1,1,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,1,1,0,1,0,1,1,2,1,1,2,0,1,0,0,1,0,3,1,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,0,1,0,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,0,0,1,0,0,0,0,0,1,0,1,1,0,0,0,2,0,1,1,1,3,2,2,3,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[1,0,0,0,1,0,0,0,0,0,3,1,1,2,1,0,0,0,0,0,0,0,0,2,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,2,1,0,0,2,1,0,0,1,2,1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,0,1,0,1,1,0,1],["0.000","0.000","0.000","0.000","0.000","0.667","1.000","1.000","0.500","1.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","0.000","0.333","0.000","0.000","0.000","0.000","0.000","0.000","0.500","1.000","0.000","0.500","0.000","1.000","1.000","1.000","1.000","1.000","1.000","0.000","0.500","0.000","0.000","1.000","0.000","0.600","0.500","0.667","0.500","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","1.000","0.000","0.000","0.000","0.000","0.500","1.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","0.000","0.500","0.333","0.000","1.000","0.000","0.500","0.000","0.000","0.000","0.000"],["0.000","0.000","0.000","0.000","0.000","0.500","1.000","1.000","0.333","1.000","0.200","0.500","0.333","0.333","0.000","0.000","0.000","0.000","0.500","1.000","0.000","0.333","1.000","0.250","1.000","0.000","0.000","1.000","0.750","1.000","1.000","0.667","1.000","1.000","1.000","1.000","1.000","1.000","1.000","1.000","0.800","0.667","1.000","1.000","0.000","0.600","0.500","0.667","0.500","0.000","0.000","0.000","0.667","1.000","0.500","0.000","1.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","1.000","0.000","0.000","0.000","0.000","0.500","1.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","0.000","0.500","0.333","0.000","1.000","0.000","0.500","0.000","0.000","0.000","0.000"],["0.000","0.000","0.000","0.000","0.000","1.000","2.000","1.000","0.500","2.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","0.000","0.333","0.000","0.000","0.000","0.000","0.000","0.000","1.000","2.000","0.000","1.000","0.000","1.000","1.000","2.500","1.000","4.000","2.500","0.000","0.500","0.000","0.000","1.000","0.000","0.600","0.500","0.667","0.500","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","1.000","0.000","0.000","0.000","0.000","0.500","1.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.667","2.000","0.000","1.000","0.333","0.000","1.000","0.000","0.500","0.000","0.000","0.000","0.000"],["0.000","0.000","0.000","0.000","0.000","1.500","3.000","2.000","0.833","3.000","0.200","0.500","0.333","0.333","0.000","0.000","0.000","0.000","0.833","2.000","0.000","0.667","1.000","0.250","1.000","0.000","0.000","1.000","1.750","3.000","1.000","1.667","1.000","2.000","2.000","3.500","2.000","5.000","3.500","1.000","1.300","0.667","1.000","2.000","0.000","1.200","1.000","1.333","1.000","0.000","0.000","0.000","0.667","1.000","0.500","0.000","1.000","0.000","0.000","0.000","0.000","0.000","0.667","2.000","2.000","0.000","0.000","0.000","0.000","1.000","2.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","1.000","3.000","0.000","1.500","0.667","0.000","2.000","0.000","1.000","0.000","0.000","0.000","0.000"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>情境<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"情境","targets":2},{"name":"打席 (PA)","targets":3},{"name":"安打 (H)","targets":4},{"name":"全壘打 (HR)","targets":5},{"name":"四壞保送 (BB)","targets":6},{"name":"三振 (SO)","targets":7},{"name":"打擊率 (AVG)","targets":8},{"name":"上壘率 (OBP)","targets":9},{"name":"長打率 (SLG)","targets":10},{"name":"整體攻擊指數 (OPS)","targets":11}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各打者打擊進階統計-batter-batting-advanced-stats" class="section level4">
-<h4>各打者打擊進階統計 (Batter Batting Advanced Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-7753c6fa1021b11cb744" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7753c6fa1021b11cb744">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)","張育成 (Yu Chang)","Jan Pospisil","Martin Cervenka","Martin Cervinka","Matous Bubenik","Max Prejda","Terrin Vavra","Vojtech Mensik","William Escala"],[4,4,1,1,3,1,2,1,2,2,5,1,1,2,2,2,3,2,2],["0.0%","25.0%","0.0%","100.0%","100.0%","100.0%","50.0%","0.0%","50.0%","0.0%","40.0%","0.0%","0.0%","0.0%","0.0%","0.0%","33.3%","0.0%","0.0%"],["50.0%","25.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","50.0%","50.0%","0.0%","0.0%","0.0%","0.0%","100.0%","50.0%","0.0%","0.0%","0.0%"],["0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%"],["0.0%","25.0%","0.0%","0.0%","33.3%","0.0%","0.0%","0.0%","50.0%","0.0%","20.0%","0.0%","0.0%","0.0%","0.0%","0.0%","33.3%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"場內擊球數","targets":2},{"name":"強勁擊球 (HardHit)","targets":3},{"name":"軟弱擊球 (WeaklyHit)","targets":4},{"name":"完美擊球 (Barrel)","targets":5},{"name":"扎實擊球 (Solid)","targets":6}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各打者擊球數據-batter-hit-metrics" class="section level4">
-<h4>各打者擊球數據 (Batter Hit Metrics)</h4>
+<h4 id="tbl-TeamBasic">
+各隊基本表現 (Team Basic Performance)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamBasic" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamBasic">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)"],[0],[2],[0],[2],[0],[0]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>得分 (R)<\/th>\n      <th>安打 (H)<\/th>\n      <th>失誤 (E)<\/th>\n      <th>殘壘 (LOB)<\/th>\n      <th>製造雙殺 (DP)<\/th>\n      <th>被雙殺 (GIDP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"得分 (R)","targets":1},{"name":"安打 (H)","targets":2},{"name":"失誤 (E)","targets":3},{"name":"殘壘 (LOB)","targets":4},{"name":"製造雙殺 (DP)","targets":5},{"name":"被雙殺 (GIDP)","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-TeamBattingBasic">
+各隊打擊基本統計 (Team Batting Basic Stats)
+</h4>
 <blockquote>
 <p>目前尚無相關數據紀錄。</p>
 </blockquote>
+<h4 id="tbl-TeamBattingAdv">
+各隊打擊進階統計 (Team Batting Advanced Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamBattingAdv" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamBattingAdv">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)"],[2],["50.0%"],["0.0%"],["0.0%"],["0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"場內擊球數","targets":1},{"name":"強勁擊球 (HardHit)","targets":2},{"name":"軟弱擊球 (WeaklyHit)","targets":3},{"name":"完美擊球 (Barrel)","targets":4},{"name":"扎實擊球 (Solid)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-MaxEV">
+各隊最快擊球初速 (Max Exit Velocity)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-MaxEV" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-MaxEV">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)"],["Do Yeong Kim"],[107.8],[173.5],[3],["一壘安打 (Single)"],[27.1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>最快擊球初速 (mph)<\/th>\n      <th>最快擊球初速 (kph)<\/th>\n      <th>最快初速擊球仰角 (deg)<\/th>\n      <th>結果<\/th>\n      <th>飛行距離_公尺<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"最快擊球初速 (mph)","targets":2},{"name":"最快擊球初速 (kph)","targets":3},{"name":"最快初速擊球仰角 (deg)","targets":4},{"name":"結果","targets":5},{"name":"飛行距離_公尺","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-TeamOutcomes">
+各隊團隊打擊結果總和統計 (Team Outcomes)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamOutcomes" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamOutcomes">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)"],["一壘安打 (Single)"],[2]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>結果<\/th>\n      <th>總次數<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"結果","targets":1},{"name":"總次數","targets":2}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="各打者對不同球種的揮空率-batter-whiff-rate-by-pitch-type" class="section level4">
-<h4>各打者對不同球種的揮空率 (Batter Whiff Rate by Pitch Type)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-fea25353a8c248e9c5a7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fea25353a8c248e9c5a7">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["張育成 (Yu Chang)","林安可 (Lin An-Ko)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","鄭宗哲 (Cheng Tsung-Che)","張育成 (Yu Chang)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","鄭宗哲 (Cheng Tsung-Che)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","吳念庭 (Wu Nien-Ting)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","張育成 (Yu Chang)","張育成 (Yu Chang)","Vojtech Mensik","Marek Chlup","Marek Chlup","Martin Cervinka","Matous Bubenik","William Escala","Matous Bubenik","Max Prejda","Terrin Vavra","William Escala","Martin Cervenka","Martin Cervenka","Martin Cervinka","Martin Cervinka","Martin Muzik","Michal Sindelka","Ryan Johnson","Terrin Vavra","Vojtech Mensik","Jan Pospisil","Marek Chlup","Martin Cervenka","Martin Cervenka","Martin Muzik","Matous Bubenik","Michal Sindelka","Vojtech Mensik","William Escala","Marek Chlup","Marek Chlup","Martin Cervenka","Martin Cervinka","Martin Cervinka","Martin Muzik","Martin Muzik","Max Prejda","Ryan Johnson","Terrin Vavra","Terrin Vavra"],["曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","滑球 (Slider)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","卡特球 (Cutter)","滑球 (Slider)","伸卡球 (Sinker)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","伸卡球 (Sinker)","伸卡球 (Sinker)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","橫掃球 (Sweeper)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","滑球 (Slider)","橫掃球 (Sweeper)","變速球 (Changeup)","變速球 (Changeup)","卡特球 (Cutter)","橫掃球 (Sweeper)","曲球 (Curveball)","滑球 (Slider)","指叉球 (Splitter)","變速球 (Changeup)","滑球 (Slider)","橫掃球 (Sweeper)","曲球 (Curveball)","橫掃球 (Sweeper)","變速球 (Changeup)","變速球 (Changeup)","曲球 (Curveball)","橫掃球 (Sweeper)"],[9,4,3,7,4,5,6,4,6,5,4,3,3,7,2,1,5,1,3,1,3,1,7,1,1,2,1,6,4,1,4,1,1,1,4,1,2,1,1,1,1,1,7,1,4,1,8,4,7,5,6,6,3,3,8,4,2,4,2,4,4,3,2,4,2,1,3,1,1,3,2,1,1,1,4,1,1,1,1,1,1,1,1,1,1],[6,3,3,3,3,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,4,4,4,4,4,3,3,3,3,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],[1,0,2,2,0,1,0,0,2,2,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,2,0,0,0,0,2,0,2,2,0,2,1,1,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0],["16.7%","0.0%","66.7%","66.7%","0.0%","50.0%","0.0%","0.0%","100.0%","100.0%","50.0%","0.0%","50.0%","50.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","25.0%","25.0%","75.0%","50.0%","0.0%","0.0%","0.0%","0.0%","66.7%","0.0%","100.0%","100.0%","0.0%","100.0%","50.0%","50.0%","0.0%","0.0%","0.0%","0.0%","100.0%","100.0%","100.0%","100.0%","0.0%","100.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>球種<\/th>\n      <th>總球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"球種","targets":2},{"name":"總球數","targets":3},{"name":"揮棒次數","targets":4},{"name":"揮空次數","targets":5},{"name":"揮空率","targets":6}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="打者數據-6" class="section level3">
+<h3>⚾ 打者數據 (6)</h3>
+<div class="anchor-nav">
+<span class="anchor-label">📋
+快速跳轉：</span><a href="#tbl-BatterBattingAdv">打擊進階統計</a><a href="#tbl-BatterWhiffProfile">對不同球種揮空率</a><a href="#tbl-Hits">上壘與全壘打擊球數據</a><a href="#tbl-BatterOutcomes">打者打擊結果統計</a>
 </div>
-<div id="上壘與全壘打的擊球數據-hits-hrs-ev-la" class="section level4">
-<h4>上壘與全壘打的擊球數據 (Hits &amp; HRs EV &amp; LA)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-0d65a5e6b21495ffa95c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-0d65a5e6b21495ffa95c">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","台灣 (Chinese Taipei)","捷克 (Czechia)","台灣 (Chinese Taipei)","捷克 (Czechia)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)"],["費爾柴德 (Stuart Fairchild)","陳晨威 (Chen Chen-Wei)","張育成 (Yu Chang)","江坤宇 (Chiang Kun-Yu)","Terrin Vavra","張育成 (Yu Chang)","陳晨威 (Chen Chen-Wei)","吳念庭 (Wu Nien-Ting)","Martin Cervinka","張育成 (Yu Chang)","Vojtech Mensik","林家正 (Lin Chia-Cheng)","Matous Bubenik","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)"],["全壘打 (Home Run)","一壘安打 (Single)","一壘安打 (Single)","一壘安打 (Single)","二壘安打 (Double)","一壘安打 (Single)","二壘安打 (Double)","一壘安打 (Single)","一壘安打 (Single)","一壘安打 (Single)","一壘安打 (Single)","二壘安打 (Double)","一壘安打 (Single)","一壘安打 (Single)","一壘安打 (Single)"],[104.6,101.1,100.2,98,97.09999999999999,96.09999999999999,91.09999999999999,88.8,86.09999999999999,84.3,82.59999999999999,75.09999999999999,61.4,25.1,23],[168.3,162.7,161.3,157.7,156.3,154.7,146.6,142.9,138.6,135.7,132.9,120.9,98.8,40.4,37],[31,10,0,10,31,10,21,16,9,12,12,4,40,27,1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>結果<\/th>\n      <th>擊球初速 (mph)<\/th>\n      <th>擊球初速 (kph)<\/th>\n      <th>擊球仰角 (deg)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"結果","targets":2},{"name":"擊球初速 (mph)","targets":3},{"name":"擊球初速 (kph)","targets":4},{"name":"擊球仰角 (deg)","targets":5}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-BatterBattingBasic">
+各打者打擊基本統計 (Batter Batting Basic Stats)
+</h4>
+<blockquote>
+<p>目前尚無相關數據紀錄。</p>
+</blockquote>
+<h4 id="tbl-BatterBattingAdv">
+各打者打擊進階統計 (Batter Batting Advanced Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterBattingAdv" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterBattingAdv">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)","韓國 (🇰🇷 韓國)"],["Do Yeong Kim","Jahmai Jones"],[1,1],["100.0%","0.0%"],["0.0%","0.0%"],["0.0%","0.0%"],["0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"場內擊球數","targets":2},{"name":"強勁擊球 (HardHit)","targets":3},{"name":"軟弱擊球 (WeaklyHit)","targets":4},{"name":"完美擊球 (Barrel)","targets":5},{"name":"扎實擊球 (Solid)","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-BatterCombined">
+各打者擊球數據 (Batter Hit Metrics)
+</h4>
+<blockquote>
+<p>目前尚無相關數據紀錄。</p>
+</blockquote>
+<h4 id="tbl-BatterWhiffProfile">
+各打者對不同球種的揮空率 (Batter Whiff Rate by Pitch Type)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterWhiffProfile" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterWhiffProfile">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)","韓國 (🇰🇷 韓國)","韓國 (🇰🇷 韓國)","韓國 (🇰🇷 韓國)"],["Do Yeong Kim","Do Yeong Kim","Jahmai Jones","Jahmai Jones"],["曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)"],[1,1,1,1],[1,1,1,0],[0,1,0,0],["0.0%","100.0%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>球種<\/th>\n      <th>總球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"球種","targets":2},{"name":"總球數","targets":3},{"name":"揮棒次數","targets":4},{"name":"揮空次數","targets":5},{"name":"揮空率","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-Hits">
+上壘與全壘打的擊球數據 (Hits &amp; HRs EV &amp; LA)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-Hits" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-Hits">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)","韓國 (🇰🇷 韓國)"],["Do Yeong Kim","Jahmai Jones"],["一壘安打 (Single)","一壘安打 (Single)"],[107.8,75.7],[173.5,121.8],[3,19]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>結果<\/th>\n      <th>擊球初速 (mph)<\/th>\n      <th>擊球初速 (kph)<\/th>\n      <th>擊球仰角 (deg)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"結果","targets":2},{"name":"擊球初速 (mph)","targets":3},{"name":"擊球初速 (kph)","targets":4},{"name":"擊球仰角 (deg)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-BatterOutcomes">
+各隊打者的打擊結果統計 (Batter Outcomes)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterOutcomes" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterOutcomes">{"x":{"filter":"none","vertical":false,"data":[["韓國 (🇰🇷 韓國)","韓國 (🇰🇷 韓國)"],["Do Yeong Kim","Jahmai Jones"],["一壘安打 (Single)","一壘安打 (Single)"],[1,1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>結果<\/th>\n      <th>次數<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"結果","targets":2},{"name":"次數","targets":3}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="各隊打者的打擊結果統計-batter-outcomes" class="section level4">
-<h4>各隊打者的打擊結果統計 (Batter Outcomes)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-3d62ee9b0a39cac34af3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-3d62ee9b0a39cac34af3">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","張育成 (Yu Chang)","張育成 (Yu Chang)","張育成 (Yu Chang)","Jan Pospisil","Marek Chlup","Marek Chlup","Marek Chlup","Martin Cervenka","Martin Cervenka","Martin Cervinka","Martin Cervinka","Martin Cervinka","Martin Muzik","Matous Bubenik","Matous Bubenik","Max Prejda","Max Prejda","Michal Sindelka","Ryan Johnson","Terrin Vavra","Terrin Vavra","Vojtech Mensik","Vojtech Mensik","Vojtech Mensik","William Escala","William Escala"],["飛球出局 (Flyout)","封殺 (Forceout)","滾地球出局 (Groundout)","內野高飛出局 (Pop Out)","三振 (Strikeout)","二壘安打 (Double)","滾地球出局 (Groundout)","高飛犧牲打 (Sac Fly)","一壘安打 (Single)","三振 (Strikeout)","飛球出局 (Flyout)","四壞保送 (Walk)","滾地球出局 (Groundout)","封殺 (Forceout)","滾地球出局 (Groundout)","一壘安打 (Single)","四壞保送 (Walk)","三振 (Strikeout)","滾地球出局 (Groundout)","觸身球 (Hit By Pitch)","二壘安打 (Double)","滾地球出局 (Groundout)","觸身球 (Hit By Pitch)","四壞保送 (Walk)","一壘安打 (Single)","全壘打 (Home Run)","Intent Walk","一壘安打 (Single)","四壞保送 (Walk)","四壞保送 (Walk)","滾地球出局 (Groundout)","一壘安打 (Single)","一壘安打 (Single)","飛球出局 (Flyout)","平飛球出局 (Lineout)","飛球出局 (Flyout)","觸身球 (Hit By Pitch)","三振 (Strikeout)","四壞保送 (Walk)","三振 (Strikeout)","封殺 (Forceout)","平飛球出局 (Lineout)","一壘安打 (Single)","三振 (Strikeout)","三振 (Strikeout)","內野高飛出局 (Pop Out)","一壘安打 (Single)","飛球出局 (Flyout)","滾地球出局 (Groundout)","三振 (Strikeout)","三振 (Strikeout)","飛球出局 (Flyout)","二壘安打 (Double)","內野高飛出局 (Pop Out)","一壘安打 (Single)","三振 (Strikeout)","滾地球出局 (Groundout)","三振 (Strikeout)"],[1,1,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,3,1,1,3,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,2,1,1,1,1,2,1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>結果<\/th>\n      <th>次數<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"結果","targets":2},{"name":"次數","targets":3}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="投手數據-6" class="section level3">
+<h3>💪 投手數據 (6)</h3>
+<div class="anchor-nav">
+<span class="anchor-label">📋
+快速跳轉：</span><a href="#tbl-PitcherBasicStats">表現基本統計</a><a href="#tbl-PitcherAvgSpeed">平均球速</a><a href="#tbl-PitcherMaxSpeed">最快球速、轉速與球種</a><a href="#tbl-PitcherTotalWhiff">總揮空率</a><a href="#tbl-PitcherTypeWhiff">各球種揮空率</a><a href="#tbl-PitcherStats">投球內容統計</a>
 </div>
-</div>
-<div id="投手數據" class="section level3">
-<h3>投手數據</h3>
-<div id="各投手表現基本統計-pitcher-basic-stats" class="section level4">
-<h4>各投手表現基本統計 (Pitcher Basic Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-b0aea9a86c8e0a081caa" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b0aea9a86c8e0a081caa">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["莊陳仲敖 (Zhuang Chen Zhong-Ao)","林昱珉 (Lin Yu-Min)","Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)","Jan Novak","Tomas Duffek","Filip Capka","Jeff Barto","Martin Schneider","Boris Vecerka","Lukas Hlouch"],[55,30,14,10,48,31,19,15,13,12,4],[38,21,9,9,25,17,10,9,6,3,3],[15,9,5,1,23,14,9,6,6,8,1],["69.1%","70.0%","64.3%","90.0%","52.1%","54.8%","52.6%","60.0%","46.2%","25.0%","75.0%"],["2.2","2.1","1.0","1.0","2.2","1.1","1.2","0.2","0.1","0.0","0.1"],["0.00","0.00","0.00","0.00","16.88","13.50","5.40","13.50","27.00","0.00","0.00"],["1.12","0.86","0.00","0.00","3.00","2.25","0.60","4.50","6.00","0.00","0.00"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總用球數<\/th>\n      <th>好球數<\/th>\n      <th>壞球數<\/th>\n      <th>好球率<\/th>\n      <th>投球局數 (IP)<\/th>\n      <th>防禦率 (ERA)<\/th>\n      <th>每局被上壘率 (WHIP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總用球數","targets":2},{"name":"好球數","targets":3},{"name":"壞球數","targets":4},{"name":"好球率","targets":5},{"name":"投球局數 (IP)","targets":6},{"name":"防禦率 (ERA)","targets":7},{"name":"每局被上壘率 (WHIP)","targets":8}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手的平均球速-pitcher-avg-speed" class="section level4">
-<h4>各投手的平均球速 (Pitcher Avg Speed)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-28c5299bbf764154a122" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-28c5299bbf764154a122">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)","林昱珉 (Lin Yu-Min)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","Boris Vecerka","Lukas Hlouch","Jan Novak","Filip Capka","Jeff Barto","Tomas Duffek","Martin Schneider"],[150.6,146.8,139.4,138.4,144.2,138.1,136.3,124.8,123.4,123.3,105.1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>平均球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"平均球速 (kph)","targets":2}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手最快球速轉速與球種-pitcher-max-speed" class="section level4">
-<h4>各投手最快球速、轉速與球種 (Pitcher Max Speed)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f1d149c4051e397d6018" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f1d149c4051e397d6018">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","林昱珉 (Lin Yu-Min)","Boris Vecerka","Jan Novak","Lukas Hlouch","Filip Capka","Jeff Barto","Tomas Duffek","Martin Schneider"],[2265,2309,2460,2190,2331,2059,1927,2000,1849,1939,1784],["四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)"],[154.2,153.2,152.6,151.8,153.4,144,142.4,137.3,133.9,132.4,114.3]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>轉速 (rpm)<\/th>\n      <th>球種<\/th>\n      <th>最快球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"轉速 (rpm)","targets":2},{"name":"球種","targets":3},{"name":"最快球速 (kph)","targets":4}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手總揮空率-pitcher-total-whiff-rate" class="section level4">
-<h4>各投手總揮空率 (Pitcher Total Whiff Rate)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f468a9670d5d3dcfba7d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f468a9670d5d3dcfba7d">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["莊陳仲敖 (Zhuang Chen Zhong-Ao)","林昱珉 (Lin Yu-Min)","Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)","Jan Novak","Tomas Duffek","Filip Capka","Jeff Barto","Martin Schneider","Boris Vecerka","Lukas Hlouch"],[55,30,14,10,48,31,19,15,13,12,4],[32,15,9,8,19,9,8,8,4,1,2],[8,7,4,3,6,2,2,2,1,0,0],["25.0%","46.7%","44.4%","37.5%","31.6%","22.2%","25.0%","25.0%","25.0%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總球數","targets":2},{"name":"揮棒次數","targets":3},{"name":"揮空次數","targets":4},{"name":"揮空率","targets":5}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手各球種揮空率-pitcher-whiff-rate-by-pitch-type" class="section level4">
-<h4>各投手各球種揮空率 (Pitcher Whiff Rate by Pitch Type)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-bb8ee8b3f6162bce9959" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bb8ee8b3f6162bce9959">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["莊陳仲敖 (Zhuang Chen Zhong-Ao)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","Jyun-Yue Tseng","Jyun-Yue Tseng","Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)","林凱威 (Lin Kai-Wei)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","Boris Vecerka","Boris Vecerka","Boris Vecerka","Boris Vecerka","Filip Capka","Filip Capka","Filip Capka","Jan Novak","Jan Novak","Jan Novak","Jan Novak","Jeff Barto","Jeff Barto","Jeff Barto","Jeff Barto","Lukas Hlouch","Lukas Hlouch","Lukas Hlouch","Martin Schneider","Martin Schneider","Tomas Duffek","Tomas Duffek","Tomas Duffek"],["四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","卡特球 (Cutter)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","橫掃球 (Sweeper)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","橫掃球 (Sweeper)","曲球 (Curveball)","指叉球 (Splitter)","伸卡球 (Sinker)","變速球 (Changeup)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","伸卡球 (Sinker)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","卡特球 (Cutter)","滑球 (Slider)","曲球 (Curveball)","滑球 (Slider)","曲球 (Curveball)","變速球 (Changeup)","滑球 (Slider)"],[26,16,5,8,12,1,1,6,4,8,13,4,4,1,5,4,2,1,9,8,2,25,11,10,2,5,7,2,1,2,1,1,12,1,17,11,3],[16,11,1,4,8,1,0,4,4,4,8,1,2,0,1,0,0,0,5,3,0,12,3,4,0,4,2,1,1,1,0,1,4,0,6,1,2],[4,3,1,0,4,0,0,2,1,4,2,1,0,0,0,0,0,0,1,1,0,2,2,2,0,2,0,0,0,0,0,0,1,0,2,0,0],["25.0%","27.3%","100.0%","0.0%","50.0%","0.0%","0.0%","50.0%","25.0%","100.0%","25.0%","100.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","20.0%","33.3%","0.0%","16.7%","66.7%","50.0%","0.0%","50.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","25.0%","0.0%","33.3%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>球種<\/th>\n      <th>該球種球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"球種","targets":2},{"name":"該球種球數","targets":3},{"name":"揮棒次數","targets":4},{"name":"揮空次數","targets":5},{"name":"揮空率","targets":6}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手的投球內容統計-pitcher-stats" class="section level4">
-<h4>各投手的投球內容統計 (Pitcher Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-ee620c3754dbe0902b91" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ee620c3754dbe0902b91">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)","捷克 (Czechia)"],["莊陳仲敖 (Zhuang Chen Zhong-Ao)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","莊陳仲敖 (Zhuang Chen Zhong-Ao)","Jyun-Yue Tseng","Jyun-Yue Tseng","Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)","林凱威 (Lin Kai-Wei)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","林昱珉 (Lin Yu-Min)","Boris Vecerka","Boris Vecerka","Boris Vecerka","Boris Vecerka","Filip Capka","Filip Capka","Filip Capka","Jan Novak","Jan Novak","Jan Novak","Jan Novak","Jeff Barto","Jeff Barto","Jeff Barto","Jeff Barto","Lukas Hlouch","Lukas Hlouch","Lukas Hlouch","Martin Schneider","Martin Schneider","Tomas Duffek","Tomas Duffek","Tomas Duffek"],["四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","卡特球 (Cutter)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","橫掃球 (Sweeper)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","曲球 (Curveball)","橫掃球 (Sweeper)","指叉球 (Splitter)","伸卡球 (Sinker)","變速球 (Changeup)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","卡特球 (Cutter)","滑球 (Slider)","曲球 (Curveball)","滑球 (Slider)","曲球 (Curveball)","變速球 (Changeup)","滑球 (Slider)"],[26,16,8,5,12,1,1,6,4,13,8,4,4,1,5,4,2,1,9,8,2,25,11,10,2,7,5,2,1,2,1,1,12,1,17,11,3],[149,132,123.3,127.8,152.8,138.1,137.9,152.3,138.6,149,131.7,130,134.7,131.3,151.9,139.4,132.3,149.2,118.7,128.9,135.7,141.6,133.7,124.6,141.3,131.1,117.5,116.5,113,141.5,139.7,129.7,104.4,114.3,118.5,129.8,126.9],[2464,2100,2673,2549,2238,2212,2184,2331,2686,2078,2084,3116,2738,640,2333,1914,2230,2236,2177,2115,1940,2038,1260,2176,1714,1774,1184,1582,1617,1884,1937,1554,1598,1784,1678,1807,1803]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>球種<\/th>\n      <th>用球數<\/th>\n      <th>平均球速 (kph)<\/th>\n      <th>平均轉速 (rpm)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"球種","targets":2},{"name":"用球數","targets":3},{"name":"平均球速 (kph)","targets":4},{"name":"平均轉速 (rpm)","targets":5}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div id="台灣隊本屆數據" class="section level3">
-<h3>台灣隊本屆數據</h3>
-<div id="台灣隊打者基本統計-taiwan-batter-basic-stats" class="section level4">
-<h4>台灣隊打者基本統計 (Taiwan Batter Basic Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f078f6672f4e6d4a8e89" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f078f6672f4e6d4a8e89">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)"],["林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","張政禹 (Chang Cheng-Yu)","張政禹 (Chang Cheng-Yu)","張政禹 (Chang Cheng-Yu)","陳傑憲 (Chen Chieh-Hsien)","陳傑憲 (Chen Chieh-Hsien)","陳傑憲 (Chen Chieh-Hsien)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","吳念庭 (Wu Nien-Ting)","吳念庭 (Wu Nien-Ting)","吳念庭 (Wu Nien-Ting)","吳念庭 (Wu Nien-Ting)","蔣少宏 (Chiang Shao-Hung)","蔣少宏 (Chiang Shao-Hung)","蔣少宏 (Chiang Shao-Hung)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","鄭宗哲 (Cheng Tsung-Che)","林子偉 (Lin Tzu-Wei)","林子偉 (Lin Tzu-Wei)","林子偉 (Lin Tzu-Wei)","張育成 (Yu Chang)","張育成 (Yu Chang)","張育成 (Yu Chang)","張育成 (Yu Chang)","張育成 (Yu Chang)"],["總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)"],[12,4,6,8,4,10,2,1,8,2,6,3,4,2,2,2,1,1,3,2,3,10,4,3,7,3,8,4,1,5,3,7,2,1,5,2,7,3,2,4,3,3,1,3,11,4,5,8,3,10,3,4,7,3,3,2,3,12,3,5,8,4],[1,0,1,1,0,2,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,1,0,1,0,0,1,0,1,0,0,0,1,0,0,0,2,1,1,2,0,1,0,0,1,0,0,0,0,5,1,2,3,2],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,0,0,0,1,1,1,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,4,1,3,2,2,5,2,3,4,1,0,0,0,1,1,0,0,1],[3,2,2,1,2,3,1,0,2,1,3,1,2,1,0,0,0,0,0,0,0,2,1,1,2,0,3,1,1,2,1,0,0,0,0,0,2,1,1,2,0,1,0,1,4,1,1,3,1,1,0,1,1,0,1,1,1,0,0,0,0,0],["0.083","0.000","0.167","0.125","0.000","0.222","0.000","1.000","0.143","0.500","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.111","0.250","0.000","0.143","0.000","0.167","0.000","0.000","0.250","0.000","0.250","0.000","0.000","0.333","0.000","0.143","0.000","0.000","0.000","0.333","0.000","0.000","0.000","0.286","0.333","0.500","0.333","0.000","0.200","0.000","0.000","0.333","0.000","0.000","0.000","0.000","0.455","0.500","0.400","0.375","0.667"],["0.083","0.000","0.167","0.125","0.000","0.200","0.000","1.000","0.125","0.500","0.167","0.333","0.250","0.000","0.000","0.000","0.000","0.000","0.667","1.000","0.667","0.200","0.250","0.000","0.143","0.333","0.375","0.500","0.000","0.400","0.333","0.571","0.500","1.000","0.600","0.500","0.143","0.000","0.000","0.000","0.333","0.000","0.000","0.000","0.545","0.500","0.800","0.500","0.667","0.600","0.667","0.750","0.714","0.333","0.000","0.000","0.000","0.500","0.667","0.400","0.375","0.750"],["0.083","0.000","0.167","0.125","0.000","0.333","0.000","1.000","0.143","1.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.111","0.250","0.000","0.143","0.000","0.167","0.000","0.000","0.250","0.000","0.500","0.000","0.000","0.667","0.000","0.143","0.000","0.000","0.000","0.333","0.000","0.000","0.000","0.714","0.333","2.000","0.833","0.000","0.200","0.000","0.000","0.333","0.000","0.000","0.000","0.000","0.455","0.500","0.400","0.375","0.667"],["0.167","0.000","0.333","0.250","0.000","0.533","0.000","2.000","0.268","1.500","0.167","0.333","0.250","0.000","0.000","0.000","0.000","0.000","0.667","1.000","0.667","0.311","0.500","0.000","0.286","0.333","0.542","0.500","0.000","0.650","0.333","1.071","0.500","1.000","1.267","0.500","0.286","0.000","0.000","0.000","0.667","0.000","0.000","0.000","1.260","0.833","2.800","1.333","0.667","0.800","0.667","0.750","1.048","0.333","0.000","0.000","0.000","0.955","1.167","0.800","0.750","1.417"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>情境<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"情境","targets":2},{"name":"打席 (PA)","targets":3},{"name":"安打 (H)","targets":4},{"name":"全壘打 (HR)","targets":5},{"name":"四壞保送 (BB)","targets":6},{"name":"三振 (SO)","targets":7},{"name":"打擊率 (AVG)","targets":8},{"name":"上壘率 (OBP)","targets":9},{"name":"長打率 (SLG)","targets":10},{"name":"整體攻擊指數 (OPS)","targets":11}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="台灣隊打者進階統計-taiwan-batter-advanced-stats" class="section level4">
-<h4>台灣隊打者進階統計 (Taiwan Batter Advanced Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-fde6406ab465b6dab107" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fde6406ab465b6dab107">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)"],["林安可 (Lin An-Ko)","陳晨威 (Chen Chen-Wei)","宋晟睿 (Sung Cheng-Hui)","張政禹 (Chang Cheng-Yu)","陳傑憲 (Chen Chieh-Hsien)","江坤宇 (Chiang Kun-Yu)","吉力吉撈·鞏冠 (Giljegiljaw Kungkuan)","林家正 (Lin Chia-Cheng)","吳念庭 (Wu Nien-Ting)","蔣少宏 (Chiang Shao-Hung)","費爾柴德 (Stuart Fairchild)","鄭宗哲 (Cheng Tsung-Che)","林子偉 (Lin Tzu-Wei)","張育成 (Yu Chang)"],[9,7,2,2,1,7,3,4,5,2,3,4,2,11],["33.3%","14.3%","0.0%","50.0%","100.0%","71.4%","66.7%","50.0%","0.0%","50.0%","33.3%","0.0%","0.0%","27.3%"],["33.3%","14.3%","0.0%","0.0%","0.0%","14.3%","33.3%","0.0%","40.0%","50.0%","33.3%","50.0%","50.0%","18.2%"],["0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%"],["0.0%","14.3%","0.0%","0.0%","0.0%","14.3%","0.0%","25.0%","0.0%","0.0%","33.3%","0.0%","0.0%","18.2%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"場內擊球數","targets":2},{"name":"強勁擊球 (HardHit)","targets":3},{"name":"軟弱擊球 (WeaklyHit)","targets":4},{"name":"完美擊球 (Barrel)","targets":5},{"name":"扎實擊球 (Solid)","targets":6}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="台灣隊投手基本統計-taiwan-pitcher-basic-stats" class="section level4">
-<h4>台灣隊投手基本統計 (Taiwan Pitcher Basic Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-a575075ab1d6bdc7a14a" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a575075ab1d6bdc7a14a">{"x":{"filter":"none","vertical":false,"data":[["台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)","台灣 (Chinese Taipei)"],["莊陳仲敖 (Zhuang Chen Zhong-Ao)","鄭浩均 (Cheng Hao-Chun)","徐若熙 (Hsu Jo-Hsi)","張峻瑋 (Chang Chun-Wei)","沙子宸 (Sha Tzu-Chen)","林昱珉 (Lin Yu-Min)","孫易磊 (Sun Yi-Lei)","陳柏毓 (Chen Po-Yu)","張奕 (Chang Yi)","胡智為 (Hu Chih-Wei)","林詩翔 (Lin Shih-Hsiang)","Jyun-Yue Tseng","林凱威 (Lin Kai-Wei)"],[55,54,53,42,39,30,26,22,20,16,15,14,10],[38,27,38,20,23,21,11,12,14,9,9,9,9],[15,26,15,22,16,9,15,9,6,7,6,5,1],["69.1%","50.0%","71.7%","47.6%","59.0%","70.0%","42.3%","54.5%","70.0%","56.2%","60.0%","64.3%","90.0%"],["2.2","1.2","4.0","2.1","2.0","2.1","0.2","1.0","1.1","0.1","1.1","1.0","1.0"],["0.00","32.40","0.00","0.00","13.50","0.00","0.00","18.00","6.75","108.00","0.00","0.00","0.00"],["1.12","5.40","0.50","1.29","2.00","0.86","4.50","2.00","1.50","12.00","0.75","0.00","0.00"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總用球數<\/th>\n      <th>好球數<\/th>\n      <th>壞球數<\/th>\n      <th>好球率<\/th>\n      <th>投球局數 (IP)<\/th>\n      <th>防禦率 (ERA)<\/th>\n      <th>每局被上壘率 (WHIP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"Bfrtip","stateSave":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總用球數","targets":2},{"name":"好球數","targets":3},{"name":"壞球數","targets":4},{"name":"好球率","targets":5},{"name":"投球局數 (IP)","targets":6},{"name":"防禦率 (ERA)","targets":7},{"name":"每局被上壘率 (WHIP)","targets":8}],"language":{"url":"//cdn.datatables.net/plug-ins/1.10.25/i18n/Chinese-traditional.json"},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherBasicStats">
+各投手表現基本統計 (Pitcher Basic Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherBasicStats" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherBasicStats">{"x":{"filter":"none","vertical":false,"data":[["日本 (🇯🇵 日本)"],["Yusei Kikuchi"],[4],[3],[1],["75.0%"],["0.0"],["0.00"],["0.00"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總用球數<\/th>\n      <th>好球數<\/th>\n      <th>壞球數<\/th>\n      <th>好球率<\/th>\n      <th>投球局數 (IP)<\/th>\n      <th>防禦率 (ERA)<\/th>\n      <th>每局被上壘率 (WHIP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總用球數","targets":2},{"name":"好球數","targets":3},{"name":"壞球數","targets":4},{"name":"好球率","targets":5},{"name":"投球局數 (IP)","targets":6},{"name":"防禦率 (ERA)","targets":7},{"name":"每局被上壘率 (WHIP)","targets":8}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 3 ? \"#d5f5e3\" : value <= 5 ? \"#e8f8f5\" : value <= 8 ? \"#fef9e7\" : \"#fde8e8\"});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherAvgSpeed">
+各投手的平均球速 (Pitcher Avg Speed)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherAvgSpeed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherAvgSpeed">{"x":{"filter":"none","vertical":false,"data":[["日本 (🇯🇵 日本)"],["Yusei Kikuchi"],[139.8]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>平均球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"平均球速 (kph)","targets":2}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherMaxSpeed">
+各投手最快球速、轉速與球種 (Pitcher Max Speed)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherMaxSpeed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherMaxSpeed">{"x":{"filter":"none","vertical":false,"data":[["日本 (🇯🇵 日本)"],["Yusei Kikuchi"],[2254],["四縫線速球 (Four-Seam Fastball)"],[154.2]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>轉速 (rpm)<\/th>\n      <th>球種<\/th>\n      <th>最快球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"轉速 (rpm)","targets":2},{"name":"球種","targets":3},{"name":"最快球速 (kph)","targets":4}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherTotalWhiff">
+各投手總揮空率 (Pitcher Total Whiff Rate)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherTotalWhiff" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherTotalWhiff">{"x":{"filter":"none","vertical":false,"data":[["日本 (🇯🇵 日本)"],["Yusei Kikuchi"],[4],[3],[1],["33.3%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總球數","targets":2},{"name":"揮棒次數","targets":3},{"name":"揮空次數","targets":4},{"name":"揮空率","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherTypeWhiff">
+各投手各球種揮空率 (Pitcher Whiff Rate by Pitch Type)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherTypeWhiff" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherTypeWhiff">{"x":{"filter":"none","vertical":false,"data":[["日本 (🇯🇵 日本)","日本 (🇯🇵 日本)"],["Yusei Kikuchi","Yusei Kikuchi"],["四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)"],[2,2],[2,1],[1,0],["50.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>球種<\/th>\n      <th>該球種球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"球種","targets":2},{"name":"該球種球數","targets":3},{"name":"揮棒次數","targets":4},{"name":"揮空次數","targets":5},{"name":"揮空率","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherStats">
+各投手的投球內容統計 (Pitcher Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherStats" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherStats">{"x":{"filter":"none","vertical":false,"data":[["日本 (🇯🇵 日本)","日本 (🇯🇵 日本)"],["Yusei Kikuchi","Yusei Kikuchi"],["曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)"],[2,2],[125.4,154.1],[2732,2257]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>球種<\/th>\n      <th>用球數<\/th>\n      <th>平均球速 (kph)<\/th>\n      <th>平均轉速 (rpm)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"球種","targets":2},{"name":"用球數","targets":3},{"name":"平均球速 (kph)","targets":4},{"name":"平均轉速 (rpm)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<!-- === JavaScript 區段 === -->
 <script>
+// 摺疊面板 (Accordion) 切換功能
+function toggleAccordion(id) {
+  var content = document.getElementById(id);
+  var toggle = content.previousElementSibling;
+  if (content.classList.contains('show')) {
+    content.classList.remove('show');
+    toggle.classList.remove('active');
+  } else {
+    content.classList.add('show');
+    toggle.classList.add('active');
+  }
+}
+
+// 情境篩選器：依據下拉選單值篩選 DataTable 中的「情境」欄位
+function filterContext(tableKey, value) {
+  var tableId = 'dt-' + tableKey;
+  var dtTable = document.getElementById(tableId);
+  if (!dtTable) return;
+  // 透過 DataTables API 搜尋「情境」欄位
+  var dtApi = $(dtTable).find('table').DataTable();
+  if (!dtApi) return;
+  // 找到「情境」欄位的 index
+  var headers = dtApi.columns().header().toArray();
+  var ctxIdx = -1;
+  for (var i = 0; i < headers.length; i++) {
+    if ($(headers[i]).text().indexOf('情境') >= 0) {
+      ctxIdx = i;
+      break;
+    }
+  }
+  if (ctxIdx >= 0) {
+    if (value === '') {
+      dtApi.column(ctxIdx).search('').draw();
+    } else {
+      dtApi.column(ctxIdx).search('^' + value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', true, false).draw();
+    }
+  }
+}
+
+// Tab 分頁狀態保存 (localStorage)
 document.addEventListener("DOMContentLoaded", function() {
-    // 監聽 Bootstrap 標籤頁 (Tab) 的切換事件，利用 localStorage 保存最後點擊的分頁
     $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
         var tabHref = $(e.target).attr("href");
         localStorage.setItem('activeWbcTab', tabHref);
     });
-
-    // 頁面初始化時，檢查是否有暫存的分頁並自動展開
     var savedTab = localStorage.getItem('activeWbcTab');
     if (savedTab) {
         setTimeout(function() {
@@ -3170,11 +3461,33 @@ document.addEventListener("DOMContentLoaded", function() {
             if (tabBtn.length > 0) {
                 tabBtn.tab('show');
             }
-        }, 50); // 微延遲確保 Rmd 框架已將 Tab 構建完畢
+        }, 50);
     }
+
+    // 情境篩選器初始化：預設篩選「總體」
+    setTimeout(function() {
+        var filters = document.querySelectorAll('.context-filter select');
+        filters.forEach(function(f) {
+            var tableKey = f.id.replace('filter-', '');
+            filterContext(tableKey, '總體');
+        });
+    }, 500);
+
+    // 錨點跳轉增強：點擊錨點連結後，自動將目標滾動到可見位置（考量 Sticky Tab 高度）
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href').substring(1);
+            var targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                var offset = 100; // 預留 Sticky Tab + Sticky Anchor Nav 的高度
+                var top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({top: top, behavior: 'smooth'});
+            }
+        });
+    });
 });
 </script>
-</div>
 </div>
 </div>
 
