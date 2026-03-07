@@ -4,79 +4,186 @@
     <meta charset="UTF-8">
     <title>WBC 2026 賽事即時數據報表</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #f7f9fc; }
-        .frame-container { position: relative; width: 100%; height: 100%; }
-        iframe { position: absolute; top: 0; left: 0; border: none; width: 100%; height: 100%; transition: opacity 0.2s ease-in-out; }
-        .hidden { opacity: 0; pointer-events: none; z-index: 1; }
-        .visible { opacity: 1; pointer-events: auto; z-index: 2; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #f4f6f9; }
+        iframe { border: none; width: 100%; height: 100%; display: block; }
         #update-toast {
             position: fixed; top: 10px; right: 20px;
             background: #28a745; color: white;
-            padding: 8px 16px; border-radius: 4px;
-            font-family: sans-serif; font-size: 14px;
+            padding: 8px 16px; border-radius: 6px;
+            font-family: -apple-system, sans-serif; font-size: 14px;
             opacity: 0; transition: opacity 0.5s; pointer-events: none; z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
     </style>
 </head>
 <body>
-    <div id="update-toast">資料已即時更新</div>
-    <div class="frame-container">
-        <!-- 採用雙層 iframe 輪替，以消除載入閃爍 -->
-        <iframe id="frame1" class="visible" src="788118_Korea_vs_Japan_LiveStats.html"></iframe>
-        <iframe id="frame2" class="hidden" src=""></iframe>
-    </div>
+    <div id="update-toast">📊 資料已即時更新</div>
+    <!-- 方案 C：使用單一 iframe，不再整頁替換 -->
+    <iframe id="mainFrame" src="788118_Korea_vs_Japan_LiveStats.html"></iframe>
 
     <script>
-        let activeFrame = document.getElementById('frame1');
-        let inactiveFrame = document.getElementById('frame2');
-        const toast = document.getElementById('update-toast');
-        const RELOAD_SEC = 30; // 每 30 秒靜默刷新一次
-        let baseSrc = activeFrame.src.split('?')[0];
+    /* =================================================================
+       方案 C：局部 DOM 更新 (Partial DOM Update)
+       -----------------------------------------------------------------
+       核心概念：
+         1. 定時 fetch() 最新的報表 HTML
+         2. 用 DOMParser 解析成虛擬文件
+         3. 只提取「懶人包文字」和「DataTable JSON 數據」
+         4. 注入到現有 iframe 的 DOM 中
+         5. 所有 UI 狀態完全保留：
+            - Tab 分頁選擇
+            - Accordion 展開/收起
+            - 情境篩選器選擇
+            - DataTable 分頁/排序/搜尋
+            - 捲動位置
+       ================================================================= */
 
-        function doubleBufferRefresh() {
-            try {
-                // 取得目前正在觀看視窗的狀態
-                const innerWindow = activeFrame.contentWindow;
-                const innerDoc = activeFrame.contentDocument || innerWindow.document;
-                
-                // 定義 onload，當背景 iframe 載入完畢後執行切換
-                inactiveFrame.onload = function() {
-                    try {
-                        // 取得「交換前一刻」當下最精準的捲動高度
-                        const currentInnerWindow = activeFrame.contentWindow;
-                        const currentInnerDoc = activeFrame.contentDocument || currentInnerWindow.document;
-                        const finalScrollX = currentInnerWindow.scrollX || currentInnerDoc.documentElement.scrollLeft || currentInnerDoc.body.scrollLeft || 0;
-                        const finalScrollY = currentInnerWindow.scrollY || currentInnerDoc.documentElement.scrollTop || currentInnerDoc.body.scrollTop || 0;
+    var iframe = document.getElementById('mainFrame');
+    var toast = document.getElementById('update-toast');
+    var RELOAD_SEC = 30;
+    var reportUrl = iframe.getAttribute('src');
+    var isReady = false;
 
-                        // 將準備登場的隱藏 iframe 捲動到相同高度
-                        inactiveFrame.contentWindow.scrollTo(finalScrollX, finalScrollY);
-                        
-                        // 交換顯示狀態 (CSS transition 提供平滑過渡)
-                        inactiveFrame.className = 'visible';
-                        activeFrame.className = 'hidden';
-                        
-                        // 交換變數指標
-                        const temp = activeFrame;
-                        activeFrame = inactiveFrame;
-                        inactiveFrame = temp;
+    // 等待 iframe 首次載入完成
+    iframe.onload = function() { isReady = true; };
 
-                        // 顯示小提示框
-                        toast.style.opacity = 1;
-                        setTimeout(() => toast.style.opacity = 0, 2500);
-                    } catch(e) {}
-                    
-                    // 解除一次性綁定
-                    inactiveFrame.onload = null;
-                };
+    /**
+     * 局部更新主函式
+     * 只更新「資料內容」，完全保留使用者的 UI 操作狀態
+     */
+    async function partialRefresh() {
+        if (!isReady) return;
 
-            } catch(e) { /* 例外處理：若跨域或尚未就緒 */ }
+        try {
+            var iframeWin = iframe.contentWindow;
+            var iframeDoc = iframe.contentDocument || iframeWin.document;
+            if (!iframeDoc || !iframeDoc.body) return;
 
-            // 指定隱藏的 iframe 去抓取最新生成的靜態網頁
-            inactiveFrame.src = baseSrc + '?t=' + new Date().getTime();
+            // === Step 1: 抓取最新 HTML ===
+            var resp = await fetch(reportUrl + '?t=' + new Date().getTime());
+            if (!resp.ok) return;
+            var html = await resp.text();
+            var parser = new DOMParser();
+            var newDoc = parser.parseFromString(html, 'text/html');
+            var hasUpdate = false;
+
+            // === Step 2: 更新懶人包 (Recap) — 保留 Accordion 展開/收起狀態 ===
+            var oldRecapBox = iframeDoc.querySelector('.recap-box');
+            var newRecapBox = newDoc.querySelector('.recap-box');
+            if (oldRecapBox && newRecapBox) {
+                // 先記錄哪些 Accordion 是展開的
+                var accordionStates = {};
+                var oldAccContents = oldRecapBox.querySelectorAll('.accordion-content');
+                for (var i = 0; i < oldAccContents.length; i++) {
+                    if (oldAccContents[i].id) {
+                        accordionStates[oldAccContents[i].id] = oldAccContents[i].classList.contains('show');
+                    }
+                }
+
+                // 替換懶人包內容（包含新增的打席/投球事件）
+                var newHTML = newRecapBox.innerHTML;
+                if (oldRecapBox.innerHTML !== newHTML) {
+                    oldRecapBox.innerHTML = newHTML;
+                    hasUpdate = true;
+
+                    // 恢復 Accordion 展開/收起狀態
+                    for (var accId in accordionStates) {
+                        if (accordionStates[accId]) {
+                            var content = iframeDoc.getElementById(accId);
+                            if (content) {
+                                content.classList.add('show');
+                                var toggle = content.previousElementSibling;
+                                if (toggle) toggle.classList.add('active');
+                            }
+                        }
+                    }
+                }
+            }
+
+            // === Step 3: 更新 DataTable 數據 — 保留排序/分頁/搜尋/篩選狀態 ===
+            // DT (R) htmlwidget 將表格數據以 JSON 嵌入在
+            // <script type="application/json" data-for="dt-XXX"> 標籤中
+            // 資料結構為欄位導向 (column-major)：x.data[col_index][row_index]
+            var jsonScripts = newDoc.querySelectorAll('script[type="application/json"][data-for]');
+            for (var s = 0; s < jsonScripts.length; s++) {
+                var widgetId = jsonScripts[s].getAttribute('data-for');
+                if (!widgetId) continue;
+
+                try {
+                    var widgetData = JSON.parse(jsonScripts[s].textContent);
+                    if (!widgetData.x || !widgetData.x.data) continue;
+                    var newColData = widgetData.x.data;
+                    if (newColData.length === 0) continue;
+
+                    // 轉置：欄位導向 → 列導向 (DataTables rows.add 需要列導向)
+                    var numRows = newColData[0].length;
+                    var numCols = newColData.length;
+                    var rows = [];
+                    for (var r = 0; r < numRows; r++) {
+                        var row = [];
+                        for (var c = 0; c < numCols; c++) {
+                            var val = newColData[c][r];
+                            row.push(val !== null && val !== undefined ? val : '');
+                        }
+                        rows.push(row);
+                    }
+
+                    // 取得現有 DataTable 實例
+                    var widget = iframeDoc.getElementById(widgetId);
+                    if (!widget) continue;
+                    var tableEl = widget.querySelector('table');
+                    if (!tableEl) continue;
+
+                    // 透過 iframe 內的 jQuery 取得 DataTable API
+                    var jq = iframeWin.jQuery;
+                    if (!jq) continue;
+                    var dtApi;
+                    try { dtApi = jq(tableEl).DataTable(); } catch(dte) { continue; }
+                    if (!dtApi) continue;
+
+                    // 比對：資料是否有變動（避免無謂重繪）
+                    var oldData = dtApi.data().toArray();
+                    var newDataStr = JSON.stringify(rows);
+                    var oldDataStr = JSON.stringify(oldData);
+
+                    if (newDataStr !== oldDataStr) {
+                        // 保存當前 UI 狀態
+                        var savedPage = dtApi.page();
+                        var savedOrder = dtApi.order();
+                        var savedSearch = dtApi.search();
+
+                        // 更新資料
+                        dtApi.clear();
+                        dtApi.rows.add(rows);
+
+                        // 恢復排序與搜尋狀態，然後重繪
+                        dtApi.order(savedOrder);
+                        dtApi.search(savedSearch);
+                        dtApi.draw(false); // false = 保持當前頁碼
+
+                        // 嘗試恢復精確頁碼（行數變動可能影響頁數）
+                        try { dtApi.page(savedPage).draw(false); } catch(pe) {}
+
+                        hasUpdate = true;
+                    }
+                } catch(tableErr) {
+                    // 單一表格更新失敗不影響其他表格，靜默跳過
+                }
+            }
+
+            // === Step 4: 顯示更新提示 ===
+            if (hasUpdate) {
+                toast.style.opacity = 1;
+                setTimeout(function() { toast.style.opacity = 0; }, 2500);
+            }
+
+        } catch(e) {
+            // 網路錯誤或解析失敗，靜默跳過，等下次重試
         }
+    }
 
-        // 啟用自動更新功能
-        setInterval(doubleBufferRefresh, RELOAD_SEC * 1000);
+    // 啟動定時局部更新
+    setInterval(partialRefresh, RELOAD_SEC * 1000);
     </script>
 </body>
 </html>
