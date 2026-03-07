@@ -30,7 +30,7 @@
         let activeFrame = document.getElementById('frame1');
         let inactiveFrame = document.getElementById('frame2');
         const toast = document.getElementById('update-toast');
-        const RELOAD_SEC = 10; // 每 10 秒靜默刷新一次
+        const RELOAD_SEC = 60; // 每 60 秒靜默刷新一次
         let baseSrc = activeFrame.src.split('?')[0];
 
         function doubleBufferRefresh() {
