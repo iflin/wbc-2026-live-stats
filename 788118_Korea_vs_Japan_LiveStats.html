@@ -11,7 +11,7 @@
 
 
 
-<title>🇹🇼 台灣隊 2026 WBC 預賽表現總覽</title>
+<title>賽事即時數據報表</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -2841,7 +2841,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">🇹🇼 台灣隊 2026 WBC 預賽表現總覽</h1>
+<h1 class="title toc-ignore">賽事即時數據報表</h1>
 
 </div>
 
@@ -2850,2608 +2850,836 @@ display: none;
 
 
 body {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 background-color: #f4f6f9;
-color: #2c3e50;
-font-size: 15px; 
-line-height: 1.7;
+color: #2d3436;
+font-size: 15px;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
 }
 .container-fluid {
 max-width: 960px;
-margin: 0 auto;
-padding: 20px 30px;
+padding-top: 0 !important;
 }
 
-h1.title {
-font-size: 26px;
-font-weight: 800;
-color: #1B2A4A;
-border-bottom: 3px solid #dd5e00;
-padding-bottom: 12px;
-margin-bottom: 24px;
+h1.title, .date {
+display: none !important;
 }
-h2 { 
-font-size: 26px;
-font-weight: 700;
-color: #1B2A4A;
-margin-top: 32px;
-margin-bottom: 16px;
-padding-left: 12px;
-border-left: 4px solid #dd5e00;
+
+.mini-nav {
+position: fixed;
+bottom: 30px;
+right: 110px;
+display: flex;
+flex-direction: row;
+gap: 8px;
+z-index: 9999;
 }
-h3 { 
-font-size: 18px;
-font-weight: 700;
+.mini-nav a {
+background: #2C3E50;
 color: white;
-background: linear-gradient(135deg, #1B2A4A 0%, #2C3E50 100%);
-padding: 10px 18px;
-border-radius: 8px;
-margin-top: 28px;
-margin-bottom: 14px;
+padding: 8px 16px;
+border-radius: 50px;
+text-decoration: none;
+font-size: 13px;
+font-weight: 600;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+transition: all 0.2s;
+white-space: nowrap;
 }
-h4 { 
+.mini-nav a:hover {
+background: #1B2A4A;
+transform: translateY(-1px);
+text-decoration: none;
+color: white;
+}
+
+h2 {
+font-size: 26px;
+font-weight: 700;
+color: #1B2A4A;
+margin-top: 30px;
+margin-bottom: 22px;
+padding-left: 14px;
+border-left: 4px solid #E67E22;
+}
+
+h3 {
+background-color: #2C3E50;
+color: white;
+padding: 12px 18px;
+border-radius: 5px 5px 0 0;
+margin-top: 35px;
+margin-bottom: 0;
+font-size: 18px;
+font-weight: bold;
+}
+
+h4 {
 font-size: 17px;
 font-weight: 700;
-color: #34495E;
-margin-top: 28px;
-margin-bottom: 10px;
-padding: 8px 0 8px 12px;
-border-left: 3px solid #E67E22;
-}
-
-.recap-box {
-background: linear-gradient(135deg, #fefefe, #f8f9fa);
-border: 1px solid #e0e4e8;
-border-radius: 12px;
-padding: 20px 24px;
-margin-bottom: 20px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.recap-box p, .recap-box li {
-font-size: 15px;
-line-height: 1.8;
-}
-.recap-box strong { color: #1B2A4A; }
-
-.game-cards {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-margin: 16px 0;
-}
-.game-card {
-flex: 1;
-min-width: 200px;
-background: white;
-border: 1px solid #e0e4e8;
-border-radius: 10px;
-padding: 14px 18px;
-text-align: center;
-box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
-.game-card .opponent { font-size: 14px; color: #636e72; margin-bottom: 6px; }
-.game-card .score { font-size: 22px; font-weight: 800; color: #1B2A4A; }
-.game-card .result-win { color: #27ae60; font-weight: 700; }
-.game-card .result-lose { color: #e74c3c; font-weight: 700; }
-
-.game-card-win { background: #f0fff5; border-color: #b7e4c7; }
-.game-card-lose { background: #fff5f5; border-color: #f5c6cb; }
-
-.compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-.compare-table th {
-background: #1B2A4A; color: white; padding: 10px 14px;
-font-size: 13px; text-align: center;
-}
-.compare-table td {
-padding: 8px 14px; text-align: center; border-bottom: 1px solid #e0e4e8;
-font-size: 14px;
-}
-.compare-table tr:nth-child(even) { background: #f8f9fa; }
-.arrow-up { color: #27ae60; font-weight: 700; }
-.arrow-down { color: #e74c3c; font-weight: 700; }
-
-.summary-insight {
-background: linear-gradient(135deg, #fefefe, #f0f4f8);
-border: 1px solid #d5dce4;
-border-radius: 12px;
-padding: 18px 22px;
-margin: 16px 0 20px 0;
-font-size: 15px;
-line-height: 1.9;
-}
-.summary-insight .insight-good { color: #27ae60; font-weight: 600; }
-.summary-insight .insight-bad { color: #e74c3c; font-weight: 600; }
-.summary-insight .insight-note { color: #2c3e50; font-weight: 600; }
-
-.player-card {
-background: white;
-border: 1px solid #e0e4e8;
-border-radius: 12px;
-padding: 16px 20px;
-margin-bottom: 14px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-transition: box-shadow 0.2s;
-}
-.player-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-.player-card-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
+color: #2C3E50;
+margin-top: 36px;
 margin-bottom: 12px;
-padding-bottom: 8px;
-border-bottom: 2px solid #f0f2f5;
-}
-.player-card-name {
-font-size: 16px;
-font-weight: 700;
-color: #1B2A4A;
-}
-.player-card-badge {
-font-size: 12px;
-font-weight: 700;
-padding: 3px 10px;
-border-radius: 20px;
-}
-.badge-up { background: #e8f8f0; color: #27ae60; }
-.badge-down { background: #fce8e8; color: #e74c3c; }
-.badge-flat { background: #f0f2f5; color: #636e72; }
-.player-card-meta {
-font-size: 13px;
-color: #636e72;
-margin-top: 4px;
-margin-bottom: 8px;
-display: flex;
-gap: 12px;
-flex-wrap: wrap;
-}
-.player-card-meta span {
-background: #f0f2f5;
-padding: 2px 8px;
-border-radius: 4px;
+padding: 10px 0 10px 14px;
+border-left: 4px solid #E67E22;
+border-bottom: 2px solid #e0e4ea;
+background: linear-gradient(90deg, rgba(230,126,34,0.06) 0%, transparent 100%);
 }
 
-.dumbbell-row {
-display: grid;
-grid-template-columns: 120px 45px 1fr 45px 35px; 
-align-items: center;
-padding: 6px 0;
-font-size: 14px;
-gap: 8px;
-}
-.dumbbell-label {
-font-weight: 600;
-color: #636e72;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.stat-value {
-text-align: right;
-font-weight: 600;
-font-size: 14px;
-}
-.stat-value-23 { color: #7f8c8d; }
-.stat-value-26 { color: #1B2A4A; text-align: left; }
-
-.dumbbell-container {
-position: relative;
-height: 20px;
-display: flex;
-align-items: center;
-margin: 0 4px;
-}
-.dumbbell-track {
-position: absolute;
-left: 0;
-right: 0;
-height: 4px;
-background: #e0e4e8;
-border-radius: 2px;
-z-index: 1;
-}
-.dumbbell-line {
-position: absolute;
-height: 4px;
-border-radius: 2px;
-z-index: 2;
-transition: all 0.6s ease;
-}
-.dumbbell-line.line-up { background: #27ae60; }
-.dumbbell-line.line-down { background: #e74c3c; }
-.dumbbell-line.line-flat { background: #95a5a6; }
-.dumbbell-dot {
-position: absolute;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-z-index: 3;
-box-shadow: 0 0 0 2px white;
-}
-.dot-23 { background: #bdc3c7; }
-.dot-26 { background: #e67e22; }
-.stat-delta {
-text-align: right;
-font-size: 14px;
-font-weight: 700;
+h4:first-of-type {
+margin-top: 16px;
 }
 
-.player-card-comment {
-font-size: 13px;
-color: #636e72;
-margin-top: 8px;
-padding-top: 8px;
-border-top: 1px dashed #e0e4e8;
-}
-
-.player-card-comment.comment-positive {
-color: #27ae60;
-font-weight: 600;
-border-top-color: #b7e4c7;
-}
-.player-card-comment.comment-negative {
-color: #e74c3c;
-font-weight: 600;
-border-top-color: #f5c6cb;
-}
-
-.chart-legend {
-display: flex;
-align-items: center;
-gap: 16px;
-font-size: 12.5px;
-color: #636e72;
-margin-bottom: 12px;
-padding: 6px 0;
-}
-.chart-legend-item {
-display: flex;
-align-items: center;
-gap: 4px;
-}
-.chart-legend-swatch {
-display: inline-block;
-width: 16px;
-height: 10px;
-border-radius: 3px;
-}
-.chart-legend-swatch.swatch-23 { background: #bdc3c7; }
-.chart-legend-swatch.swatch-26 { background: linear-gradient(90deg, #dd5e00, #e67e22); }
-
-.compact-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-.compact-table th {
-background: #f0f2f5;
-color: #2c3e50;
-font-size: 13px;
-font-weight: 600;
-padding: 8px 12px;
-text-align: center;
-}
-.compact-table td {
-padding: 6px 12px;
-text-align: center;
-font-size: 14px;
-border-bottom: 1px solid #e8ecf0;
-}
-.compact-table tr:nth-child(even) { background: #fafbfc; }
-
-.section-label {
-font-size: 14px;
-font-weight: 600;
-color: #636e72;
-margin: 20px 0 8px 0;
-padding-left: 10px;
-border-left: 3px solid #bdc3c7;
-}
-
-.nav-pills > li > a {
-border-radius: 8px;
-padding: 8px 16px;
-font-size: 14px;
-font-weight: 600;
-color: #636e72;
-transition: all 0.25s;
-}
-.nav-pills > li.active > a,
-.nav-pills > li > a:hover {
-background: linear-gradient(135deg, #dd5e00, #e67e22) !important;
-color: white !important;
-}
-
-.section.level2.tabset { overflow: visible !important; }
-.nav-pills {
-position: sticky;
-top: 0;
-z-index: 999;
-background: rgba(244, 246, 249, 0.95);
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-padding: 8px 0;
-border-bottom: 2px solid #e0e4e8;
-margin-bottom: 8px;
-}
-
-#back-to-top {
-position: fixed;
-bottom: 24px;
-right: 24px;
-z-index: 9999;
-width: 44px;
-height: 44px;
-border-radius: 50%;
-border: none;
-background: linear-gradient(135deg, #dd5e00, #e67e22);
-color: white;
-font-size: 20px;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(221, 94, 0, 0.3);
-transition: opacity 0.3s, transform 0.3s;
-opacity: 0;
-transform: translateY(20px);
-pointer-events: none;
-}
-#back-to-top.visible {
-opacity: 1;
-transform: translateY(0);
-pointer-events: auto;
-}
-#back-to-top:hover {
-transform: translateY(-3px);
-box-shadow: 0 6px 18px rgba(221, 94, 0, 0.4);
+.html-widget {
+background: white;
+border: 1px solid #e0e4ea;
+border-top: none;
+border-radius: 0 0 8px 8px;
+padding: 15px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+margin-bottom: 30px;
 }
 
 table.dataTable thead th {
-background: #1B2A4A !important; color: white !important;
-font-size: 13px; font-weight: 700; padding: 8px 10px !important; 
+padding: 8px 14px !important;
+padding-right: 26px !important;
+background-color: #f0f2f5;
+border-bottom: 2px solid #dee2e6;
+font-size: 13px;
+font-weight: 700;
+color: #4a5568;
+letter-spacing: 0.3px;
+}
+
+table.dataTable tbody td {
+font-size: 14px;
+padding: 8px 10px !important;
+}
+
+table.dataTable tbody tr:hover {
+background-color: #f0f3f7 !important;
+}
+
+.dataTables_info {
+font-size: 12.5px !important;
+color: #8a9199 !important;
+}
+.dataTables_paginate {
+font-size: 13px !important;
+}
+.dataTables_paginate .paginate_button {
+font-size: 13px !important;
+padding: 4px 10px !important;
+}
+.dataTables_filter {
+font-size: 13px !important;
+color: #636e72 !important;
+}
+.dataTables_filter input {
+font-size: 14px !important;
+padding: 4px 8px !important;
+}
+
+.dataTables_wrapper .dataTables_scroll,
+.html-widget .dataTables_wrapper {
+min-height: 480px;
+}
+
+.recap-box {
+padding: 0;
+font-size: 15px;
+line-height: 1.85;
+margin-bottom: 20px;
+}
+.recap-box p, .recap-box li, .recap-box ul {
+font-size: 15px;
+line-height: 1.85;
+}
+.recap-box strong {
+color: #dd5e00;
+font-weight: 600;
+}
+
+.accordion-group {
+margin-bottom: 8px;
+}
+.accordion-toggle {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #f8f9fa;
+border: 1px solid #e0e4ea;
+border-radius: 8px;
+padding: 12px 20px;
+cursor: pointer;
+font-size: 16px;
+font-weight: 700;
+color: #2C3E50;
+transition: all 0.2s;
+margin-bottom: 0;
+user-select: none;
+}
+.accordion-toggle:hover {
+background: #eef2f7;
+}
+.accordion-toggle .arrow {
+transition: transform 0.3s;
+font-size: 0.9rem;
+opacity: 0.5;
+}
+.accordion-toggle.active .arrow {
+transform: rotate(180deg);
+}
+.accordion-toggle.active {
+border-radius: 8px 8px 0 0;
+border-bottom: none;
+background: #eef2f7;
+}
+.accordion-content {
+display: none;
+border: 1px solid #e0e4ea;
+border-top: none;
+border-radius: 0 0 8px 8px;
+padding: 16px 20px;
+background: white;
+animation: slideDown 0.3s ease;
+}
+.accordion-content.show {
+display: block;
+}
+@keyframes slideDown {
+from { opacity: 0; transform: translateY(-8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.section.level2 > .nav-pills {
+position: sticky;
+top: 0;
+z-index: 101;
+background: #f4f6f9;
+padding: 10px 0 6px 0;
+border-bottom: none;
+margin-bottom: 0;
+overflow-x: auto;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+}
+.nav-pills > li > a {
+border-radius: 8px;
+padding: 10px 20px;
+font-size: 15px;
+font-weight: 700;
+color: #2C3E50;
+transition: all 0.2s;
+border: 2px solid transparent;
+background: #e8ecf1;
+}
+.nav-pills > li > a:hover {
+background: #dfe3e8;
+border-color: #c0c8d0;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+background: #2C3E50 !important;
+color: white !important;
+border-color: #1B2A4A !important;
+box-shadow: 0 2px 6px rgba(44,62,80,0.3);
+}
+
+.anchor-nav {
+position: sticky;
+top: 52px; 
+z-index: 100;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+padding: 8px 16px;
+background: #f4f6f9;
+border: none;
+border-bottom: 1px dashed #d0d5dc;
+border-radius: 0;
+margin-bottom: 12px;
+}
+.anchor-nav .anchor-label {
+font-size: 13px;
+color: #8a9199;
+font-weight: 600;
+line-height: 28px;
+}
+.anchor-nav a {
+background: transparent;
+color: #E67E22;
+padding: 2px 8px;
+border-radius: 4px;
+border: none;
+text-decoration: none;
+font-size: 13px;
+font-weight: 500;
+transition: all 0.15s;
+line-height: 28px;
+}
+.anchor-nav a:hover {
+background: #fef3e2;
+color: #dd5e00;
+text-decoration: underline;
+}
+
+.context-filter {
+margin-bottom: 12px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.context-filter label {
+font-weight: 600;
+margin-right: 4px;
+color: #2C3E50;
+font-size: 14px;
+}
+.context-filter select {
+padding: 7px 14px;
+border-radius: 8px;
+border: 2px solid #E67E22;
+font-size: 14px;
+font-weight: 600;
+background: white;
+color: #2C3E50;
+cursor: pointer;
+outline: none;
+transition: all 0.2s;
+}
+.context-filter select:focus {
+border-color: #dd5e00;
+box-shadow: 0 0 0 3px rgba(230,126,34,0.15);
+}
+
+.guide-tip {
+background: #f0f3f7;
+border: 1px solid #d0d5dc;
+border-radius: 8px;
+padding: 10px 16px;
+font-size: 13px;
+color: #636e72;
+margin-bottom: 12px;
+font-weight: 500;
+}
+.guide-tip strong {
+color: #E67E22;
+}
+
+@media (max-width: 768px) {
+
+body { font-size: 15px; }
+.container-fluid { padding: 0 8px !important; }
+
+h2 {
+font-size: 20px;
+margin-top: 20px;
+margin-bottom: 14px;
+padding-left: 10px;
+}
+h3 {
+font-size: 15px;
+padding: 10px 14px;
+}
+h4 {
+font-size: 15px;
+margin-top: 24px;
+margin-bottom: 8px;
+padding: 8px 0 8px 10px;
+}
+
+.recap-box, .recap-box p, .recap-box li {
+font-size: 15px;
+line-height: 1.75;
+}
+.accordion-toggle {
+font-size: 14px;
+padding: 10px 14px;
+}
+.accordion-content {
+padding: 12px 14px;
+}
+
+.nav-pills > li > a {
+padding: 8px 14px;
+font-size: 14px;
+}
+
+.html-widget {
+padding: 8px;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+table.dataTable thead th {
+font-size: 11px;
+padding: 6px 8px !important;
 white-space: nowrap;
 }
 table.dataTable tbody td {
-font-size: 14px !important; padding: 8px 10px !important; 
+font-size: 13px !important;
+padding: 6px 8px !important;
+white-space: nowrap;
 }
-
-.html-widget { padding: 12px; margin-bottom: 16px; overflow-x: auto; }
-.html-widget .dataTables_wrapper { min-height: 420px; }
-
-.table-scroll-hint {
-position: relative;
-}
-.table-scroll-hint::after {
-content: '';
-position: absolute;
-top: 0;
-right: 0;
-width: 30px;
-height: 100%;
-background: linear-gradient(to right, transparent, rgba(244, 246, 249, 0.8));
-pointer-events: none;
-z-index: 1;
-}
-
-.dataTables_info { font-size: 12.5px !important; color: #636e72 !important; }
-.dataTables_paginate { font-size: 13px !important; }
-.dataTables_filter { font-size: 13px !important; }
-.dataTables_filter input { font-size: 13px !important; }
-.dataTables_length { font-size: 13px !important; color: #636e72 !important; }
-
-@media (max-width: 768px) {
-body { font-size: 15px; }
-.container-fluid { padding: 0 8px !important; }
-h2 { font-size: 22px; } 
-h3 { font-size: 16px; padding: 10px 14px; } 
-h4 { font-size: 15px; } 
-.game-cards { flex-direction: column; }
-.game-card { min-width: auto; }
-.html-widget { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-table.dataTable thead th { font-size: 12px; white-space: nowrap; }
-table.dataTable tbody td { font-size: 13px !important; white-space: nowrap; }
 .html-widget .dataTables_wrapper { min-height: 350px; }
 
-.nav-pills {
-display: flex !important;
-flex-wrap: nowrap !important;
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-scrollbar-width: none; 
+.context-filter {
+flex-wrap: wrap;
 gap: 6px;
-padding: 8px 4px;
 }
-.nav-pills::-webkit-scrollbar { display: none; } 
-.nav-pills > li { flex-shrink: 0; }
-.nav-pills > li > a { white-space: nowrap; padding: 6px 12px; font-size: 13px; }
+.context-filter label { font-size: 13px; }
+.context-filter select {
+font-size: 13px;
+padding: 6px 10px;
+}
 
-.player-card { padding: 12px 14px; }
-.player-card-name { font-size: 14px; }
-.stat-row { flex-wrap: wrap; }
-.stat-label { width: 60px; font-size: 12px; }
-.stat-value { width: 42px; font-size: 12px; }
-.mini-bar-container { max-width: 80px; }
+.anchor-nav { display: none !important; } 
+.guide-tip { display: none !important; } 
+.mini-nav { display: none !important; } 
+
+.match-info-bar {
+padding: 4px 10px;
+font-size: 11px;
 }
+.match-info-bar .match-teams { font-size: 11px; }
+.match-info-bar .match-time { font-size: 10px; }
+
+.dataTables_info { font-size: 11px !important; }
+.dataTables_filter { font-size: 12px !important; }
+.dataTables_filter input { font-size: 13px !important; }
+.dataTables_paginate { font-size: 12px !important; }
+.dataTables_paginate .paginate_button {
+padding: 3px 8px !important;
+font-size: 12px !important;
+}
+}
+
 @media (max-width: 480px) {
-h2 { font-size: 19px; }
-.recap-box p, .recap-box li { font-size: 14px; }
-.player-card-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+h2 { font-size: 18px; }
+h3 { font-size: 14px; padding: 8px 12px; }
+h4 { font-size: 14px; }
+.recap-box, .recap-box p, .recap-box li {
+font-size: 14px;
+line-height: 1.7;
+}
+.accordion-toggle { font-size: 13px; padding: 8px 12px; }
+.nav-pills > li > a { padding: 6px 10px; font-size: 13px; }
+table.dataTable thead th { font-size: 10px; }
+table.dataTable tbody td { font-size: 12px !important; }
+.match-info-bar { display: none !important; } 
+}
+
+.match-info-bar {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 9998;
+background: rgba(27, 42, 74, 0.92);
+color: white;
+padding: 5px 18px;
+font-size: 12px;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+border-radius: 0 0 8px 0;
+backdrop-filter: blur(6px);
+pointer-events: none;
+white-space: nowrap;
+}
+.match-info-bar .match-teams {
+font-weight: 700;
+font-size: 13px;
+margin-right: 12px;
+}
+.match-info-bar .match-time {
+opacity: 0.75;
+font-size: 11px;
 }
 </style>
+<!-- === 固定左上角對戰資訊列 === -->
+<div class="match-info-bar">
+<span class="match-teams">🇰🇷 韓國 vs 🇯🇵 日本</span><span class="match-time">更新：2026-03-07 21:34:03</span>
+</div>
+<!-- === 迷你固定導航列 (Mini Nav) — 改至右下角避免遮擋 === -->
+<div id="mini-nav" class="mini-nav">
+<p><a href="#recap-section">📝 懶人包</a> <a href="#stats-section">📊
+數據</a></p>
+</div>
 <!-- === 懶人包區段 === -->
-<div id="賽況總覽-summary" class="section level2">
-<h2>📋 賽況總覽 (Summary)</h2>
-<div id="wbc-預賽戰績1-勝-2-敗" class="section level3 recap-box">
-<h3>🇹🇼 2026 WBC 預賽戰績：1 勝 2 敗</h3>
-<p><strong>總得分 14 分，總失分 16 分</strong>（得失分差 -2）</p>
-<div class="game-cards">
-<div class="game-card game-card-lose">
-<div class="opponent">
-vs 🇯🇵 日本
+<div id="recap-section">
+
 </div>
-<div class="score">
-🇹🇼 0 : 13
+<div id="賽況懶人包-game-recap" class="section level2">
+<h2>📝 賽況懶人包 (Game Recap)</h2>
+<div id="韓國-vs-日本-賽事數據亮點總結" class="section level3 recap-box">
+<h3>⚾ 韓國 vs 日本 賽事數據亮點總結</h3>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-ev&#39;)">
+🔥 擊球火力戰 (Exit Velocity) <span class="arrow">▼</span>
 </div>
-<div class="result-lose">
-😢 敗
-</div>
-</div>
-<div class="game-card game-card-win">
-<div class="opponent">
-vs 🇨🇿 捷克
-</div>
-<div class="score">
-🇹🇼 14 : 0
-</div>
-<div class="result-win">
-🏆 勝
-</div>
-</div>
-<div class="game-card game-card-lose">
-<div class="opponent">
-vs 🇦🇺 澳洲
-</div>
-<div class="score">
-🇹🇼 0 : 3
-</div>
-<div class="result-lose">
-😢 敗
+<div id="acc-ev" class="accordion-content">
+<ul>
+<li><strong>日本 (Japan) 最快擊球</strong>：由 <strong>Munetaka
+Murakami</strong> 於八局下對決 <strong>Taek Yeon Kim</strong>
+時擊出，初速達 <strong>179.9 kph</strong>（仰角 17度，飛行距離
+80.2公尺）。投手投出 <strong>150.8 kph</strong> 的四縫線速球 (Four-Seam
+Fastball)，結果為：一壘安打 (Single)。</li>
+<li><strong>韓國 (Korea) 最快擊球</strong>：由 <strong>Do Yeong
+Kim</strong> 於一局上對決 <strong>Yusei Kikuchi</strong> 時擊出，初速達
+<strong>173.5 kph</strong>（仰角 3度，飛行距離 27.1公尺）。投手投出
+<strong>125 kph</strong> 的曲球 (Curveball)，結果為：一壘安打
+(Single)。</li>
+<li><strong>日本 (Japan) 平均初速最高</strong>：<strong>Teruaki
+Sato</strong> 今日平均擊球初速達 <strong>162.2 kph</strong>（共 2
+次場內擊球）。</li>
+<li><strong>韓國 (Korea) 平均初速最高</strong>：<strong>Hyeseong
+Kim</strong> 今日平均擊球初速達 <strong>170.6 kph</strong>（共 1
+次場內擊球）。</li>
+</ul>
 </div>
 </div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-pv&#39;)">
+⚡ 投球速度戰 (Pitch Velocity) <span class="arrow">▼</span>
 </div>
+<div id="acc-pv" class="accordion-content">
+<ul>
+<li><strong>日本 (Japan) 最速球</strong>：由 <strong>Yusei
+Kikuchi</strong> 於三局上對決 Bo Gyeong Moon 時投出，球速達
+<strong>156.6 kph</strong> 之 四縫線速球 (Four-Seam Fastball)（Play
+結果：封殺 (Forceout)）。</li>
+<li><strong>韓國 (Korea) 最速球</strong>：由 <strong>Woo-Suk Go</strong>
+於六局下對決 Munetaka Murakami 時投出，球速達 <strong>153.5 kph</strong>
+之 四縫線速球 (Four-Seam Fastball)（Play 結果：滾地球出局
+(Groundout)）。</li>
+</ul>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle active" onclick="toggleAccordion(&#39;acc-ab&#39;)">
+🏆 關鍵打席 (Key At-Bats) <span class="arrow">▼</span>
+</div>
+<div id="acc-ab" class="accordion-content show">
+<ul>
+<li><strong>韓國 (Korea) Do Yeong
+Kim</strong>：一局上，在<strong>一壘有人</strong>、比分為<strong>客 0 -
+主 0</strong>的情況下，擊出 <strong>一壘安打 (Single)</strong>。擊球初速
+<strong>173.5 kph</strong>（仰角 <strong>3度</strong>，飛行距離
+<strong>27.1公尺</strong>），貢獻 <strong>0
+分打點</strong>。（擊球初速超過 105 mph） &gt; <em>打次描述：Do Yeong
+Kim singles on a line drive to left fielder Masataka Yoshida.</em></li>
+<li><strong>日本 (Japan) 大谷翔平 (Shohei
+Ohtani)</strong>：三局下，在<strong>一壘有人</strong>、比分為<strong>客
+3 - 主 2</strong>的情況下，擊出 <strong>全壘打 (Home
+Run)</strong>。擊球初速 <strong>178.3 kph</strong>（仰角
+<strong>41度</strong>，飛行距離 <strong>124.4公尺</strong>），貢獻
+<strong>1 分打點</strong>。（全壘打） &gt; <em>打次描述：Shohei Ohtani
+homers (2) on a fly ball to right center field.</em></li>
+<li><strong>韓國 (Korea) Jahmai
+Jones</strong>：三局上，在<strong>一壘有人</strong>、比分為<strong>客 3
+- 主 2</strong>的情況下，擊出 <strong>一壘安打
+(Single)</strong>。擊球初速 <strong>172.0 kph</strong>（仰角
+<strong>6度</strong>，飛行距離 <strong>39.9公尺</strong>），貢獻
+<strong>0 分打點</strong>。（擊球初速超過 105 mph） &gt;
+<em>打次描述：Jahmai Jones singles on a sharp ground ball to left
+fielder Masataka Yoshida.</em></li>
+<li><strong>日本 (Japan) Munetaka
+Murakami</strong>：八局下，在<strong>一壘有人</strong>、比分為<strong>客
+6 - 主 8</strong>的情況下，擊出 <strong>一壘安打
+(Single)</strong>。擊球初速 <strong>179.9 kph</strong>（仰角
+<strong>17度</strong>，飛行距離 <strong>80.2公尺</strong>），貢獻
+<strong>0 分打點</strong>。（擊球初速超過 105 mph） &gt;
+<em>打次描述：Munetaka Murakami singles on a sharp line drive to right
+fielder Hyun Min Ahn.</em></li>
+</ul>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-kp&#39;)">
+🎯 關鍵投球 (Key Pitches) <span class="arrow">▼</span>
+</div>
+<div id="acc-kp" class="accordion-content">
+<ul>
+<li><strong>日本 (Japan) Yusei
+Kikuchi</strong>：三局上，在<strong>一壘有人</strong>、比分<strong>客 3
+- 主 2</strong>的情況下，對決 Shay Whitcomb 投出 <strong>156.4
+kph</strong> 的四縫線速球 (Four-Seam Fastball)，結果為三振
+(Strikeout)。（球速超過 95 mph）</li>
+<li><strong>日本 (Japan) Yusei
+Kikuchi</strong>：三局上，在<strong>一壘有人</strong>、比分<strong>客 3
+- 主 2</strong>的情況下，對決 Shay Whitcomb 投出 <strong>155.8
+kph</strong> 的四縫線速球 (Four-Seam Fastball)，結果為三振
+(Strikeout)。（球速超過 95 mph）</li>
+<li><strong>韓國 (Korea) Taek Yeon
+Kim</strong>：七局下，在<strong>一二壘有人</strong>、比分<strong>客 5 -
+主 8</strong>的情況下，對決 Kazuma Okamoto 投出 <strong>147.5
+kph</strong> 的四縫線速球 (Four-Seam Fastball)，結果為三振
+(Strikeout)。（得點圈有人時奪三振）</li>
+</ul>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-def&#39;)">
+🛡️ 關鍵守備 (Key Defensive Plays) <span class="arrow">▼</span>
+</div>
+<div id="acc-def" class="accordion-content">
+<ul>
+<li><strong>日本 (Japan) 守備</strong>：三局上，在比分<strong>客 3 - 主
+2</strong>及<strong>一壘有人</strong>的危機中，成功攔截了 Bo Gyeong Moon
+擊出高達 <strong>171.2 kph</strong>（仰角
+-16度）的強勁球，將其接殺或封殺出局。沒收了可能形成重傷害的一擊。</li>
+<li><strong>日本 (Japan) 守備</strong>：六局上，在比分<strong>客 5 - 主
+5</strong>及<strong>一壘有人</strong>的危機中，成功攔截了 Bo Gyeong Moon
+擊出高達 <strong>168.9 kph</strong>（仰角
+-1度）的強勁球，將其接殺或封殺出局。穩健防守鞏固出局數。</li>
+<li><strong>韓國 (Korea) 守備</strong>：六局下，在比分<strong>客 5 - 主
+5</strong>及<strong>一壘有人</strong>的危機中，成功攔截了 Kazuma Okamoto
+擊出高達 <strong>159.0 kph</strong>（仰角
+-7度）的強勁球，將其接殺或封殺出局。穩健防守鞏固出局數。</li>
+<li><strong>韓國 (Korea) 守備</strong>：七局下，在比分<strong>客 5 - 主
+5</strong>及<strong>一壘有人</strong>的危機中，成功攔截了 Teruaki Sato
+擊出高達 <strong>175.1 kph</strong>（仰角
+1度）的強勁球，將其接殺或封殺出局。沒收了可能形成重傷害的一擊。</li>
+</ul>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-toggle" onclick="toggleAccordion(&#39;acc-pitch&#39;)">
+⚾ 雙方投手調度概況 (Pitching Changes) <span class="arrow">▼</span>
+</div>
+<div id="acc-pitch" class="accordion-content">
+<ul>
+<li><strong>Japan</strong>：
+<ul>
+<li><strong>先發</strong>：Yusei Kikuchi (共用 63 球)</li>
+<li><strong>中繼</strong>：Hiromi Itoh 於第 4 局登板 (共用 52 球)</li>
+<li><strong>中繼</strong>：Atsuki Taneichi 於第 7 局登板 (共用 15
+球)</li>
+<li><strong>中繼</strong>：Yuki Matsumoto 於第 8 局登板 (共用 27
+球)</li>
+<li><strong>中繼</strong>：Taisei Ota 於第 9 局登板 (共用 7 球)</li>
+</ul></li>
+<li><strong>Korea</strong>：
+<ul>
+<li><strong>先發</strong>：Young Pyo Ko (共用 51 球)</li>
+<li><strong>中繼</strong>：Byeong Hyeon Jo 於第 3 局登板 (共用 26
+球)</li>
+<li><strong>中繼</strong>：Ju Young Son 於第 5 局登板 (共用 18 球)</li>
+<li><strong>中繼</strong>：Woo-Suk Go 於第 6 局登板 (共用 13 球)</li>
+<li><strong>中繼</strong>：Yeong Hyun Park 於第 7 局登板 (共用 14
+球)</li>
+<li><strong>中繼</strong>：Young Kyu Kim 於第 7 局登板 (共用 12 球)</li>
+<li><strong>中繼</strong>：Taek Yeon Kim 於第 7 局登板 (共用 21 球)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p><em>(本懶人包由系統自動抓取 Statcast
+數據生成，提供即時賽況速寫)</em></p>
 </div>
 <hr />
-</div>
-<div id="詳細數據探索-detailed-stats" class="section level2 tabset tabset-pills">
-<h2 class="tabset tabset-pills">📊 詳細數據探索 (Detailed Stats)</h2>
-<div id="隊伍數據" class="section level3">
-<h3>🏟️ 隊伍數據</h3>
-<div id="台灣隊團隊打擊統計-team-batting-stats" class="section level4">
-<h4>台灣隊團隊打擊統計 (Team Batting Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="dt-tw-team-batting" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-team-batting">{"x":{"filter":"none","vertical":false,"data":[["總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)"],[104,41,38,74,30],[15,6,5,11,4],[1,0,1,1,0],[15,9,9,10,5],[23,8,9,17,6],["0.179","0.214","0.179","0.180","0.174"],["0.327","0.463","0.395","0.311","0.367"],["0.238","0.286","0.286","0.246","0.217"],["0.565","0.749","0.680","0.557","0.584"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>情境<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"ft","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"情境","targets":0},{"name":"打席 (PA)","targets":1},{"name":"安打 (H)","targets":2},{"name":"全壘打 (HR)","targets":3},{"name":"四壞保送 (BB)","targets":4},{"name":"三振 (SO)","targets":5},{"name":"打擊率 (AVG)","targets":6},{"name":"上壘率 (OBP)","targets":7},{"name":"長打率 (SLG)","targets":8},{"name":"整體攻擊指數 (OPS)","targets":9}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="台灣隊團隊基本表現-team-basic-performance" class="section level4">
-<h4>台灣隊團隊基本表現 (Team Basic Performance)</h4>
-<div class="datatables html-widget html-fill-item" id="dt-tw-team-basic" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-team-basic">{"x":{"filter":"none","vertical":false,"data":[[13],[15],[0],[23],[0],[0]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>得分 (R)<\/th>\n      <th>安打 (H)<\/th>\n      <th>失誤 (E)<\/th>\n      <th>殘壘 (LOB)<\/th>\n      <th>製造雙殺 (DP)<\/th>\n      <th>被雙殺 (GIDP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"ft","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"得分 (R)","targets":0},{"name":"安打 (H)","targets":1},{"name":"失誤 (E)","targets":2},{"name":"殘壘 (LOB)","targets":3},{"name":"製造雙殺 (DP)","targets":4},{"name":"被雙殺 (GIDP)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div id="打者數據" class="section level3">
-<h3>⚾ 打者數據</h3>
-<div id="各打者打擊基本統計-batter-batting-stats" class="section level4">
-<h4>各打者打擊基本統計 (Batter Batting Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="dt-tw-batter-basic" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-batter-basic">{"x":{"filter":"none","vertical":false,"data":[["林安可","陳晨威","宋晟睿","張政禹","陳傑憲","江坤宇","吉力吉撈·鞏冠","林家正","吳念庭","蔣少宏","費爾柴德","鄭宗哲","林子偉","張育成"],[12,10,6,2,3,10,8,7,7,3,11,10,3,12],[1,2,0,0,0,1,1,1,1,0,2,1,0,5],[0,0,0,0,0,0,0,0,0,0,1,0,0,0],[0,0,1,0,1,1,1,1,0,0,4,5,0,1],[3,3,3,0,0,2,3,0,2,1,4,1,1,0],["0.083","0.222","0.000","0.000","0.000","0.111","0.167","0.250","0.143","0.000","0.286","0.200","0.000","0.455"],["0.083","0.200","0.167","0.000","0.667","0.200","0.375","0.571","0.143","0.000","0.545","0.600","0.000","0.500"],["0.083","0.333","0.000","0.000","0.000","0.111","0.167","0.500","0.143","0.000","0.714","0.200","0.000","0.455"],["0.167","0.533","0.167","0.000","0.667","0.311","0.542","1.071","0.286","0.000","1.260","0.800","0.000","0.955"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>打者 (Batter)<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"打者 (Batter)","targets":0},{"name":"打席 (PA)","targets":1},{"name":"安打 (H)","targets":2},{"name":"全壘打 (HR)","targets":3},{"name":"四壞保送 (BB)","targets":4},{"name":"三振 (SO)","targets":5},{"name":"打擊率 (AVG)","targets":6},{"name":"上壘率 (OBP)","targets":7},{"name":"長打率 (SLG)","targets":8},{"name":"整體攻擊指數 (OPS)","targets":9}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各打者擊球數據-batter-hit-metrics" class="section level4">
-<h4>各打者擊球數據 (Batter Hit Metrics)</h4>
-<blockquote>
-<p>💡 <strong>擊球初速 (Exit
-Velocity)</strong>：球離開球棒的速度，越高代表球打得越扎實。
-<strong>擊球仰角 (Launch
-Angle)</strong>：球飛出的角度，影響安打類型（滾地球/飛球/全壘打）。</p>
-</blockquote>
-<div class="datatables html-widget html-fill-item" id="dt-tw-batter-hit" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-batter-hit">{"x":{"filter":"none","vertical":false,"data":[["林安可","張育成","陳晨威","江坤宇","吳念庭","費爾柴德","吉力吉撈·鞏冠","宋晟睿","鄭宗哲","林家正","蔣少宏","林子偉","張政禹","陳傑憲"],[12,11,9,9,7,7,6,5,5,4,3,3,2,1],[9,11,7,7,5,3,3,2,4,4,2,2,2,1],[136.9,139,141.9,149.4,129.6,114.3,146.8,131.2,100.6,144,140.1,119.4,144.7,169.9],[12.3,14.2,12.1,-5.9,32.2,22.3,-4,6.5,-20.5,-0.8,26,22.5,-20,-9],[178.3,166.1,162.7,170.4,142.9,168.3,162.5,134.1,149.7,165.8,160.3,140.3,164,169.9],[9,10,10,-16,16,31,1,-22,-4,36,-28,-35,-2,-9],[60,48.8,64.59999999999999,1.8,77.7,118.6,17.1,1.8,8.5,121.3,1.2,1.5,11.3,3.4]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>打者 (Batter)<\/th>\n      <th>打數 (AB)<\/th>\n      <th>場內擊球數 (BIP)<\/th>\n      <th>平均初速 (kph)<\/th>\n      <th>平均仰角 (deg)<\/th>\n      <th>最快初速 (kph)<\/th>\n      <th>最快初速仰角 (deg)<\/th>\n      <th>最快初速飛行距離 (m)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"打者 (Batter)","targets":0},{"name":"打數 (AB)","targets":1},{"name":"場內擊球數 (BIP)","targets":2},{"name":"平均初速 (kph)","targets":3},{"name":"平均仰角 (deg)","targets":4},{"name":"最快初速 (kph)","targets":5},{"name":"最快初速仰角 (deg)","targets":6},{"name":"最快初速飛行距離 (m)","targets":7}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div id="投手數據" class="section level3">
-<h3>💪 投手數據</h3>
-<div id="各投手基本統計-pitcher-basic-stats" class="section level4">
-<h4>各投手基本統計 (Pitcher Basic Stats)</h4>
-<div class="datatables html-widget html-fill-item" id="dt-tw-pitcher-basic" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-pitcher-basic">{"x":{"filter":"none","vertical":false,"data":[["莊陳仲敖","鄭浩均","徐若熙","張峻瑋","沙子宸","林昱珉","孫易磊","陳柏毓","張奕","胡智為","Jyun-Yue Tseng","林詩翔","林凱威"],[55,54,53,42,39,30,26,22,20,16,15,15,10],[38,27,38,20,23,21,11,12,14,9,10,9,9],[15,26,15,22,16,9,15,9,6,7,5,6,1],["69.1%","50.0%","71.7%","47.6%","59.0%","70.0%","42.3%","54.5%","70.0%","56.2%","66.7%","60.0%","90.0%"],["2.2","1.2","4.0","2.1","2.0","2.1","0.2","1.0","1.1","0.1","1.0","1.1","1.0"],["0.00","32.40","0.00","0.00","13.50","0.00","0.00","18.00","6.75","108.00","0.00","0.00","0.00"],["1.12","5.40","0.50","1.29","2.00","0.86","4.50","2.00","1.50","12.00","0.00","0.75","0.00"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>投手 (Pitcher)<\/th>\n      <th>總用球數 (Pitches)<\/th>\n      <th>好球數 (Strikes)<\/th>\n      <th>壞球數 (Balls)<\/th>\n      <th>好球率 (Strike%)<\/th>\n      <th>投球局數 (IP)<\/th>\n      <th>防禦率 (ERA)<\/th>\n      <th>每局被上壘率 (WHIP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"投手 (Pitcher)","targets":0},{"name":"總用球數 (Pitches)","targets":1},{"name":"好球數 (Strikes)","targets":2},{"name":"壞球數 (Balls)","targets":3},{"name":"好球率 (Strike%)","targets":4},{"name":"投球局數 (IP)","targets":5},{"name":"防禦率 (ERA)","targets":6},{"name":"每局被上壘率 (WHIP)","targets":7}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手最快球速-pitcher-max-speed" class="section level4">
-<h4>各投手最快球速 (Pitcher Max Speed)</h4>
-<div class="datatables html-widget html-fill-item" id="dt-tw-pitcher-max" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-pitcher-max">{"x":{"filter":"none","vertical":false,"data":[["張峻瑋","鄭浩均","孫易磊","Jyun-Yue Tseng","徐若熙","林凱威","莊陳仲敖","林昱珉","張奕","陳柏毓","沙子宸","林詩翔","胡智為"],[2445,2326,2294,2265,2237,2309,2460,2190,2208,2292,2285,2379,2325],["四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)","四縫線速球 (4-Seam FB)"],[155.3,155.1,155.1,154.2,153.5,153.2,152.6,151.8,151.3,150.8,150.5,146.4,145.8]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>投手 (Pitcher)<\/th>\n      <th>轉速 (rpm)<\/th>\n      <th>球種 (Pitch Type)<\/th>\n      <th>最快球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"投手 (Pitcher)","targets":0},{"name":"轉速 (rpm)","targets":1},{"name":"球種 (Pitch Type)","targets":2},{"name":"最快球速 (kph)","targets":3}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="各投手投球球種與數量-pitcher-pitch-types" class="section level4">
-<h4>各投手投球球種與數量 (Pitcher Pitch Types)</h4>
-<blockquote>
-<p>💡 顯示每位投手使用各球種的次數與比例。</p>
-</blockquote>
-<div class="datatables html-widget html-fill-item" id="dt-tw-pitch-types" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="dt-tw-pitch-types">{"x":{"filter":"none","vertical":false,"data":[["莊陳仲敖","莊陳仲敖","莊陳仲敖","莊陳仲敖","胡智為","胡智為","胡智為","鄭浩均","鄭浩均","鄭浩均","鄭浩均","徐若熙","徐若熙","徐若熙","徐若熙","徐若熙","張峻瑋","張峻瑋","張峻瑋","張峻瑋","Jyun-Yue Tseng","Jyun-Yue Tseng","Jyun-Yue Tseng","林凱威","林凱威","陳柏毓","陳柏毓","陳柏毓","陳柏毓","林詩翔","林詩翔","沙子宸","沙子宸","沙子宸","沙子宸","沙子宸","張奕","張奕","張奕","張奕","孫易磊","孫易磊","孫易磊","孫易磊","林昱珉","林昱珉","林昱珉","林昱珉","林昱珉"],["四縫線速球 (4-Seam FB)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (4-Seam FB)","滑球 (Slider)","四縫線速球 (4-Seam FB)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (4-Seam FB)","曲球 (Curveball)","切球 (Cutter)","滑球 (Slider)","四縫線速球 (4-Seam FB)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","四縫線速球 (4-Seam FB)","切球 (Cutter)","滑球 (Slider)","四縫線速球 (4-Seam FB)","掃帚球 (Sweeper)","四縫線速球 (4-Seam FB)","變速球 (Changeup)","曲球 (Curveball)","伸卡球 (Sinker)","變速球 (Changeup)","四縫線速球 (4-Seam FB)","變速球 (Changeup)","四縫線速球 (4-Seam FB)","滑曲球 (Slurve)","伸卡球 (Sinker)","曲球 (Curveball)","切球 (Cutter)","四縫線速球 (4-Seam FB)","變速球 (Changeup)","曲球 (Curveball)","變速球 (Changeup)","四縫線速球 (4-Seam FB)","滑球 (Slider)","Splitter (Splitter)","四縫線速球 (4-Seam FB)","變速球 (Changeup)","曲球 (Curveball)","掃帚球 (Sweeper)","Splitter (Splitter)"],[26,16,8,5,8,6,2,29,11,7,7,19,19,8,6,1,26,10,5,1,13,1,1,6,4,9,5,4,4,11,4,15,9,8,4,3,9,7,2,2,12,12,1,1,13,8,4,4,1],[149,132,123.3,127.8,138.1,145.4,137.4,148.9,139.9,123.2,132.2,135,150.6,123.8,139.2,133.7,150.9,139.3,129.9,130.7,152.7,138.1,137.9,152.3,138.6,149.6,136.2,126.3,145.1,126.7,145.5,133.3,148.6,128.3,141.9,122.3,143,148.6,136.3,125.1,135.4,153.1,134.4,134.9,149,131.7,130,134.7,131.3],[2464,2100,2673,2549,1792,2365,2235,2244,1603,2407,2359,1008,2052,2073,2038,2164,2325,1708,2492,2193,2243,2212,2184,2331,2686,2226,1498,2984,1975,1937,2264,1639,2272,2675,1854,2484,2053,2100,1075,2491,2167,2338,2159,988,2078,2084,3116,2738,640]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>投手 (Pitcher)<\/th>\n      <th>球種 (Pitch Type)<\/th>\n      <th>用球數 (Count)<\/th>\n      <th>平均球速 (kph)<\/th>\n      <th>平均轉速 (rpm)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"投手 (Pitcher)","targets":0},{"name":"球種 (Pitch Type)","targets":1},{"name":"用球數 (Count)","targets":2},{"name":"平均球速 (kph)","targets":3},{"name":"平均轉速 (rpm)","targets":4}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div id="vs-2026-比較" class="section level3">
-<h3>📈 2023 vs 2026 比較</h3>
-<div id="vs-2026-快速比較" class="section level4">
-<h4>📊 2023 vs 2026 快速比較</h4>
-<table class="compare-table">
-<tr>
-<th>
-項目
-</th>
-<th>
-2023 WBC
-</th>
-<th>
-2026 WBC
-</th>
-<th>
-變化
-</th>
-</tr>
-<tr>
-<td>
-戰績
-</td>
-<td>
-2 勝 2 敗（4 場）
-</td>
-<td>
-1 勝 2 敗（3 場）
-</td>
-<td>
-—
-</td>
-</tr>
-<tr>
-<td>
-總得分
-</td>
-<td>
-26 分
-</td>
-<td>
-14 分
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-總失分
-</td>
-<td>
-31 分
-</td>
-<td>
-16 分
-</td>
-<td>
-<span class="arrow-up">↑ 進步</span>
-</td>
-</tr>
-<tr>
-<td>
-場均得分
-</td>
-<td>
-6.5 分
-</td>
-<td>
-4.7 分
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-場均失分
-</td>
-<td>
-7.8 分
-</td>
-<td>
-5.3 分
-</td>
-<td>
-<span class="arrow-up">↑ 進步</span>
-</td>
-</tr>
-<tr>
-<td>
-得失分差
-</td>
-<td>
--5
-</td>
-<td>
--2
-</td>
-<td>
-<span class="arrow-up">↑ 進步</span>
-</td>
-</tr>
-</table>
-</div>
-<div id="vs-2026-團隊指標比較" class="section level4">
-<h4>🆚 2023 vs 2026 團隊指標比較</h4>
-<table class="compare-table">
-<tr>
-<th>
-指標
-</th>
-<th>
-2023 WBC
-</th>
-<th>
-2026 WBC
-</th>
-<th>
-變化
-</th>
-</tr>
-<tr>
-<td>
-打席 (PA)
-</td>
-<td>
-159.000
-</td>
-<td>
-104.000
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-安打 (H)
-</td>
-<td>
-44.000
-</td>
-<td>
-15.000
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-全壘打 (HR)
-</td>
-<td>
-5.000
-</td>
-<td>
-1.000
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-四壞保送 (BB)
-</td>
-<td>
-14.000
-</td>
-<td>
-15.000
-</td>
-<td>
-<span class="arrow-up">↑ 進步</span>
-</td>
-</tr>
-<tr>
-<td>
-三振 (SO)
-</td>
-<td>
-23.000
-</td>
-<td>
-23.000
-</td>
-<td>
-→ 持平
-</td>
-</tr>
-</table>
-</div>
-<div id="隊伍數據比較" class="section level4">
-<h4>⚔️ 隊伍數據比較</h4>
-<div class="summary-insight">
-<p><span class="insight-good">✅ 進步面</span>：場均失分從 7.8 降至
-5.3，防守端進步<br> <span class="insight-bad">⚠️
-退步面</span>：團隊打擊率從 0.317 下滑至 0.179；OPS 從 0.896 下滑至
-0.565<br> <span class="insight-note">📌 關鍵觀察</span>：得失分差從 -5
-收斂至 -2，整體競爭力有所提升。</p>
-</div>
-<p class="section-label">
-打擊面指標
-</p>
-<table class="compare-table">
-<tr>
-<th>
-指標
-</th>
-<th>
-2023 WBC
-</th>
-<th>
-2026 WBC
-</th>
-<th>
-變化
-</th>
-</tr>
-<tr>
-<td>
-<strong>打席 (PA)</strong>
-</td>
-<td>
-159
-</td>
-<td>
-104
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>安打 (H)</strong>
-</td>
-<td>
-44
-</td>
-<td>
-15
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>全壘打 (HR)</strong>
-</td>
-<td>
-5
-</td>
-<td>
-1
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>四壞保送 (BB)</strong>
-</td>
-<td>
-14
-</td>
-<td>
-15
-</td>
-<td>
-<span class="arrow-up">↑ 進步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>三振 (SO)</strong>
-</td>
-<td>
-23
-</td>
-<td>
-23
-</td>
-<td>
-→ 持平
-</td>
-</tr>
-<tr>
-<td>
-<strong>打擊率 (AVG)</strong>
-</td>
-<td>
-0.317
-</td>
-<td>
-0.179
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>上壘率 (OBP)</strong>
-</td>
-<td>
-0.392
-</td>
-<td>
-0.327
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>長打率 (SLG)</strong>
-</td>
-<td>
-0.504
-</td>
-<td>
-0.238
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-<tr>
-<td>
-<strong>整體攻擊指數 (OPS)</strong>
-</td>
-<td>
-0.896
-</td>
-<td>
-0.565
-</td>
-<td>
-<span class="arrow-down">↓ 退步</span>
-</td>
-</tr>
-</table>
-</div>
-<div id="球員比較打擊" class="section level4">
-<h4>⚾ 球員比較：打擊</h4>
-<div class="chart-legend">
-<div class="chart-legend-item">
-<span class="chart-legend-swatch swatch-23"></span>2023 WBC
-</div>
-<div class="chart-legend-item">
-<span class="chart-legend-swatch swatch-26"></span>2026 預賽
-</div>
-</div>
-<p class="section-label">
-🔄 兩屆皆出賽（8 人，依 OPS 變化排序）
-</p>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">吳念庭</span> <span class="player-card-badge badge-down">OPS -0.692</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 18打席 (5安打, 3保送/2三振)</span> <span>⚾
-2026出賽: 7打席 (1安打, 0保送/2三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.333</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:29%; width:38%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:67%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:29%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.143</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.444</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:24%; width:50%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:74%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:24%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.143</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.533</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:14%; width:39%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:53%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:14%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.143</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">0.978</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:24%; width:58%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:82%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:24%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.286</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 大幅下滑
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">吉力吉撈·鞏冠</span> <span class="player-card-badge badge-down">OPS -0.553</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 14打席 (4安打, 2保送/2三振)</span> <span>⚾
-2026出賽: 8打席 (1安打, 1保送/3三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.333</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:33%; width:34%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:67%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:33%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.167</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.429</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:62%; width:10%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:72%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:62%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.375</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.667</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:17%; width:50%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:67%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:17%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.167</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">1.095</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:45%; width:46%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:91%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:45%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.542</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 大幅下滑
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">林子偉</span> <span class="player-card-badge badge-down">OPS -0.521</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 17打席 (1安打, 2保送/4三振)</span> <span>⚾
-2026出賽: 3打席 (0安打, 0保送/1三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.071</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:0%; width:14%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:14%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.000</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.235</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:0%; width:39%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:39%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.000</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.286</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:0%; width:29%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:29%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.000</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">0.521</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:0%; width:43%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:43%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.000</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 大幅下滑
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">張育成</span> <span class="player-card-badge badge-down">OPS -0.483</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 18打席 (7安打, 2保送/2三振)</span> <span>⚾
-2026出賽: 12打席 (5安打, 1保送/0三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.438</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:88%; width:3%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:88%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:91%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.455</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.500</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-flat" style="left:83%; width:0%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:83%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:83%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.500</span><span class="stat-delta">→</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.938</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:46%; width:48%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:94%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:46%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.455</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">1.438</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:66%; width:34%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:100%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:66%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.955</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 大幅下滑
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">江坤宇</span> <span class="player-card-badge badge-down">OPS -0.463</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 14打席 (4安打, 0保送/0三振)</span> <span>⚾
-2026出賽: 10打席 (1安打, 1保送/2三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.333</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:22%; width:45%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:67%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:22%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.111</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.357</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:33%; width:27%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:60%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:33%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.200</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.417</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:11%; width:31%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:42%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:11%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.111</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">0.774</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:26%; width:38%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:64%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:26%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.311</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 大幅下滑
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">陳傑憲</span> <span class="player-card-badge badge-down">OPS -0.413</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 16打席 (5安打, 1保送/1三振)</span> <span>⚾
-2026出賽: 3打席 (0安打, 1保送/0三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.357</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:0%; width:71%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:71%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.000</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.438</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:66%; width:34%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:66%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:100%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.667</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.643</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:0%; width:64%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:64%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.000</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">1.080</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:56%; width:34%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:90%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:56%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.667</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 大幅下滑
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">鄭宗哲</span> <span class="player-card-badge badge-down">OPS -0.078</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 18打席 (5安打, 2保送/3三振)</span> <span>⚾
-2026出賽: 10打席 (1安打, 5保送/1三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.333</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:40%; width:27%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:67%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:40%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.200</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.412</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:69%; width:31%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:69%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:100%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.600</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.467</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:20%; width:27%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:47%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:20%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.200</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">0.878</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:67%; width:6%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:73%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:67%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.800</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ OPS 小幅退步
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<p><span class="player-card-name">陳晨威</span> <span class="player-card-badge badge-flat">OPS +0.033</span></p>
-</div>
-<div class="player-card-meta">
-<p><span>⚾ 2023出賽: 4打席 (1安打, 0保送/1三振)</span> <span>⚾
-2026出賽: 10打席 (2安打, 0保送/3三振)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="打擊率 (AVG)">打擊率
-(AVG)</span><span class="stat-value stat-value-23">0.250</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:44%; width:6%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:50%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:44%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.222</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="上壘率 (OBP)">上壘率
-(OBP)</span><span class="stat-value stat-value-23">0.250</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:33%; width:9%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:42%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:33%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.200</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="長打率 (SLG)">長打率
-(SLG)</span><span class="stat-value stat-value-23">0.250</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:25%; width:8%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:25%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:33%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.333</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="攻擊指數 (OPS)">攻擊指數
-(OPS)</span><span class="stat-value stat-value-23">0.500</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:42%; width:2%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:42%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:44%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.533</span><span class="stat-delta arrow-up">↑</span>
-</div>
-</div>
-<p class="section-label">
-🆕 2026 新面孔（6 人）
-</p>
-<table class="compact-table">
-<tr>
-<th>
-球員
-</th>
-<th>
-打席 (PA)
-</th>
-<th>
-安打 (H)
-</th>
-<th>
-全壘打 (HR)
-</th>
-<th>
-打擊率 (AVG)
-</th>
-<th>
-整體攻擊指數 (OPS)
-</th>
-</tr>
-<tr>
-<td>
-林安可
-</td>
-<td>
-12
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-0.083
-</td>
-<td>
-0.167
-</td>
-</tr>
-<tr>
-<td>
-宋晟睿
-</td>
-<td>
-6
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0.000
-</td>
-<td>
-0.167
-</td>
-</tr>
-<tr>
-<td>
-張政禹
-</td>
-<td>
-2
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0.000
-</td>
-<td>
-0.000
-</td>
-</tr>
-<tr>
-<td>
-林家正
-</td>
-<td>
-7
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-0.250
-</td>
-<td>
-1.071
-</td>
-</tr>
-<tr>
-<td>
-蔣少宏
-</td>
-<td>
-3
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0.000
-</td>
-<td>
-0.000
-</td>
-</tr>
-<tr>
-<td>
-費爾柴德
-</td>
-<td>
-11
-</td>
-<td>
-2
-</td>
-<td>
-1
-</td>
-<td>
-0.286
-</td>
-<td>
-1.260
-</td>
-</tr>
-</table>
-<p class="section-label">
-📋 2023 出賽但 2026 未入選（7 人）
-</p>
-<table class="compact-table">
-<tr>
-<th>
-球員
-</th>
-<th>
-打席 (PA)
-</th>
-<th>
-安打 (H)
-</th>
-<th>
-全壘打 (HR)
-</th>
-<th>
-打擊率 (AVG)
-</th>
-<th>
-整體攻擊指數 (OPS)
-</th>
-</tr>
-<tr>
-<td>
-Chin Cheng
-</td>
-<td>
-3
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-0.333
-</td>
-<td>
-0.667
-</td>
-</tr>
-<tr>
-<td>
-Kuo-Chen Fan
-</td>
-<td>
-2
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-0.500
-</td>
-<td>
-1.000
-</td>
-</tr>
-<tr>
-<td>
-林立
-</td>
-<td>
-17
-</td>
-<td>
-7
-</td>
-<td>
-0
-</td>
-<td>
-0.467
-</td>
-<td>
-1.063
-</td>
-</tr>
-<tr>
-<td>
-Po-Jung Wang
-</td>
-<td>
-11
-</td>
-<td>
-2
-</td>
-<td>
-0
-</td>
-<td>
-0.200
-</td>
-<td>
-0.473
-</td>
-</tr>
-<tr>
-<td>
-Tien-Hsin Kuo
-</td>
-<td>
-2
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0.000
-</td>
-<td>
-0.000
-</td>
-</tr>
-<tr>
-<td>
-Wei-Chen Wang
-</td>
-<td>
-3
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-0.333
-</td>
-<td>
-0.667
-</td>
-</tr>
-<tr>
-<td>
-Yu-Chieh Kao
-</td>
-<td>
-2
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0.000
-</td>
-<td>
-0.000
-</td>
-</tr>
-</table>
-</div>
-<div id="球員比較投手" class="section level4">
-<h4>💪 球員比較：投手</h4>
-<div class="chart-legend">
-<div class="chart-legend-item">
-<span class="chart-legend-swatch swatch-23"></span>2023 WBC
-</div>
-<div class="chart-legend-item">
-<span class="chart-legend-swatch swatch-26"></span>2026 預賽
-</div>
-</div>
-<p class="section-label">
-🔄 兩屆皆出賽（2 人，依 ERA 變化排序）
-</p>
-<div class="player-card">
-<div class="player-card-header">
-<span class="player-card-name">胡智為</span><span class="player-card-badge badge-down">ERA +104.62</span>
-</div>
-<div class="player-card-meta">
-<p><span>💪 2023出賽: 2.2局 (63球)</span> <span>💪 2026出賽: 0.1局
-(16球)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="防禦率 (ERA)">防禦率
-(ERA)</span><span class="stat-value stat-value-23">3.38</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:3%; width:97%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:3%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:100%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">108.00</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="每局被上壘率 (WHIP)">每局被上壘率
-(WHIP)</span><span class="stat-value stat-value-23">3.00</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:25%; width:75%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:25%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:100%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">12.00</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="好球率 (Strike%)">好球率
-(Strike%)</span><span class="stat-value stat-value-23">60.3%</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-down" style="left:56%; width:4%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:60%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:56%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">56.2%</span><span class="stat-delta arrow-down">↓</span>
-</div>
-<div class="player-card-comment comment-negative">
-⚠️ ERA 大幅退步
-</div>
-</div>
-<div class="player-card">
-<div class="player-card-header">
-<span class="player-card-name">Jyun-Yue Tseng</span><span class="player-card-badge badge-up">ERA -27.00</span>
-</div>
-<div class="player-card-meta">
-<p><span>💪 2023出賽: 1局 (40球)</span> <span>💪 2026出賽: 1局
-(15球)</span></p>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="防禦率 (ERA)">防禦率
-(ERA)</span><span class="stat-value stat-value-23">27.00</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:0%; width:100%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:100%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.00</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="每局被上壘率 (WHIP)">每局被上壘率
-(WHIP)</span><span class="stat-value stat-value-23">6.00</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:0%; width:100%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:100%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:0%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">0.00</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="dumbbell-row">
-<span class="dumbbell-label" title="好球率 (Strike%)">好球率
-(Strike%)</span><span class="stat-value stat-value-23">60.0%</span>
-<div class="dumbbell-container">
-<div class="dumbbell-track">
-
-</div>
-<div class="dumbbell-line line-up" style="left:60%; width:7%;">
-
-</div>
-<div class="dumbbell-dot dot-23" style="left:60%;">
-
-</div>
-<div class="dumbbell-dot dot-26" style="left:67%;">
-
-</div>
-</div>
-<span class="stat-value stat-value-26">66.7%</span><span class="stat-delta arrow-up">↑</span>
-</div>
-<div class="player-card-comment comment-positive">
-✅ ERA 大幅進步，好球率顯著提升
-</div>
-</div>
-<p class="section-label">
-🆕 2026 新面孔（11 人）
-</p>
-<table class="compact-table">
-<tr>
-<th>
-投手
-</th>
-<th>
-用球數 (PC)
-</th>
-<th>
-好球率 (Strike%)
-</th>
-<th>
-投球局數 (IP)
-</th>
-<th>
-防禦率 (ERA)
-</th>
-<th>
-每局被上壘率 (WHIP)
-</th>
-</tr>
-<tr>
-<td>
-莊陳仲敖
-</td>
-<td>
-55
-</td>
-<td>
-69.1%
-</td>
-<td>
-2.2
-</td>
-<td>
-0.00
-</td>
-<td>
-1.12
-</td>
-</tr>
-<tr>
-<td>
-鄭浩均
-</td>
-<td>
-54
-</td>
-<td>
-50.0%
-</td>
-<td>
-1.2
-</td>
-<td>
-32.40
-</td>
-<td>
-5.40
-</td>
-</tr>
-<tr>
-<td>
-徐若熙
-</td>
-<td>
-53
-</td>
-<td>
-71.7%
-</td>
-<td>
-4.0
-</td>
-<td>
-0.00
-</td>
-<td>
-0.50
-</td>
-</tr>
-<tr>
-<td>
-張峻瑋
-</td>
-<td>
-42
-</td>
-<td>
-47.6%
-</td>
-<td>
-2.1
-</td>
-<td>
-0.00
-</td>
-<td>
-1.29
-</td>
-</tr>
-<tr>
-<td>
-沙子宸
-</td>
-<td>
-39
-</td>
-<td>
-59.0%
-</td>
-<td>
-2.0
-</td>
-<td>
-13.50
-</td>
-<td>
-2.00
-</td>
-</tr>
-<tr>
-<td>
-林昱珉
-</td>
-<td>
-30
-</td>
-<td>
-70.0%
-</td>
-<td>
-2.1
-</td>
-<td>
-0.00
-</td>
-<td>
-0.86
-</td>
-</tr>
-<tr>
-<td>
-孫易磊
-</td>
-<td>
-26
-</td>
-<td>
-42.3%
-</td>
-<td>
-0.2
-</td>
-<td>
-0.00
-</td>
-<td>
-4.50
-</td>
-</tr>
-<tr>
-<td>
-陳柏毓
-</td>
-<td>
-22
-</td>
-<td>
-54.5%
-</td>
-<td>
-1.0
-</td>
-<td>
-18.00
-</td>
-<td>
-2.00
-</td>
-</tr>
-<tr>
-<td>
-張奕
-</td>
-<td>
-20
-</td>
-<td>
-70.0%
-</td>
-<td>
-1.1
-</td>
-<td>
-6.75
-</td>
-<td>
-1.50
-</td>
-</tr>
-<tr>
-<td>
-林詩翔
-</td>
-<td>
-15
-</td>
-<td>
-60.0%
-</td>
-<td>
-1.1
-</td>
-<td>
-0.00
-</td>
-<td>
-0.75
-</td>
-</tr>
-<tr>
-<td>
-林凱威
-</td>
-<td>
-10
-</td>
-<td>
-90.0%
-</td>
-<td>
-1.0
-</td>
-<td>
-0.00
-</td>
-<td>
-0.00
-</td>
-</tr>
-</table>
-<p class="section-label">
-📋 2023 出賽但 2026 未入選（12 人）
-</p>
-<table class="compact-table">
-<tr>
-<th>
-投手
-</th>
-<th>
-用球數 (PC)
-</th>
-<th>
-好球率 (Strike%)
-</th>
-<th>
-投球局數 (IP)
-</th>
-<th>
-防禦率 (ERA)
-</th>
-<th>
-每局被上壘率 (WHIP)
-</th>
-</tr>
-<tr>
-<td>
-Che-Yuan Wu
-</td>
-<td>
-77
-</td>
-<td>
-68.8%
-</td>
-<td>
-5.2
-</td>
-<td>
-4.76
-</td>
-<td>
-1.06
-</td>
-</tr>
-<tr>
-<td>
-Wei-Chung Wang
-</td>
-<td>
-63
-</td>
-<td>
-66.7%
-</td>
-<td>
-3.0
-</td>
-<td>
-15.00
-</td>
-<td>
-2.33
-</td>
-</tr>
-<tr>
-<td>
-陳冠宇
-</td>
-<td>
-60
-</td>
-<td>
-53.3%
-</td>
-<td>
-2.0
-</td>
-<td>
-9.00
-</td>
-<td>
-3.00
-</td>
-</tr>
-<tr>
-<td>
-Shao-Ching Chiang
-</td>
-<td>
-56
-</td>
-<td>
-64.3%
-</td>
-<td>
-3.0
-</td>
-<td>
-6.00
-</td>
-<td>
-2.00
-</td>
-</tr>
-<tr>
-<td>
-Tzu-Peng Huang
-</td>
-<td>
-56
-</td>
-<td>
-51.8%
-</td>
-<td>
-2.2
-</td>
-<td>
-6.75
-</td>
-<td>
-1.50
-</td>
-</tr>
-<tr>
-<td>
-Kuan-Wei Chen
-</td>
-<td>
-50
-</td>
-<td>
-64.0%
-</td>
-<td>
-2.0
-</td>
-<td>
-22.50
-</td>
-<td>
-2.50
-</td>
-</tr>
-<tr>
-<td>
-Chia-Hao Sung
-</td>
-<td>
-40
-</td>
-<td>
-67.5%
-</td>
-<td>
-3.2
-</td>
-<td>
-2.45
-</td>
-<td>
-0.55
-</td>
-</tr>
-<tr>
-<td>
-Shih-Peng Chen
-</td>
-<td>
-39
-</td>
-<td>
-69.2%
-</td>
-<td>
-1.1
-</td>
-<td>
-33.75
-</td>
-<td>
-3.75
-</td>
-</tr>
-<tr>
-<td>
-Yen-Ching Lu
-</td>
-<td>
-36
-</td>
-<td>
-50.0%
-</td>
-<td>
-2.0
-</td>
-<td>
-0.00
-</td>
-<td>
-1.50
-</td>
-</tr>
-<tr>
-<td>
-C.C. Lee
-</td>
-<td>
-34
-</td>
-<td>
-52.9%
-</td>
-<td>
-1.1
-</td>
-<td>
-0.00
-</td>
-<td>
-2.25
-</td>
-</tr>
-<tr>
-<td>
-Yu-Hsun Chen
-</td>
-<td>
-29
-</td>
-<td>
-55.2%
-</td>
-<td>
-1.2
-</td>
-<td>
-5.40
-</td>
-<td>
-1.80
-</td>
-</tr>
-<tr>
-<td>
-Kai-Wei Teng
-</td>
-<td>
-7
-</td>
-<td>
-14.3%
-</td>
-<td>
-0.1
-</td>
-<td>
-0.00
-</td>
-<td>
-3.00
-</td>
-</tr>
-</table>
-<p><br></p>
-<p><em>本報表由系統自動彙整 Statcast 數據生成。</em></p>
-<!-- P1-3: 回到頂部懸浮按鈕 -->
-<button id="back-to-top" title="回到頂部">
-↑
-</button>
+<div id="stats-section">
+
+</div>
+</div>
+<div id="進階數據探索-interactive-stats" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">📊 進階數據探索 (Interactive Stats)</h2>
+<div class="guide-tip">
+💡
+<strong>操作提示：</strong>使用表格右上方的搜尋框尋找特定選手，或點擊各欄位標題依數值排序。
+</div>
+<div id="隊伍數據-5" class="section level3">
+<h3>🏟️ 隊伍數據 (5)</h3>
+<div class="anchor-nav">
+<span class="anchor-label">📋
+快速跳轉：</span><a href="#tbl-TeamBasic">基本表現</a><a href="#tbl-TeamBattingBasic">打擊基本統計</a><a href="#tbl-TeamBattingAdv">打擊進階統計</a><a href="#tbl-MaxEV">最快擊球初速</a><a href="#tbl-TeamOutcomes">團隊打擊結果總和統計</a>
+</div>
+<h4 id="tbl-TeamBasic">
+各隊基本表現 (Team Basic Performance)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamBasic" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamBasic">{"x":{"filter":"none","vertical":false,"data":[["🇰🇷 韓國","🇯🇵 日本"],[6,8],[9,7],[0,0],[6,5],[0,0],[0,0]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>得分 (R)<\/th>\n      <th>安打 (H)<\/th>\n      <th>失誤 (E)<\/th>\n      <th>殘壘 (LOB)<\/th>\n      <th>製造雙殺 (DP)<\/th>\n      <th>被雙殺 (GIDP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"ft","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"得分 (R)","targets":1},{"name":"安打 (H)","targets":2},{"name":"失誤 (E)","targets":3},{"name":"殘壘 (LOB)","targets":4},{"name":"製造雙殺 (DP)","targets":5},{"name":"被雙殺 (GIDP)","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-TeamBattingBasic">
+各隊打擊基本統計 (Team Batting Basic Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamBattingBasic" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamBattingBasic">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)"],[37,8,15,7,30,39,13,13,15,24],[7,1,3,2,5,9,6,2,6,3],[4,0,2,0,4,1,0,0,0,1],[6,2,4,2,4,2,2,2,0,2],[8,1,1,1,7,15,3,5,4,11],["0.233","0.200","0.273","0.400","0.200","0.250","0.545","0.182","0.400","0.143"],["0.361","0.429","0.467","0.571","0.310","0.308","0.615","0.308","0.400","0.250"],["0.633","0.200","0.818","0.400","0.680","0.389","0.727","0.273","0.467","0.333"],["0.994","0.629","1.285","0.971","0.990","0.697","1.343","0.580","0.867","0.583"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>情境<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"情境","targets":1},{"name":"打席 (PA)","targets":2},{"name":"安打 (H)","targets":3},{"name":"全壘打 (HR)","targets":4},{"name":"四壞保送 (BB)","targets":5},{"name":"三振 (SO)","targets":6},{"name":"打擊率 (AVG)","targets":7},{"name":"上壘率 (OBP)","targets":8},{"name":"長打率 (SLG)","targets":9},{"name":"整體攻擊指數 (OPS)","targets":10}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<h4 id="tbl-TeamBattingAdv">
+各隊打擊進階統計 (Team Batting Advanced Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamBattingAdv" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamBattingAdv">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇰🇷 韓國"],[22,21],["40.9%","52.4%"],["13.6%","9.5%"],["9.1%","14.3%"],["9.1%","14.3%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"場內擊球數","targets":1},{"name":"強勁擊球 (HardHit)","targets":2},{"name":"軟弱擊球 (WeaklyHit)","targets":3},{"name":"完美擊球 (Barrel)","targets":4},{"name":"扎實擊球 (Solid)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-MaxEV">
+各隊最快擊球初速 (Max Exit Velocity)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-MaxEV" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-MaxEV">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇰🇷 韓國"],["Munetaka Murakami","Do Yeong Kim"],[111.8,107.8],[179.9,173.5],[17,3],["一壘安打 (Single)","一壘安打 (Single)"],[80.2,27.1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>最快擊球初速 (mph)<\/th>\n      <th>最快擊球初速 (kph)<\/th>\n      <th>最快初速擊球仰角 (deg)<\/th>\n      <th>結果<\/th>\n      <th>飛行距離_公尺<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"ft","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"最快擊球初速 (mph)","targets":2},{"name":"最快擊球初速 (kph)","targets":3},{"name":"最快初速擊球仰角 (deg)","targets":4},{"name":"結果","targets":5},{"name":"飛行距離_公尺","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-TeamOutcomes">
+各隊團隊打擊結果總和統計 (Team Outcomes)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-TeamOutcomes" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-TeamOutcomes">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["三振 (Strikeout)","滾地球出局 (Groundout)","四壞保送 (Walk)","飛球出局 (Flyout)","全壘打 (Home Run)","一壘安打 (Single)","Caught Stealing 2B","封殺 (Forceout)","Intent Walk","平飛球出局 (Lineout)","內野高飛出局 (Pop Out)","Sac Bunt","三振 (Strikeout)","一壘安打 (Single)","飛球出局 (Flyout)","滾地球出局 (Groundout)","二壘安打 (Double)","四壞保送 (Walk)","封殺 (Forceout)","觸身球 (Hit By Pitch)","全壘打 (Home Run)","平飛球出局 (Lineout)","內野高飛出局 (Pop Out)"],[8,7,5,4,4,3,1,1,1,1,1,1,15,6,5,4,2,2,1,1,1,1,1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>結果<\/th>\n      <th>總次數<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"結果","targets":1},{"name":"總次數","targets":2}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="打者數據-6" class="section level3">
+<h3>⚾ 打者數據 (6)</h3>
+<div class="anchor-nav">
+<span class="anchor-label">📋
+快速跳轉：</span><a href="#tbl-BatterBattingBasic">打擊基本統計</a><a href="#tbl-BatterBattingAdv">打擊進階統計</a><a href="#tbl-BatterHitMetrics">擊球數據</a><a href="#tbl-BatterWhiffProfile">對不同球種揮空率</a><a href="#tbl-Hits">上壘與全壘打擊球數據</a><a href="#tbl-BatterOutcomes">打者打擊結果統計</a>
+</div>
+<h4 id="tbl-BatterBattingBasic">
+各打者打擊基本統計 (Batter Batting Basic Stats)
+</h4>
+<div class="context-filter">
+<label>📌
+情境篩選：</label><select id="filter-BatterBattingBasic" onchange="filterContext(&#39;BatterBattingBasic&#39;, this.value)"><option value="總體">總體</option><option value="得點圈 (RISP)">得點圈
+(RISP)</option><option value="兩出局 (2 Outs)">兩出局 (2
+Outs)</option><option value="對左投 (vs LHP)">對左投 (vs
+LHP)</option><option value="對右投 (vs RHP)">對右投 (vs
+RHP)</option><option value>全部顯示</option></select>
+</div>
+<div class="datatables html-widget html-fill-item" id="dt-BatterBattingBasic" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterBattingBasic">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Kazuma Okamoto","Kazuma Okamoto","Kazuma Okamoto","Kensuke Kondoh","Kensuke Kondoh","Kensuke Kondoh","Kensuke Kondoh","Kensuke Kondoh","Masataka Yoshida","Masataka Yoshida","Masataka Yoshida","Masataka Yoshida","Masataka Yoshida","Munetaka Murakami","Munetaka Murakami","Munetaka Murakami","Seishiro Sakamoto","Seishiro Sakamoto","Seishiro Sakamoto","Seishiro Sakamoto","Seiya Suzuki","Seiya Suzuki","Seiya Suzuki","Seiya Suzuki","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","Shugo Maki","Shugo Maki","Sosuke Genda","Sosuke Genda","Sosuke Genda","Sosuke Genda","Taisei Makihara","Taisei Makihara","Taisei Makihara","Teruaki Sato","Teruaki Sato","Teruaki Sato","Teruaki Sato","Bo Gyeong Moon","Bo Gyeong Moon","Bo Gyeong Moon","Bo Gyeong Moon","Bo Gyeong Moon","Do Yeong Kim","Do Yeong Kim","Do Yeong Kim","Do Yeong Kim","Dong Won Park","Dong Won Park","Dong Won Park","Dong Won Park","Hyeseong Kim","Hyeseong Kim","Hyeseong Kim","Hyeseong Kim","Hyun Bin Moon","Hyun Bin Moon","Hyun Bin Moon","Hyun Bin Moon","Hyun Min Ahn","Hyun Min Ahn","Hyun Min Ahn","Hyun Min Ahn","Jahmai Jones","Jahmai Jones","Jahmai Jones","Jahmai Jones","Jahmai Jones","Ju Won Kim","Ju Won Kim","Ju Won Kim","Ju Won Kim","Ju Won Kim","Jung Hoo Lee","Jung Hoo Lee","Jung Hoo Lee","Jung Hoo Lee","Jung Hoo Lee","Shay Whitcomb","Shay Whitcomb","Shay Whitcomb","Shay Whitcomb","Shay Whitcomb"],["總體","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對右投 (vs RHP)","總體","得點圈 (RISP)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)","總體","得點圈 (RISP)","兩出局 (2 Outs)","對左投 (vs LHP)","對右投 (vs RHP)"],[4,3,4,4,2,1,2,2,4,1,2,1,3,4,1,4,3,1,1,2,4,1,3,2,2,4,1,1,3,3,3,4,2,2,4,1,1,1,2,1,1,2,4,2,3,2,2,5,1,2,3,3,1,1,2,4,1,1,3,1,1,1,1,4,3,2,2,5,1,2,2,3,4,1,2,1,3,5,2,1,2,3,4,3,1,2,2],[0,0,0,0,0,0,0,0,2,1,2,1,1,1,0,1,0,0,0,0,2,0,1,0,2,2,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,1,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,1,1,0,2,1,0,2,0,1,1,1,0,1,2,2,0,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,2,0,1,0,2,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,2,1,0,2,1,1,1,0,1,1,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[1,1,1,1,0,0,0,1,0,0,0,0,0,2,0,2,2,0,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,1,3,1,1,2,3,1,1,2,0,0,0,0,3,2,1,2,2,0,2,0,2,1,0,0,0,1,0,0,0,0,0,2,1,1,1,1],["0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.500","1.000","1.000","1.000","0.333","0.250","0.000","0.250","0.000","0.000","0.000","0.000","0.667","0.000","0.500","0.000","1.000","1.000","0.000","1.000","1.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.333","1.000","0.500","0.500","0.000","0.200","0.000","0.500","0.000","0.000","0.000","0.000","0.000","0.250","0.000","0.000","0.333","0.000","0.000","0.000","0.000","0.250","0.333","0.500","0.000","0.400","1.000","0.000","1.000","0.000","0.333","1.000","0.500","0.000","0.500","0.400","1.000","0.000","0.500","0.333","0.000","0.000","0.000","0.000","0.000"],["0.000","0.000","0.000","0.250","0.500","1.000","0.500","0.000","0.500","1.000","1.000","1.000","0.333","0.250","0.000","0.250","0.000","0.000","0.000","0.000","0.750","1.000","0.667","0.500","1.000","1.000","1.000","1.000","1.000","0.333","0.333","0.333","0.000","0.500","0.333","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.500","1.000","0.667","0.500","0.500","0.200","0.000","0.500","0.000","0.000","0.000","0.000","0.000","0.250","0.000","0.000","0.333","1.000","1.000","1.000","1.000","0.250","0.333","0.500","0.000","0.400","1.000","0.000","1.000","0.000","0.500","1.000","0.500","0.000","0.667","0.400","1.000","0.000","0.500","0.333","0.000","0.000","0.000","0.000","0.000"],["0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","1.250","1.000","2.500","1.000","1.333","0.250","0.000","0.250","0.000","0.000","0.000","0.000","2.667","0.000","2.000","0.000","4.000","2.500","0.000","1.000","4.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.000","0.667","2.000","1.000","1.000","0.000","0.200","0.000","0.500","0.000","0.000","0.000","0.000","0.000","1.000","0.000","0.000","1.333","0.000","0.000","0.000","0.000","0.250","0.333","0.500","0.000","0.400","1.000","0.000","1.000","0.000","0.333","1.000","0.500","0.000","0.500","0.600","1.500","0.000","0.500","0.667","0.000","0.000","0.000","0.000","0.000"],["0.000","0.000","0.000","0.250","0.500","1.000","0.500","0.000","1.750","2.000","3.500","2.000","1.667","0.500","0.000","0.500","0.000","0.000","0.000","0.000","3.417","1.000","2.667","0.500","5.000","3.500","1.000","2.000","5.000","0.333","0.333","0.333","0.000","0.500","0.333","0.000","0.000","0.000","0.000","0.000","0.000","0.000","1.167","3.000","1.667","1.500","0.500","0.400","0.000","1.000","0.000","0.000","0.000","0.000","0.000","1.250","0.000","0.000","1.667","1.000","1.000","1.000","1.000","0.500","0.667","1.000","0.000","0.800","2.000","0.000","2.000","0.000","0.833","2.000","1.000","0.000","1.167","1.000","2.500","0.000","1.000","1.000","0.000","0.000","0.000","0.000","0.000"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>情境<\/th>\n      <th>打席 (PA)<\/th>\n      <th>安打 (H)<\/th>\n      <th>全壘打 (HR)<\/th>\n      <th>四壞保送 (BB)<\/th>\n      <th>三振 (SO)<\/th>\n      <th>打擊率 (AVG)<\/th>\n      <th>上壘率 (OBP)<\/th>\n      <th>長打率 (SLG)<\/th>\n      <th>整體攻擊指數 (OPS)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"情境","targets":2},{"name":"打席 (PA)","targets":3},{"name":"安打 (H)","targets":4},{"name":"全壘打 (HR)","targets":5},{"name":"四壞保送 (BB)","targets":6},{"name":"三振 (SO)","targets":7},{"name":"打擊率 (AVG)","targets":8},{"name":"上壘率 (OBP)","targets":9},{"name":"長打率 (SLG)","targets":10},{"name":"整體攻擊指數 (OPS)","targets":11}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<h4 id="tbl-BatterBattingAdv">
+各打者打擊進階統計 (Batter Batting Advanced Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterBattingAdv" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterBattingAdv">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Kazuma Okamoto","Kensuke Kondoh","Masataka Yoshida","Munetaka Murakami","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","Shugo Maki","Sosuke Genda","Teruaki Sato","Bo Gyeong Moon","Do Yeong Kim","Hyeseong Kim","Hyun Min Ahn","Jahmai Jones","Ju Won Kim","Jung Hoo Lee","Shay Whitcomb"],[3,2,4,2,3,2,1,3,2,3,4,1,1,3,2,5,2],["33.3%","0.0%","50.0%","50.0%","66.7%","50.0%","100.0%","0.0%","50.0%","100.0%","25.0%","100.0%","100.0%","66.7%","50.0%","40.0%","0.0%"],["33.3%","50.0%","0.0%","0.0%","0.0%","0.0%","0.0%","33.3%","0.0%","0.0%","25.0%","0.0%","0.0%","0.0%","0.0%","20.0%","0.0%"],["0.0%","0.0%","0.0%","0.0%","66.7%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","100.0%","0.0%","33.3%","0.0%","20.0%","0.0%"],["0.0%","0.0%","25.0%","50.0%","0.0%","0.0%","0.0%","0.0%","0.0%","33.3%","0.0%","0.0%","100.0%","0.0%","0.0%","20.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>場內擊球數<\/th>\n      <th>強勁擊球 (HardHit)<\/th>\n      <th>軟弱擊球 (WeaklyHit)<\/th>\n      <th>完美擊球 (Barrel)<\/th>\n      <th>扎實擊球 (Solid)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"場內擊球數","targets":2},{"name":"強勁擊球 (HardHit)","targets":3},{"name":"軟弱擊球 (WeaklyHit)","targets":4},{"name":"完美擊球 (Barrel)","targets":5},{"name":"扎實擊球 (Solid)","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-BatterHitMetrics">
+各打者擊球數據 (Batter Hit Metrics)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterHitMetrics" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterHitMetrics">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Kazuma Okamoto","Masataka Yoshida","Munetaka Murakami","Kensuke Kondoh","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","Shugo Maki","Sosuke Genda","Teruaki Sato","Do Yeong Kim","Jahmai Jones","Jung Hoo Lee","Hyeseong Kim","Hyun Min Ahn","Shay Whitcomb","Bo Gyeong Moon","Ju Won Kim"],[4,4,4,3,3,2,2,2,2,5,5,5,4,4,4,3,3],[3,4,2,2,3,2,1,3,2,4,3,5,1,1,2,3,2],[118.1,149.3,155.6,120.3,153.5,160.1,156.3,113.1,162.2,143.5,154.1,133.6,170.6,169.6,140.3,166.6,146.9],[-8,16,2.5,-2,33.3,27.5,48,-3.7,25.5,29,17.3,-3,29,14,37,0.3,0.5],[159,168.3,179.9,141.6,168.7,178.3,156.3,146,175.1,173.5,172,157.7,170.6,169.6,149,171.2,162.4],[-7,2,17,2,27,41,48,21,1,3,6,29,29,14,17,-16,7],[7,22.9,80.2,19.2,117.7,124.4,86,94.5,21.9,27.1,39.9,115.2,125,79.59999999999999,87.5,2.4,45.4]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>打數 (AB)<\/th>\n      <th>場內擊球數<\/th>\n      <th>平均初速 (kph)<\/th>\n      <th>平均仰角 (deg)<\/th>\n      <th>最快初速 (kph)<\/th>\n      <th>最快初速仰角 (deg)<\/th>\n      <th>最快初速飛行距離 (m)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"打數 (AB)","targets":2},{"name":"場內擊球數","targets":3},{"name":"平均初速 (kph)","targets":4},{"name":"平均仰角 (deg)","targets":5},{"name":"最快初速 (kph)","targets":6},{"name":"最快初速仰角 (deg)","targets":7},{"name":"最快初速飛行距離 (m)","targets":8}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-BatterWhiffProfile">
+各打者對不同球種的揮空率 (Batter Whiff Rate by Pitch Type)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterWhiffProfile" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterWhiffProfile">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Munetaka Murakami","Kensuke Kondoh","Masataka Yoshida","Seishiro Sakamoto","Sosuke Genda","Teruaki Sato","Kensuke Kondoh","Masataka Yoshida","Munetaka Murakami","Seishiro Sakamoto","Seiya Suzuki","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","Shugo Maki","Shugo Maki","Sosuke Genda","Kazuma Okamoto","Kazuma Okamoto","Kazuma Okamoto","Kazuma Okamoto","Kazuma Okamoto","Munetaka Murakami","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","Shugo Maki","Shugo Maki","Shugo Maki","Sosuke Genda","Taisei Makihara","Teruaki Sato","Kensuke Kondoh","Kensuke Kondoh","Masataka Yoshida","Munetaka Murakami","Munetaka Murakami","Seishiro Sakamoto","Seishiro Sakamoto","Seishiro Sakamoto","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","Sosuke Genda","Jahmai Jones","Do Yeong Kim","Hyeseong Kim","Shay Whitcomb","Do Yeong Kim","Do Yeong Kim","Dong Won Park","Hyeseong Kim","Ju Won Kim","Jung Hoo Lee","Bo Gyeong Moon","Bo Gyeong Moon","Hyun Min Ahn","Hyun Min Ahn","Jahmai Jones","Jahmai Jones","Jung Hoo Lee","Shay Whitcomb","Bo Gyeong Moon","Do Yeong Kim","Dong Won Park","Dong Won Park","Hyeseong Kim","Hyun Bin Moon","Hyun Bin Moon","Hyun Min Ahn","Hyun Min Ahn","Jahmai Jones","Jahmai Jones","Ju Won Kim","Ju Won Kim","Ju Won Kim","Jung Hoo Lee","Jung Hoo Lee","Shay Whitcomb","Bo Gyeong Moon","Bo Gyeong Moon","Dong Won Park","Hyeseong Kim","Hyeseong Kim","Hyun Min Ahn","Ju Won Kim"],["四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","變速球 (Changeup)","變速球 (Changeup)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)","卡特球 (Cutter)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","卡特球 (Cutter)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","滑球 (Slider)","指叉球 (Splitter)","變速球 (Changeup)","卡特球 (Cutter)","滑球 (Slider)","滑球 (Slider)","變速球 (Changeup)","滑球 (Slider)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","伸卡球 (Sinker)","滑球 (Slider)","滑球 (Slider)","滑球 (Slider)","伸卡球 (Sinker)","滑球 (Slider)","變速球 (Changeup)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","伸卡球 (Sinker)","曲球 (Curveball)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","伸卡球 (Sinker)","曲球 (Curveball)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","曲球 (Curveball)","變速球 (Changeup)","曲球 (Curveball)"],[9,6,6,6,6,4,3,2,4,4,5,3,4,5,4,4,2,5,2,5,4,4,5,5,2,4,3,1,6,4,3,1,4,3,2,1,2,1,1,6,3,1,9,8,7,4,5,4,5,4,4,5,3,4,10,4,4,3,5,9,5,2,1,3,9,4,2,1,3,4,2,4,4,2,1,3,2,1,2,6,1,1,1,3],[4,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,6,5,4,4,3,3,3,3,3,3,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0],[1,1,0,1,1,1,0,0,2,2,1,0,0,1,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,1,0,1,1,3,2,1,0,0,1,2,1,1,0,0,2,0,0,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0],["25.0%","33.3%","0.0%","33.3%","33.3%","33.3%","0.0%","0.0%","100.0%","100.0%","50.0%","0.0%","0.0%","50.0%","0.0%","0.0%","0.0%","0.0%","0.0%","100.0%","100.0%","100.0%","0.0%","0.0%","100.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","33.3%","40.0%","25.0%","0.0%","33.3%","33.3%","100.0%","66.7%","33.3%","0.0%","0.0%","50.0%","100.0%","50.0%","50.0%","0.0%","0.0%","100.0%","0.0%","0.0%","100.0%","100.0%","100.0%","100.0%","100.0%","0.0%","0.0%","0.0%","0.0%","100.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>球種<\/th>\n      <th>總球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"球種","targets":2},{"name":"總球數","targets":3},{"name":"揮棒次數","targets":4},{"name":"揮空次數","targets":5},{"name":"揮空率","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-Hits">
+上壘與全壘打的擊球數據 (Hits &amp; HRs EV &amp; LA)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-Hits" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-Hits">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國"],["Munetaka Murakami","大谷翔平 (Shohei Ohtani)","Do Yeong Kim","Jahmai Jones","Hyeseong Kim","Hyun Min Ahn","Seiya Suzuki","Masataka Yoshida","Seiya Suzuki","Ju Won Kim","Masataka Yoshida","Bo Gyeong Moon","Jung Hoo Lee","大谷翔平 (Shohei Ohtani)","Jung Hoo Lee","Jahmai Jones"],["一壘安打 (Single)","全壘打 (Home Run)","一壘安打 (Single)","一壘安打 (Single)","全壘打 (Home Run)","一壘安打 (Single)","全壘打 (Home Run)","一壘安打 (Single)","全壘打 (Home Run)","一壘安打 (Single)","全壘打 (Home Run)","二壘安打 (Double)","二壘安打 (Double)","一壘安打 (Single)","一壘安打 (Single)","一壘安打 (Single)"],[111.8,110.8,107.8,106.9,106,105.4,104.8,104.6,104.4,100.9,100.9,99.2,97.90000000000001,88.2,76.40000000000001,75.7],[179.9,178.3,173.5,172,170.6,169.6,168.7,168.3,168,162.4,162.4,159.6,157.6,141.9,123,121.8],[17,41,3,6,29,14,27,2,30,7,31,18,11,14,14,19]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>結果<\/th>\n      <th>擊球初速 (mph)<\/th>\n      <th>擊球初速 (kph)<\/th>\n      <th>擊球仰角 (deg)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"結果","targets":2},{"name":"擊球初速 (mph)","targets":3},{"name":"擊球初速 (kph)","targets":4},{"name":"擊球仰角 (deg)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-BatterOutcomes">
+各隊打者的打擊結果統計 (Batter Outcomes)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-BatterOutcomes" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-BatterOutcomes">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Kazuma Okamoto","Kazuma Okamoto","Kazuma Okamoto","Kensuke Kondoh","Kensuke Kondoh","Kensuke Kondoh","Kensuke Kondoh","Masataka Yoshida","Masataka Yoshida","Masataka Yoshida","Masataka Yoshida","Munetaka Murakami","Munetaka Murakami","Munetaka Murakami","Seishiro Sakamoto","Seishiro Sakamoto","Seiya Suzuki","Seiya Suzuki","Seiya Suzuki","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","大谷翔平 (Shohei Ohtani)","Shugo Maki","Shugo Maki","Shugo Maki","Sosuke Genda","Sosuke Genda","Sosuke Genda","Sosuke Genda","Taisei Makihara","Teruaki Sato","Teruaki Sato","Bo Gyeong Moon","Bo Gyeong Moon","Bo Gyeong Moon","Bo Gyeong Moon","Do Yeong Kim","Do Yeong Kim","Do Yeong Kim","Dong Won Park","Hyeseong Kim","Hyeseong Kim","Hyun Bin Moon","Hyun Min Ahn","Hyun Min Ahn","Jahmai Jones","Jahmai Jones","Jahmai Jones","Ju Won Kim","Ju Won Kim","Ju Won Kim","Ju Won Kim","Jung Hoo Lee","Jung Hoo Lee","Jung Hoo Lee","Jung Hoo Lee","Shay Whitcomb","Shay Whitcomb","Shay Whitcomb"],["滾地球出局 (Groundout)","飛球出局 (Flyout)","三振 (Strikeout)","封殺 (Forceout)","滾地球出局 (Groundout)","三振 (Strikeout)","四壞保送 (Walk)","滾地球出局 (Groundout)","全壘打 (Home Run)","內野高飛出局 (Pop Out)","一壘安打 (Single)","三振 (Strikeout)","滾地球出局 (Groundout)","一壘安打 (Single)","三振 (Strikeout)","Caught Stealing 2B","全壘打 (Home Run)","飛球出局 (Flyout)","四壞保送 (Walk)","全壘打 (Home Run)","Intent Walk","一壘安打 (Single)","四壞保送 (Walk)","飛球出局 (Flyout)","三振 (Strikeout)","四壞保送 (Walk)","滾地球出局 (Groundout)","平飛球出局 (Lineout)","Sac Bunt","四壞保送 (Walk)","三振 (Strikeout)","飛球出局 (Flyout)","滾地球出局 (Groundout)","二壘安打 (Double)","封殺 (Forceout)","滾地球出局 (Groundout)","四壞保送 (Walk)","飛球出局 (Flyout)","一壘安打 (Single)","三振 (Strikeout)","三振 (Strikeout)","三振 (Strikeout)","全壘打 (Home Run)","四壞保送 (Walk)","三振 (Strikeout)","一壘安打 (Single)","一壘安打 (Single)","三振 (Strikeout)","飛球出局 (Flyout)","滾地球出局 (Groundout)","觸身球 (Hit By Pitch)","一壘安打 (Single)","三振 (Strikeout)","滾地球出局 (Groundout)","二壘安打 (Double)","飛球出局 (Flyout)","一壘安打 (Single)","三振 (Strikeout)","平飛球出局 (Lineout)","內野高飛出局 (Pop Out)"],[2,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,1,3,3,1,1,3,1,2,2,1,1,1,1,1,2,1,1,1,2,1,1]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>打者<\/th>\n      <th>結果<\/th>\n      <th>次數<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"打者","targets":1},{"name":"結果","targets":2},{"name":"次數","targets":3}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="投手數據-6" class="section level3">
+<h3>💪 投手數據 (6)</h3>
+<div class="anchor-nav">
+<span class="anchor-label">📋
+快速跳轉：</span><a href="#tbl-PitcherBasicStats">表現基本統計</a><a href="#tbl-PitcherAvgSpeed">平均球速</a><a href="#tbl-PitcherMaxSpeed">最快球速、轉速與球種</a><a href="#tbl-PitcherTotalWhiff">總揮空率</a><a href="#tbl-PitcherTypeWhiff">各球種揮空率</a><a href="#tbl-PitcherStats">投球內容統計</a>
+</div>
+<h4 id="tbl-PitcherBasicStats">
+各投手表現基本統計 (Pitcher Basic Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherBasicStats" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherBasicStats">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Yusei Kikuchi","Hiromi Itoh","Yuki Matsumoto","Atsuki Taneichi","Taisei Ota","Young Pyo Ko","Byeong Hyeon Jo","Taek Yeon Kim","Ju Young Son","Yeong Hyun Park","Woo-Suk Go","Young Kyu Kim"],[63,52,27,15,7,51,26,21,18,14,13,12],[37,30,12,11,6,33,13,13,11,7,7,4],[26,21,15,4,1,18,13,8,7,7,6,8],["58.7%","57.7%","44.4%","73.3%","85.7%","64.7%","50.0%","61.9%","61.1%","50.0%","53.8%","33.3%"],["3.0","3.0","1.0","1.0","1.0","2.2","1.1","1.1","1.0","0.2","1.0","0.0"],["9.00","6.00","9.00","0.00","0.00","13.50","6.75","0.00","0.00","0.00","0.00","0.00"],["2.00","0.33","4.00","0.00","0.00","1.50","1.50","0.75","1.00","3.00","0.00","0.00"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總用球數<\/th>\n      <th>好球數<\/th>\n      <th>壞球數<\/th>\n      <th>好球率<\/th>\n      <th>投球局數 (IP)<\/th>\n      <th>防禦率 (ERA)<\/th>\n      <th>每局被上壘率 (WHIP)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總用球數","targets":2},{"name":"好球數","targets":3},{"name":"壞球數","targets":4},{"name":"好球率","targets":5},{"name":"投球局數 (IP)","targets":6},{"name":"防禦率 (ERA)","targets":7},{"name":"每局被上壘率 (WHIP)","targets":8}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.15 ? \"#fde8e8\" : value <= 0.25 ? \"#fef9e7\" : value <= 0.3 ? \"#e8f8f5\" : \"#d5f5e3\"});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 3 ? \"#d5f5e3\" : value <= 5 ? \"#e8f8f5\" : value <= 8 ? \"#fef9e7\" : \"#fde8e8\"});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherAvgSpeed">
+各投手的平均球速 (Pitcher Avg Speed)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherAvgSpeed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherAvgSpeed">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Taisei Ota","Atsuki Taneichi","Yuki Matsumoto","Yusei Kikuchi","Hiromi Itoh","Woo-Suk Go","Ju Young Son","Taek Yeon Kim","Yeong Hyun Park","Byeong Hyeon Jo","Young Kyu Kim","Young Pyo Ko"],[152.1,149.3,148.8,143.3,142.2,146.1,143.8,143.4,139.4,138.6,137.4,126.6]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>平均球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"平均球速 (kph)","targets":2}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherMaxSpeed">
+各投手最快球速、轉速與球種 (Pitcher Max Speed)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherMaxSpeed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherMaxSpeed">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Yusei Kikuchi","Atsuki Taneichi","Taisei Ota","Yuki Matsumoto","Hiromi Itoh","Woo-Suk Go","Taek Yeon Kim","Ju Young Son","Yeong Hyun Park","Byeong Hyeon Jo","Young Kyu Kim","Young Pyo Ko"],[2252,2405,2458,2471,2351,2301,2344,2530,2377,2359,2201,2222],["四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","伸卡球 (Sinker)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)"],[156.6,155.8,155.1,154.7,150.8,153.5,151,150.2,148.2,147.3,146.6,141]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>轉速 (rpm)<\/th>\n      <th>球種<\/th>\n      <th>最快球速 (kph)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"轉速 (rpm)","targets":2},{"name":"球種","targets":3},{"name":"最快球速 (kph)","targets":4}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherTotalWhiff">
+各投手總揮空率 (Pitcher Total Whiff Rate)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherTotalWhiff" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherTotalWhiff">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Yusei Kikuchi","Hiromi Itoh","Yuki Matsumoto","Atsuki Taneichi","Taisei Ota","Young Pyo Ko","Byeong Hyeon Jo","Taek Yeon Kim","Ju Young Son","Yeong Hyun Park","Woo-Suk Go","Young Kyu Kim"],[63,52,27,15,7,51,26,21,18,14,13,12],[29,21,7,8,5,19,7,7,9,6,5,1],[10,8,4,3,1,6,3,3,2,1,0,0],["34.5%","38.1%","57.1%","37.5%","20.0%","31.6%","42.9%","42.9%","22.2%","16.7%","0.0%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>總球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"總球數","targets":2},{"name":"揮棒次數","targets":3},{"name":"揮空次數","targets":4},{"name":"揮空率","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherTypeWhiff">
+各投手各球種揮空率 (Pitcher Whiff Rate by Pitch Type)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherTypeWhiff" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherTypeWhiff">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Atsuki Taneichi","Atsuki Taneichi","Atsuki Taneichi","Hiromi Itoh","Hiromi Itoh","Hiromi Itoh","Hiromi Itoh","Hiromi Itoh","Taisei Ota","Taisei Ota","Yuki Matsumoto","Yuki Matsumoto","Yuki Matsumoto","Yusei Kikuchi","Yusei Kikuchi","Yusei Kikuchi","Yusei Kikuchi","Byeong Hyeon Jo","Byeong Hyeon Jo","Byeong Hyeon Jo","Byeong Hyeon Jo","Byeong Hyeon Jo","Ju Young Son","Ju Young Son","Ju Young Son","Ju Young Son","Taek Yeon Kim","Taek Yeon Kim","Taek Yeon Kim","Woo-Suk Go","Woo-Suk Go","Woo-Suk Go","Woo-Suk Go","Yeong Hyun Park","Yeong Hyun Park","Yeong Hyun Park","Young Kyu Kim","Young Kyu Kim","Young Kyu Kim","Young Pyo Ko","Young Pyo Ko"],["伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","伸卡球 (Sinker)","曲球 (Curveball)","伸卡球 (Sinker)","變速球 (Changeup)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","卡特球 (Cutter)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","卡特球 (Cutter)","指叉球 (Splitter)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","卡特球 (Cutter)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","變速球 (Changeup)"],[12,2,1,23,10,9,7,3,6,1,17,9,1,24,26,10,3,14,5,3,3,1,11,5,1,1,7,11,3,7,3,2,1,5,6,3,8,2,2,33,18],[7,1,0,7,5,5,3,1,4,1,5,2,0,17,9,3,0,2,2,2,1,0,7,1,0,1,4,3,0,4,0,1,0,2,3,1,0,0,1,14,5],[3,0,0,3,2,1,1,1,1,0,2,2,0,6,4,0,0,1,1,1,0,0,1,1,0,0,2,1,0,0,0,0,0,1,0,0,0,0,0,6,0],["42.9%","0.0%","0.0%","42.9%","40.0%","20.0%","33.3%","100.0%","25.0%","0.0%","40.0%","100.0%","0.0%","35.3%","44.4%","0.0%","0.0%","50.0%","50.0%","50.0%","0.0%","0.0%","14.3%","100.0%","0.0%","0.0%","50.0%","33.3%","0.0%","0.0%","0.0%","0.0%","0.0%","50.0%","0.0%","0.0%","0.0%","0.0%","0.0%","42.9%","0.0%"]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>球種<\/th>\n      <th>該球種球數<\/th>\n      <th>揮棒次數<\/th>\n      <th>揮空次數<\/th>\n      <th>揮空率<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"球種","targets":2},{"name":"該球種球數","targets":3},{"name":"揮棒次數","targets":4},{"name":"揮空次數","targets":5},{"name":"揮空率","targets":6}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<h4 id="tbl-PitcherStats">
+各投手的投球內容統計 (Pitcher Stats)
+</h4>
+<div class="datatables html-widget html-fill-item" id="dt-PitcherStats" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="dt-PitcherStats">{"x":{"filter":"none","vertical":false,"data":[["🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇯🇵 日本","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國","🇰🇷 韓國"],["Atsuki Taneichi","Atsuki Taneichi","Atsuki Taneichi","Hiromi Itoh","Hiromi Itoh","Hiromi Itoh","Hiromi Itoh","Hiromi Itoh","Taisei Ota","Taisei Ota","Yuki Matsumoto","Yuki Matsumoto","Yuki Matsumoto","Yusei Kikuchi","Yusei Kikuchi","Yusei Kikuchi","Yusei Kikuchi","Byeong Hyeon Jo","Byeong Hyeon Jo","Byeong Hyeon Jo","Byeong Hyeon Jo","Byeong Hyeon Jo","Ju Young Son","Ju Young Son","Ju Young Son","Ju Young Son","Taek Yeon Kim","Taek Yeon Kim","Taek Yeon Kim","Woo-Suk Go","Woo-Suk Go","Woo-Suk Go","Woo-Suk Go","Yeong Hyun Park","Yeong Hyun Park","Yeong Hyun Park","Young Kyu Kim","Young Kyu Kim","Young Kyu Kim","Young Pyo Ko","Young Pyo Ko"],["伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","伸卡球 (Sinker)","曲球 (Curveball)","伸卡球 (Sinker)","變速球 (Changeup)","伸卡球 (Sinker)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","曲球 (Curveball)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","卡特球 (Cutter)","四縫線速球 (Four-Seam Fastball)","滑球 (Slider)","變速球 (Changeup)","曲球 (Curveball)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","滑球 (Slider)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","卡特球 (Cutter)","指叉球 (Splitter)","四縫線速球 (Four-Seam Fastball)","變速球 (Changeup)","卡特球 (Cutter)","滑球 (Slider)","變速球 (Changeup)","四縫線速球 (Four-Seam Fastball)","曲球 (Curveball)","變速球 (Changeup)"],[12,2,1,23,10,9,7,3,6,1,17,9,1,26,24,10,3,14,5,3,3,1,11,5,1,1,11,7,3,7,3,2,1,6,5,3,8,2,2,33,18],[148.7,155.8,143.2,148.2,140.5,132.2,143,129.8,154.2,139.4,148.6,151,132,154.6,138.8,126.7,136.5,145.6,130.3,130.3,125.7,144.4,147.5,140.5,139.4,123.6,149.6,136.6,136.3,152.3,133.4,144.9,142.9,146.9,131.4,137.8,133.7,144.2,145.8,120.5,137.9],[1904,2384,1609,2296,1297,2449,1434,2469,2400,708,2108,2351,2425,2279,2576,2674,1688,2310,618,595,1259,2311,2485,2387,1251,2278,2288,1251,1963,2219,2674,2374,1182,2318,2103,2384,2156,2143,2188,2200,2000]],"container":"<table class=\"display compact cell-border hover\">\n  <thead>\n    <tr>\n      <th>隊伍<\/th>\n      <th>投手<\/th>\n      <th>球種<\/th>\n      <th>用球數<\/th>\n      <th>平均球速 (kph)<\/th>\n      <th>平均轉速 (rpm)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":20,"autoWidth":false,"dom":"frtip","stateSave":true,"scrollX":true,"columnDefs":[{"className":"dt-left","targets":"_all"},{"name":"隊伍","targets":0},{"name":"投手","targets":1},{"name":"球種","targets":2},{"name":"用球數","targets":3},{"name":"平均球速 (kph)","targets":4},{"name":"平均轉速 (rpm)","targets":5}],"language":{"search":"🔍 搜尋：","info":"顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆","infoEmpty":"無紀錄","infoFiltered":"（自 _MAX_ 筆中篩選）","lengthMenu":"顯示 _MENU_ 筆","zeroRecords":"找不到相符的紀錄","paginate":{"previous":"上一頁","next":"下一頁"}},"order":[],"orderClasses":false,"lengthMenu":[10,20,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<!-- === JavaScript 區段 === -->
 <script>
-// P1-3: 回到頂部按鈕 — 捲動超過 500px 顯示
-(function() {
-  var btn = document.getElementById('back-to-top');
-  if (!btn) return;
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 500) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
-    }
-  });
-  btn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-})();
+// 摺疊面板 (Accordion) 切換功能
+function toggleAccordion(id) {
+  var content = document.getElementById(id);
+  var toggle = content.previousElementSibling;
+  if (content.classList.contains('show')) {
+    content.classList.remove('show');
+    toggle.classList.remove('active');
+  } else {
+    content.classList.add('show');
+    toggle.classList.add('active');
+  }
+}
 
-// Tab 切換時自動捲動至 Tab 內容頂端
-(function() {
-  var tabs = document.querySelectorAll('.nav-pills a[data-toggle="tab"]');
-  tabs.forEach(function(tab) {
-    tab.addEventListener('shown.bs.tab', scrollToTabs);
-    tab.addEventListener('click', function() {
-      // Bootstrap 3 使用 jQuery 事件，額外綁定原生 click
-      setTimeout(scrollToTabs, 100);
-    });
-  });
-  function scrollToTabs() {
-    var navBar = document.querySelector('.nav-pills');
-    if (!navBar) return;
-    var rect = navBar.getBoundingClientRect();
-    // 如果 Tab bar 不在視窗頂部附近，才捲動
-    if (rect.top < -10 || rect.top > 60) {
-      navBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// 情境篩選器：依據下拉選單值篩選 DataTable 中的「情境」欄位
+function filterContext(tableKey, value) {
+  var tableId = 'dt-' + tableKey;
+  var dtTable = document.getElementById(tableId);
+  if (!dtTable) return;
+  // 透過 DataTables API 搜尋「情境」欄位
+  var dtApi = $(dtTable).find('table').DataTable();
+  if (!dtApi) return;
+  // 找到「情境」欄位的 index
+  var headers = dtApi.columns().header().toArray();
+  var ctxIdx = -1;
+  for (var i = 0; i < headers.length; i++) {
+    if ($(headers[i]).text().indexOf('情境') >= 0) {
+      ctxIdx = i;
+      break;
     }
   }
-})();
+  if (ctxIdx >= 0) {
+    if (value === '') {
+      dtApi.column(ctxIdx).search('').draw();
+    } else {
+      dtApi.column(ctxIdx).search('^' + value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', true, false).draw();
+    }
+  }
+}
+
+// Tab 分頁狀態保存 (localStorage)
+document.addEventListener("DOMContentLoaded", function() {
+    $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+        var tabHref = $(e.target).attr("href");
+        localStorage.setItem('activeWbcTab', tabHref);
+    });
+    var savedTab = localStorage.getItem('activeWbcTab');
+    if (savedTab) {
+        setTimeout(function() {
+            var tabBtn = $('a[href="' + savedTab + '"]');
+            if (tabBtn.length > 0) {
+                tabBtn.tab('show');
+            }
+        }, 50);
+    }
+
+    // 情境篩選器初始化：預設篩選「總體」
+    setTimeout(function() {
+        var filters = document.querySelectorAll('.context-filter select');
+        filters.forEach(function(f) {
+            var tableKey = f.id.replace('filter-', '');
+            filterContext(tableKey, '總體');
+        });
+    }, 500);
+
+    // 錨點跳轉增強：點擊錨點連結後，自動將目標滾動到可見位置（考量 Sticky Tab 高度）
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href').substring(1);
+            var targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                var offset = 100; // 預留 Sticky Tab + Sticky Anchor Nav 的高度
+                var top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({top: top, behavior: 'smooth'});
+            }
+        });
+    });
+});
 </script>
-</div>
 </div>
 </div>
 
