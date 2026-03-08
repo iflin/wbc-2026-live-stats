@@ -23,7 +23,7 @@
 <body>
     <div id="update-toast">📊 資料已即時更新</div>
     <!-- 方案 C：使用單一 iframe，不再整頁替換 -->
-    <iframe id="mainFrame" src="788113_ChineseTaipei_vs_Korea_LiveStats.html?v=__TIMESTAMP__"></iframe>
+    <iframe id="mainFrame" src="788113_ChineseTaipei_vs_Korea_LiveStats.html?v=1772944183"></iframe>
 
     <script>
     /* =================================================================
@@ -64,7 +64,8 @@
             if (!iframeDoc || !iframeDoc.body) return;
 
             // === Step 1: 抓取最新 HTML ===
-            var resp = await fetch(reportUrl + '?t=' + new Date().getTime());
+            var baseReportUrl = reportUrl.split('?')[0];
+            var resp = await fetch(baseReportUrl + '?t=' + new Date().getTime());
             if (!resp.ok) return;
             var html = await resp.text();
             var parser = new DOMParser();
