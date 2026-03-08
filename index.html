@@ -23,7 +23,7 @@
 <body>
     <div id="update-toast">📊 資料已即時更新</div>
     <!-- 方案 C：使用單一 iframe，不再整頁替換 -->
-    <iframe id="mainFrame" src="788113_ChineseTaipei_vs_Korea_LiveStats.html?v=1772944985"></iframe>
+    <iframe id="mainFrame" src="788113_ChineseTaipei_vs_Korea_LiveStats.html?v=1772945007"></iframe>
 
     <script>
     /* =================================================================
@@ -71,6 +71,21 @@
             var parser = new DOMParser();
             var newDoc = parser.parseFromString(html, 'text/html');
             var hasUpdate = false;
+
+            // === Step 1.5: 結構變更偵測 — 若 SVG/表格數量改變，整頁重載 iframe ===
+            var oldSvgCount = iframeDoc.querySelectorAll('svg').length;
+            var newSvgCount = newDoc.querySelectorAll('svg').length;
+            var oldTableCount = iframeDoc.querySelectorAll('table.dataTable').length;
+            var newTableCount = newDoc.querySelectorAll('table.dataTable').length;
+
+            if (oldSvgCount !== newSvgCount || oldTableCount !== newTableCount) {
+                // 偵測到結構變更（例如新增了進壘點圖），強制 iframe 整頁重載
+                iframe.src = baseReportUrl + '?t=' + new Date().getTime();
+                toast.textContent = '📊 報表結構已更新，正在重新載入...';
+                toast.style.opacity = 1;
+                setTimeout(function() { toast.style.opacity = 0; }, 3000);
+                return;
+            }
 
             // === Step 2: 更新懶人包 (Recap) — 保留 Accordion 展開/收起狀態 ===
             var oldRecapBox = iframeDoc.querySelector('.recap-box');
